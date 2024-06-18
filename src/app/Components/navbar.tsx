@@ -45,7 +45,7 @@ export default function Navbar() {
       data-cal-namespace=""
       data-cal-link="weunzet/30min"
       data-cal-config='{"layout":"week_view"}'
-      className="rounded-tr-lg rounded-bl-lg outline text-white px-4 py-2.5 text-xs font-semibold shadow-sm hover:bg-secondary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-500 transform transition-transform duration-500 hover:scale-105 flex items-center"
+      className="rounded-tr-lg rounded-bl-lg outline outline-1 text-white px-4 py-2.5 text-xs font-semibold shadow-sm hover:bg-secondary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-500 transform transition-transform duration-500 hover:scale-105 flex items-center"
     >
       <span className="pr-2">
         <span className="relative flex h-2 w-2">
