@@ -145,6 +145,7 @@ export default function Modal({ onClose }: ModalProps) {
 
   const handleIconClick = () => {
     setShowMainModal(true);
+    addAudioEventListeners();
   };
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -162,9 +163,6 @@ export default function Modal({ onClose }: ModalProps) {
   };
 
   const handleArrowButtonClick = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-    }
     setShowMainModal(false);
     localStorage.setItem('scrollStamps', JSON.stringify(SCROLL_STAMPS));
     removeAudioEventListeners();
