@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +7,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --primary-500: #EDFF00;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +18,27 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#scroll-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#scroll-overlay.active {
+  display: block;
+  pointer-events: all;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,10 +47,28 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: 'DM Sans', sans-serif; 
+}
+
+::selection {
+  background-color: var(--primary-500);
+  color: black;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.custom-range::-webkit-slider-thumb {
+  background-color: black;
+}
+
+.custom-range::-moz-range-thumb {
+  background-color: black;
+}
+
+.custom-range::-ms-thumb {
+  background-color: black;
 }
