@@ -12,6 +12,7 @@ import Testimonials from './Components/testimonials';
 import Footer from './Components/footer';
 import Modal from './Components/modal';
 import { getCalApi } from "@calcom/embed-react";
+import { Embed } from '@calcom/embed-react';
 
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
