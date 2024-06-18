@@ -65,7 +65,7 @@ const Card: React.FC<CardProps> = ({ icon: Icon, title, power, description, pill
       ))}
       <p className="text-primary-500 font-semibold pl-2">{power}</p>
     </div>
-    <div className="pt-4 grid grid-cols-2 gap-x-4">
+    <div className="pt-4 grid grid-cols-2">
       {description.map((item, index) => (
         <div key={index} className="flex items-center mb-2">
           {getIcon(item.status)}
@@ -107,7 +107,7 @@ export default function How() {
   return (
     <>
       <section id='how'>
-        <div className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+        <div className="relative isolate overflow-hidden px-6 py-16 sm:py-24 lg:overflow-visible lg:px-0">
           <div className="absolute inset-0 -z-10 overflow-hidden">
             <svg
               className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
@@ -152,17 +152,19 @@ export default function How() {
                       </span>
                     </li>
                   </ul>
-                  <p className="mt-8">
-                    Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
-                  </p>
+                  <section id="how2">
                   <h2 id="use-client" className="mt-16 text-2xl font-bold tracking-tight text-primary-500">No server? No problem.</h2>
                   <p className="mt-6">
                     Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in.  enim, consequat vulputate nibh. Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis diam.
                   </p>
+                  <p className="mt-6">
+                    Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in.  enim, consequat vulputate nibh. Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis diam.
+                  </p>
+                  </section>
                 </div>
               </div>
             </div>
-            <div id="sticky-card" className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <div id="sticky-card" className="-ml-16 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
               {changeContent ? (
                 <Card
                   icon={TrophyIcon}
@@ -193,7 +195,7 @@ export default function How() {
           </div>
         </div>
 
-        <div className="py-24 sm:py-32">
+        <div className="pt-0 pb-16 sm:pt-24 sm:pb-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
               {timeline.map((item) => (

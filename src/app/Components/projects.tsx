@@ -47,8 +47,8 @@ export default function Projects() {
         </defs>
         <rect width="100%" height="100%" strokeWidth={0} fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
       </svg>
-
-      <div className="overflow-hidden bg-black py-32">
+    <section id="projects">
+      <div className="overflow-hidden bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-8 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
             <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
@@ -117,73 +117,77 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      </section>
 
-      <div className="bg-black py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-            <div className="lg:pr-4">
-              <div className="relative overflow-hidden px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 transform transition-transform duration-500 hover:-translate-y-3">
-                <Image
-                  className="absolute inset-0 h-full w-full object-cover rounded-tl-ct rounded-br-ct object-cover mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
-                  src="/photos/project5.png"
-                  alt="Project 5"
-                  width={700}
-                  height={400}
-                />
-                <div
-                  className="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl"
-                  aria-hidden="true"
-                >
-                </div>
+<section id="case">
+<div className="bg-black py-16 sm:py-24">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="mx-auto max-w-2xl lg:max-w-none">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-x-8 gap-y-16 sm:gap-y-24">
+        <div className="lg:pr-4 order-3 lg:order-1">
+          <div className="relative overflow-hidden px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 transform transition-transform duration-500 hover:-translate-y-3">
+            <Image
+              className="absolute inset-0 h-full w-full object-cover rounded-tl-ct rounded-br-ct mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
+              src="/photos/project5.png"
+              alt="Project 5"
+              width={700}
+              height={400}
+            />
+            <div
+              className="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl"
+              aria-hidden="true"
+            ></div>
+          </div>
+          <div className="relative overflow-hidden px-6 pb-9 pt-44 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 transform transition-transform duration-500 hover:-translate-y-3 mt-8">
+            <Image
+              className="absolute inset-0 h-full w-full object-cover rounded-tl-ct rounded-br-ct mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
+              src="/photos/project1.png"
+              alt="Project 1"
+              width={700}
+              height={400}
+            />
+            <div
+              className="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl"
+              aria-hidden="true"
+            ></div>
+          </div>
+          <dl className="mt-10 grid grid-cols-2 gap-8 border-t border-primary-500/20 pt-10 sm:grid-cols-4 lg:hidden">
+            {stats.map((stat, statIdx) => (
+              <div key={statIdx}>
+                <dt className="text-sm font-semibold leading-6 text-primary-500">{stat.label}</dt>
+                <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-white">{stat.value}</dd>
               </div>
-              <div className="relative overflow-hidden px-6 pb-9 pt-44 -ml-12 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 transform transition-transform duration-500 hover:-translate-y-3 mt-8">
-                <Image
-                  className="absolute inset-0 h-full w-full object-cover rounded-tl-ct rounded-br-ct object-cover mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
-                  src="/photos/project1.png"
-                  alt="Project 1"
-                  width={700}
-                  height={400}
-                />
-                <div
-                  className="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl"
-                  aria-hidden="true"
-                >
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
-                <h1 className="mt-2 text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-                  Our time @ Teckstar <br /> Case Study
-                </h1>
-                <div className="max-w-xl">
-                  <p className="mt-6 text-xl leading-8 text-white">
-                    Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
-                    vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
-                    erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-                    semper sed amet vitae sed turpis id.
-                  </p>
-                  <p className="mt-8 text-xl leading-8 text-white">
-                    Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie
-                    auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices
-                    hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
-                  </p>
-                </div>
-              </div>
-              <dl className="mt-10 grid grid-cols-2 gap-8 border-t border-primary-500/20 pt-10 sm:grid-cols-4">
-                {stats.map((stat, statIdx) => (
-                  <div key={statIdx}>
-                    <dt className="text-sm font-semibold leading-6 text-primary-500">{stat.label}</dt>
-                    <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-white">{stat.value}</dd>
-                  </div>
-                ))}
-              </dl>
-              <div className="mt-10 flex">
-              </div>
+            ))}
+          </dl>
+        </div>
+        <div className="order-1 lg:order-2">
+          <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
+            <h1 className="mt-2 text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
+              Our time @ Teckstar <br /> Case Study
+            </h1>
+            <div className="max-w-xl">
+              <p className="mt-6 text-xl leading-8 text-white">
+                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id.
+              </p>
+              <p className="mt-8 text-xl leading-8 text-white">
+                Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
+              </p>
             </div>
           </div>
+          <dl className="grid grid-cols-2 gap-8 border-t border-primary-500/20 mt-4 pb-12 sm:pb-0 pt-4 sm:grid-cols-4 hidden lg:grid">
+            {stats.map((stat, statIdx) => (
+              <div key={statIdx}>
+                <dt className="text-sm font-semibold leading-6 text-primary-500">{stat.label}</dt>
+                <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-white">{stat.value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </div>
-  );
+  </div>
+</div>
+</section>
+</div>
+);
 }

@@ -31,7 +31,7 @@ const scrollToSection = (id: string) => {
 
 export default function Hero() {
     return (
-        <section className="bg-black" id="hero">
+        <section className="bg-black py-4 sm:py-0" id="hero">
             <div className="relative isolate">
                 <div className="overflow-hidden">
                     <svg
@@ -57,7 +57,7 @@ export default function Hero() {
                             <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                                     Build the Right Deck to{" "}
-                                    <span className="text-primary-500">Become the Ace<span className="pl-1 relative text-dot-sm lg:text-dot top-dot">&#x25A0;</span></span>
+                                    <span className="text-primary-500">Become the Ace</span>
                                 </h1>
                                 <p className="mt-6 text-lg leading-8 text-white sm:max-w-md lg:max-w-none">
                                     Our mission is to transform tech startups and initiatives into strong brands by delivering all the essential elements needed to develop an outstanding product quickly and efficiently.
@@ -134,7 +134,8 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="bg-primary-black py-24 sm:py-18">
+            <section id="cloud">
+                <div className="bg-primary-black py-16 sm:py-24">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto max-w-2xl lg:max-w-none">
                             <h2 className="text-lg font-semibold leading-8 text-primary-500 text-center">Growth Hacked</h2>
@@ -171,7 +172,8 @@ export default function Hero() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+                </section>
+            </div>  
+    </section>
     );
 }

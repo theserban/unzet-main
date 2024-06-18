@@ -22,7 +22,8 @@ export default function Stats() {
         </defs>
         <rect width="100%" height="100%" strokeWidth={0} fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
       </svg>
-      <div className="py-24 sm:py-32">
+      <section id="stats">
+      <div className="py-16 pb-24 sm:pb-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
@@ -43,7 +44,7 @@ export default function Stats() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-tr-ct rounded-bl-ct bg-secondary-400 p-8 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44 border border-primary-500/20 transform transition-transform duration-500 hover:-translate-y-3">
+            <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 mb-4 sm:mb-0 rounded-tr-ct rounded-bl-ct bg-secondary-400 p-8 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44 border border-primary-500/20 transform transition-transform duration-500 hover:-translate-y-3">
               <p className="flex-none text-3xl font-bold tracking-tight text-primary-500">$8.9 billion</p>
               <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
                 <p className="text-lg font-semibold tracking-tight text-white">
@@ -66,6 +67,7 @@ export default function Stats() {
           </div>
         </div>
       </div>
+    </section>
     </div>
   );
 }

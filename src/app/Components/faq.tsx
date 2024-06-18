@@ -25,8 +25,9 @@ export default function FAQ() {
 
   return (
     <>
+          <section id="founder">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="relative mx-auto max-w-2xl py-12 sm:py-16 lg:max-w-4xl flex lg:flex-row flex-col items-start lg:items-start gap-x-6 gap-y-8 lg:gap-x-10">
+        <div className="relative mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-4xl flex lg:flex-row flex-col items-start lg:items-start gap-x-6 gap-y-8 lg:gap-x-10">
           <div className="w-68 lg:w-72 flex-shrink-0 p-2 rounded-lg">
             <Image
               className="rounded-tr-ct rounded-bl-ct border border-primary-500/20 transform transition-transform duration-500 hover:scale-105"
@@ -34,8 +35,8 @@ export default function FAQ() {
               alt=""
               onMouseEnter={() => setImageSrc('/photos/founder2.png')}
               onMouseLeave={() => setImageSrc('/photos/founder.png')}
-              width={500} // Add appropriate width
-              height={500} // Add appropriate height
+              width={500} 
+              height={500} 
             />
           </div>
           <div className="relative lg:ml-10">
@@ -64,7 +65,7 @@ export default function FAQ() {
       </div>
 
       <div className="bg-black">
-        <div className="mx-auto max-w-7xl px-6 py-40 pt-12">
+        <div className="mx-auto max-w-7xl px-6 pb-32 py-4 sm:pt-8">
           <div className="mx-auto max-w-4xl divide-y divide-white/10">
             <h2 className="text-2xl font-bold leading-10 tracking-tight text-white mb-8">Let me answer</h2>
 
@@ -95,6 +96,7 @@ export default function FAQ() {
           </div>
         </div>
       </div>
+      </section>
     </>
   );
 }
