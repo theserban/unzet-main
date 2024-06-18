@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const faqs = [
   {
@@ -49,15 +50,17 @@ export default function FAQ() {
                 The Serban, Founder
               </p>
               <div className="mt-6 flex items-center gap-x-6">
-                <a
-                  href="#"
+                <button
+                      data-cal-namespace=""
+                      data-cal-link="weunzet/30min"
+                      data-cal-config='{"layout":"month_view"}'
                   className="rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
                 >
-                  Book a Call
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105">
+                  Meet The Founder
+                </button>
+                <Link href="https://www.linkedin.com/in/theserban/" className="text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105">
                   Linkedin <span aria-hidden="true">→</span>
-                </a>
+                </Link>
               </div>
             </blockquote>
           </div>

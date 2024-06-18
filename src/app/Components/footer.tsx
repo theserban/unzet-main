@@ -76,7 +76,7 @@ const currentYear = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <div className="bg-secondary-400 rounded-tr-ct border-t-2 border-r-2 border-primary-500/20 relative">
+    <div className="bg-secondary-400 rounded-tr-ct border-t border-primary-500/20 relative">
       <div className="relative isolate overflow-hidden py-14 pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
@@ -90,12 +90,15 @@ export default function Footer() {
               Whether you are sure you want to collaborate with us or just want to exchange resources, let&apos;s meet.
               </p>
               <div className="mt-8 flex items-center gap-x-6">
-                <a
+                <button
+                data-cal-namespace=""
+                data-cal-link="weunzet/30min"
+                data-cal-config='{"layout":"month_view"}'
                   href="#"
                   className="rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
                 >
-                  Book a Call
-                </a>
+                  Book Now
+                </button>
                 <a
                   href="#"
                   className="text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105"

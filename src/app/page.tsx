@@ -11,7 +11,6 @@ import FAQ from './Components/faq';
 import Testimonials from './Components/testimonials';
 import Footer from './Components/footer';
 import Modal from './Components/modal';
-import { getCalApi } from "@calcom/embed-react";
 
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,22 +18,6 @@ export default function Page() {
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({});
-      cal("ui", {
-        "theme": "dark",
-        "styles": {
-          "branding": {
-            "brandColor": "#edff00"
-          }
-        },
-        "hideEventTypeDetails": false,
-        "layout": "week_view"
-      });
-    })();
   }, []);
 
   const handleCloseModal = () => {

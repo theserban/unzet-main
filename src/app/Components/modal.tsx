@@ -166,6 +166,9 @@ export default function Modal({ onClose }: ModalProps) {
     setShowMainModal(false);
     localStorage.setItem('scrollStamps', JSON.stringify(SCROLL_STAMPS));
     removeAudioEventListeners();
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
   };
 
   useEffect(() => {
@@ -265,7 +268,7 @@ export default function Modal({ onClose }: ModalProps) {
         />
       </div>
       <div
-        className={`fixed bottom-0 right-0 mb-6 mr-6 bg-primary-500 text-white p-4 rounded-tl-cts rounded-br-cts border border-primary-500/20 shadow-lg transition-all duration-500 ${showMainModal ? 'opacity-0 translate-y-4 pointer-events-none' : 'opacity-100 translate-y-0 cursor-pointer'}`}
+        className={`fixed bottom-0 right-0 mb-6 mr-6 bg-primary-500 text-white p-4 rounded-tl-cts rounded-br-cts border border-primary-500/20 shadow-lg transition-all duration-200 ${showMainModal ? 'opacity-0 translate-y-4 pointer-events-none' : 'opacity-100 translate-y-0 cursor-pointer'}`}
         onClick={handleIconClick}
       >
         <Image
