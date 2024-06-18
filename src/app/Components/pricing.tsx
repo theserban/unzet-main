@@ -7,8 +7,6 @@ const includedFeatures = [
   'Member resources',
   'Entry to annual conference',
   'Official member t-shirt',
-  'Entry to annual conference',
-  'Official member t-shirt',
 ];
 
 export default function Pricing() {
@@ -37,17 +35,17 @@ export default function Pricing() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-              Predictible pricing
+              Predictable pricing
             </h2>
             <p className="mt-6 text-base leading-7 text-white">
-              So you get to know what you're paying for. 
+              So you get to know what you&apos;re paying for. 
             </p>
           </div>
           <div className="transform transition-transform duration-500 hover:-translate-y-1 mx-auto mt-16 max-w-2xl rounded-tl-ct rounded-br-ct bg-secondary-400 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none border border-primary-500/20">
             <div className="p-8 sm:p-10 lg:flex-auto">
               <h3 className="text-2xl font-bold tracking-tight text-primary-500">Unzet Your Potential</h3>
               <p className="mt-6 text-base leading-7 text-white">
-                Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque amet indis perferendis blanditiis
                 repellendus etur quidem assumenda.
               </p>
               <div className="mt-8 flex items-center gap-x-4">
@@ -80,7 +78,7 @@ export default function Pricing() {
                     Book a Call
                   </a>
                   <p className="mt-6 text-sm leading-5 text-white">
-                    This subscription is tailored to align with your company's goals.
+                    This subscription is tailored to align with your company&apos;s goals.
                   </p>
                 </div>
               </div>
@@ -104,11 +102,11 @@ export default function Pricing() {
                   </div>
                   <div className="text-lg text-gray-600">
                     <p className="mt-4 text-base leading-7 text-white">
-                    Since we understand the challenges of building something from scratch, we provide an alternative: we pair up 2 to 4 businesses, allowing them to share the costs.
+                      Since we understand the challenges of building something from scratch, we provide an alternative: we pair up 2 to 4 businesses, allowing them to share the costs.
                     </p>
                   </div>
                 </div>
-                <div className="mt-6 rounded-md shadow lg:ml-10 lg:mt-0 lg:flex-shrink-0 ransform transition-transform duration-500 hover:scale-105">
+                <div className="mt-6 rounded-md shadow lg:ml-10 lg:mt-0 lg:flex-shrink-0 transform transition-transform duration-500 hover:scale-105">
                   <a
                     href="#"
                     className="rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
@@ -121,7 +119,6 @@ export default function Pricing() {
           </div>
         </div>
       </div>
-      
     </div>
   );
 }

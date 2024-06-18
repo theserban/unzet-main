@@ -1,12 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
+"use client";
+
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { PlayIcon, PauseIcon, ArrowPathIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const SCROLL_STAMPS = [
   { time: 2, id: 'how' },
   { time: 8, id: 'hero' },
 ];
 
-export default function Modal({ onClose }) {
+interface ModalProps {
+  onClose: () => void;
+}
+
+export default function Modal({ onClose }: ModalProps) {
   const [showControls, setShowControls] = useState(false);
   const [showMainModal, setShowMainModal] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -32,11 +39,11 @@ export default function Modal({ onClose }) {
     }
   }, [currentPlaybackTime, isPlaying]);
 
-  const handleLoadedMetadata = () => {
+  const handleLoadedMetadata = useCallback(() => {
     if (audioRef.current) {
       setAudioDuration(audioRef.current.duration);
     }
-  };
+  }, []);
 
   const smoothScrollTo = (targetY: number, duration: number) => {
     const overlay = document.getElementById('scroll-overlay');
@@ -67,7 +74,7 @@ export default function Modal({ onClose }) {
     requestAnimationFrame(scroll);
   };
 
-  const handleTimeUpdate = () => {
+  const handleTimeUpdate = useCallback(() => {
     if (audioRef.current) {
       const currentTime = audioRef.current.currentTime;
       setCurrentPlaybackTime(currentTime);
@@ -82,28 +89,28 @@ export default function Modal({ onClose }) {
         }
       });
     }
-  };
+  }, []);
 
-  const addAudioEventListeners = () => {
+  const addAudioEventListeners = useCallback(() => {
     if (audioRef.current) {
       audioRef.current.addEventListener('loadedmetadata', handleLoadedMetadata);
       audioRef.current.addEventListener('timeupdate', handleTimeUpdate);
     }
-  };
+  }, [handleLoadedMetadata, handleTimeUpdate]);
 
-  const removeAudioEventListeners = () => {
+  const removeAudioEventListeners = useCallback(() => {
     if (audioRef.current) {
       audioRef.current.removeEventListener('loadedmetadata', handleLoadedMetadata);
       audioRef.current.removeEventListener('timeupdate', handleTimeUpdate);
     }
-  };
+  }, [handleLoadedMetadata, handleTimeUpdate]);
 
   useEffect(() => {
     addAudioEventListeners();
     return () => {
       removeAudioEventListeners();
     };
-  }, []);
+  }, [addAudioEventListeners, removeAudioEventListeners]);
 
   const handleGuidedPitchClick = () => {
     setShowControls(true);
@@ -188,10 +195,12 @@ export default function Modal({ onClose }) {
       <div id="scroll-overlay"></div>
       <div className={`transform transition-transform duration-500 hover:-translate-y-1 fixed bottom-0 left-1/2 transform -translate-x-1/2 mb-6 bg-secondary-400 text-white p-6 rounded-tr-ct rounded-bl-ct border border-primary-500/40 shadow-lg transition-all duration-500 ${showMainModal ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
         <div className="flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4 md:justify-between w-full">
-          <img
+          <Image
             className="h-7 pb-1 transform transition-transform duration-500 hover:scale-105"
             src="/photos/guided.svg"
             alt="Unzet Logo"
+            width={100}
+            height={28}
           />
           <div className="flex flex-row space-x-4 ml-2 mr-2">
             {!showControls ? (
@@ -268,10 +277,12 @@ export default function Modal({ onClose }) {
         className={`fixed bottom-0 right-0 mb-6 mr-6 bg-primary-500 text-white p-4 rounded-tl-cts rounded-br-cts border border-primary-500/20 shadow-lg transition-all duration-500 ${showMainModal ? 'opacity-0 translate-y-4 pointer-events-none' : 'opacity-100 translate-y-0 cursor-pointer'}`}
         onClick={handleIconClick}
       >
-        <img
+        <Image
           className="h-auto w-6"
           src="/photos/guidedicon.svg"
           alt="Guided Icon"
+          width={24}
+          height={24}
         />
       </div>
     </div>

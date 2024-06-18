@@ -1,5 +1,7 @@
 "use client";
+
 import React from 'react';
+import Image from 'next/image';
 
 const featuredTestimonial = {
   body: 'Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non hendrerit in vel ac diam.',
@@ -36,7 +38,7 @@ const testimonials = [
   ],
 ];
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
@@ -59,12 +61,24 @@ export default function Testimonials() {
               <p>{`“${featuredTestimonial.body}”`}</p>
             </blockquote>
             <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
-              <img className="transform transition-transform duration-500 hover:scale-105 h-10 w-10 flex-none rounded-tr-md rounded-bl-md filter grayscale hover:filter-none" src={featuredTestimonial.author.imageUrl} alt="" />
+              <Image
+                className="transform transition-transform duration-500 hover:scale-105 h-10 w-10 flex-none rounded-tr-md rounded-bl-md filter grayscale hover:filter-none"
+                src={featuredTestimonial.author.imageUrl}
+                alt=""
+                width={40}
+                height={40}
+              />
               <div className="flex-auto">
                 <div className="font-semibold text-primary-500">{featuredTestimonial.author.name}</div>
                 <div className="text-white">{`@${featuredTestimonial.author.handle}`}</div>
               </div>
-              <img className="h-8 w-auto flex-none transform transition-transform duration-500 hover:scale-105" src={featuredTestimonial.author.logoUrl} alt="" />
+              <Image
+                className="h-8 w-auto flex-none transform transition-transform duration-500 hover:scale-105"
+                src={featuredTestimonial.author.logoUrl}
+                alt=""
+                width={32}
+                height={32}
+              />
             </figcaption>
           </figure>
           {testimonials.map((columnGroup, columnGroupIdx) => (
@@ -89,7 +103,13 @@ export default function Testimonials() {
                         <p>{`“${testimonial.body}”`}</p>
                       </blockquote>
                       <figcaption className="mt-6 flex items-center gap-x-4">
-                        <img className="transform transition-transform duration-500 hover:scale-105 h-10 w-10 rounded-tr-md rounded-bl-md filter grayscale hover:filter-none" src={testimonial.author.imageUrl} alt="" />
+                        <Image
+                          className="transform transition-transform duration-500 hover:scale-105 h-10 w-10 rounded-tr-md rounded-bl-md filter grayscale hover:filter-none"
+                          src={testimonial.author.imageUrl}
+                          alt=""
+                          width={40}
+                          height={40}
+                        />
                         <div>
                           <div className="font-semibold text-primary-500">{testimonial.author.name}</div>
                           <div className="text-white">{`@${testimonial.author.handle}`}</div>

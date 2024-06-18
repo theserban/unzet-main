@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/navbar';
-import Hero from './components/hero';
-import How from './components/how';
-import Stats from './components/stats';
-import Projects from './components/projects';
-import Pricing from './components/pricing';
-import FAQ from './components/faq';
-import Testimonials from './components/testimonials';
-import Footer from './components/footer';
-import Modal from './components/modal';
+import Navbar from './Components/navbar';
+import Hero from './Components/hero';
+import How from './Components/how';
+import Stats from './Components/stats';
+import Projects from './Components/projects';
+import Pricing from './Components/pricing';
+import FAQ from './Components/faq';
+import Testimonials from './Components/testimonials';
+import Footer from './Components/footer';
+import Modal from './Components/modal';
 import { getCalApi } from "@calcom/embed-react";
 
 export default function Page() {

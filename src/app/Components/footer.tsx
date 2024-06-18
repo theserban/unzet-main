@@ -21,7 +21,7 @@ import {
 interface Link {
   name: string;
   href: string;
-  icon: React.ElementType;
+  icon: React.ElementType<React.SVGProps<SVGSVGElement>>;
 }
 
 const Card = ({ title, links }: { title: string; links: Link[] }) => (
@@ -47,7 +47,7 @@ const navigationf = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/company/shiftintech",
-    icon: (props) => (
+    icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
           fillRule="evenodd"
@@ -60,7 +60,7 @@ const navigationf = [
   {
     name: "Instagram",
     href: "https://www.instagram.com/shiftintech/",
-    icon: (props) => (
+    icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
           fillRule="evenodd"
@@ -87,7 +87,7 @@ export default function Footer() {
                 <span className="text-primary-500">And we start tomorrow!</span>
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-200">
-              Whether you are sure you want to collaborate with us or just want to exchange resources, let's meet.
+              Whether you are sure you want to collaborate with us or just want to exchange resources, let&apos;s meet.
               </p>
               <div className="mt-8 flex items-center gap-x-6">
                 <a

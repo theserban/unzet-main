@@ -1,9 +1,11 @@
+"use client";
+
 import React from 'react';
 import { ShoppingCartIcon, CloudIcon, BookOpenIcon, UserIcon, ArrowUpIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-scroll';
+import Image from 'next/image';
 
 interface CardProps {
-    icon: ComponentType<SVGProps<SVGSVGElement>>;
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
     title: string;
     power: string;
     description: string;
@@ -19,6 +21,13 @@ const Card = ({ icon: Icon, title, power, description }: CardProps) => (
         <p>{description}</p>
     </div>
 );
+
+const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+};
 
 export default function Hero() {
     return (
@@ -54,22 +63,18 @@ export default function Hero() {
                                     Our mission is to transform tech startups and initiatives into strong brands by delivering all the essential elements needed to develop an outstanding product quickly and efficiently.
                                 </p>
                                 <div className="mt-10 flex items-center gap-x-6">
-                                    <Link
-                                        to="projects"
-                                        smooth={true}
-                                        duration={500}
+                                    <button
+                                        onClick={() => scrollToSection('projects')}
                                         className="cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
                                     >
                                         Ace Level Clients
-                                    </Link>
-                                    <Link
-                                        to="how"
-                                        smooth={true}
-                                        duration={500}
+                                    </button>
+                                    <button
+                                        onClick={() => scrollToSection('how')}
                                         className="cursor-pointer text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105"
                                     >
                                         How It Works <span aria-hidden="true">→</span>
-                                    </Link>
+                                    </button>
                                 </div>
                             </div>
                             <div className="relative mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 w-full sm:w-auto">
@@ -134,30 +139,30 @@ export default function Hero() {
                         <div className="mx-auto max-w-2xl lg:max-w-none">
                             <h2 className="text-lg font-semibold leading-8 text-primary-500 text-center">Growth Hacked</h2>
                             <div className="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-4">
-                                <img
+                                <Image
                                     className="col-span-2 max-h-8 w-full object-contain object-center lg:col-span-1 transform transition-transform duration-500 hover:scale-105"
-                                    src="photos/persuwise.svg"
+                                    src="/photos/persuwise.svg"
                                     alt="Persuwise"
                                     width={158}
                                     height={48}
                                 />
-                                <img
+                                <Image
                                     className="col-span-2 max-h-8 w-full object-contain object-center lg:col-span-1 transform transition-transform duration-500 hover:scale-105"
-                                    src="photos/antvise.svg"
+                                    src="/photos/antvise.svg"
                                     alt="Antvise"
                                     width={158}
                                     height={48}
                                 />
-                                <img
+                                <Image
                                     className="col-span-2 max-h-6 w-full object-contain object-center lg:col-span-1 transform transition-transform duration-500 hover:scale-105 mt-2"
-                                    src="photos/shiftintech.svg"
+                                    src="/photos/shiftintech.svg"
                                     alt="Shiftintech"
                                     width={158}
                                     height={48}
                                 />
-                                <img
+                                <Image
                                     className="col-span-2 max-h-8 mt-1 w-full object-contain object-center lg:col-span-1 transform transition-transform duration-500 hover:scale-105"
-                                    src="photos/nextup.svg"
+                                    src="/photos/nextup.svg"
                                     alt="NextUp"
                                     width={158}
                                     height={48}
