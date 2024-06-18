@@ -50,7 +50,7 @@ export default function Pricing() {
                 repellendus etur quidem assumenda.
               </p>
               <div className="mt-8 flex items-center gap-x-4">
-                <h4 className="flex-none text-sm font-semibold leading-6 text-primary-500">What’s included</h4>
+                <h4 className="flex-none text-sm font-semibold leading-6 text-primary-500">What&rsquo;s included</h4>
               </div>
               <ul
                 role="list"
@@ -76,13 +76,12 @@ export default function Pricing() {
                         data-cal-namespace=""
                         data-cal-link="weunzet/30min"
                         data-cal-config='{"layout":"month_view"}'
-                    href="#"
                     className="mt-4 transform transition-transform duration-500 hover:scale-105 block w-full bg-primary-500 rounded-tr-xl rounded-bl-xl px-3 py-2 text-center text-sm font-semibold text-black shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Strategy Call
                   </button>
                   <p className="mt-6 text-sm leading-5 text-white">
-                    This subscription is tailored to align with your company&apos;s goals.
+                    This subscription is tailored to align with your company&rsquo;s goals.
                   </p>
                 </div>
               </div>
@@ -115,10 +114,9 @@ export default function Pricing() {
                         data-cal-namespace=""
                         data-cal-link="weunzet/30min"
                         data-cal-config='{"layout":"month_view"}'
-                    href="#"
                     className="rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
                   >
-                    Let's Talk
+                    Let&apos;s Talk
                   </button>
                 </div>
               </div>

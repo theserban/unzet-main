@@ -31,7 +31,7 @@ export default function Navbar() {
     })();
   }, []);
 
-  const handleSmoothScroll = (e, href) => {
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
     e.preventDefault();
     const target = document.getElementById(href);
     if (target) {
