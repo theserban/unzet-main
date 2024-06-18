@@ -195,13 +195,6 @@ export default function Modal({ onClose }: ModalProps) {
       <div id="scroll-overlay"></div>
       <div className={`transform transition-transform duration-500 hover:-translate-y-1 fixed bottom-0 left-1/2 transform -translate-x-1/2 mb-6 bg-secondary-400 text-white p-6 rounded-tr-ct rounded-bl-ct border border-primary-500/40 shadow-lg transition-all duration-500 ${showMainModal ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
         <div className="flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4 md:justify-between w-full">
-          <Image
-            className="h-7 pb-1 transform transition-transform duration-500 hover:scale-105"
-            src="/photos/guided.svg"
-            alt="Unzet Logo"
-            width={100}
-            height={28}
-          />
           <div className="flex flex-row space-x-4 ml-2 mr-2">
             {!showControls ? (
               <>
