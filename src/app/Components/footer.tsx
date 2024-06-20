@@ -1,14 +1,6 @@
 'use client';
 import React from "react";
 import {
-  CalendarDaysIcon,
-  HandRaisedIcon,
-  ShoppingCartIcon,
-  CloudIcon,
-  BookOpenIcon,
-  UserIcon,
-  ArrowUpIcon,
-  CursorArrowRaysIcon,
   ClockIcon,
   PhoneIcon,
   ClipboardIcon,
@@ -16,6 +8,7 @@ import {
   FaceSmileIcon,
   CreditCardIcon,
   MapPinIcon,
+  EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 
 interface Link {
@@ -90,15 +83,14 @@ export default function Footer() {
                 Whether you are sure you want to collaborate with us or just want to exchange resources, let&apos;s meet.
               </p>
               <div className="mt-8 flex items-center gap-x-6">
-                <a
+                <button
                   data-cal-namespace=""
                   data-cal-link="weunzet/30min"
                   data-cal-config='{"layout":"month_view"}'
-                  href="#"
                   className="rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105 text-center"
                 >
                   Book Now
-                </a>
+                </button>
                 <a
                   href="#"
                   className="text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105"
@@ -121,7 +113,7 @@ export default function Footer() {
                 <Card
                   title="Contact"
                   links={[
-                    { name: "we@unzet.com", href: "#facebook", icon: BookOpenIcon },
+                    { name: "we@unzet.com", href: "#facebook", icon: EnvelopeIcon },
                     { name: "+40 (750) 460 150", href: "#twitter", icon: PhoneIcon },
                     { name: "9:00 to 18:00 GMT+2", href: "#twitter", icon: ClockIcon },
                     { name: "Bucharest, Romania", href: "#twitter", icon: MapPinIcon },

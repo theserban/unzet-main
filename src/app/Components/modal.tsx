@@ -71,6 +71,7 @@ export default function Modal({ onClose }: ModalProps) {
       }
     };
 
+    // Start the scroll animation immediately
     requestAnimationFrame(scroll);
   };
 

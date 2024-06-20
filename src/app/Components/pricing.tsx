@@ -69,7 +69,7 @@ export default function Pricing() {
                 <div className="mx-auto max-w-xs px-8">
                   <p className="text-base font-semibold text-white">Recurring Growth Hacking</p>
                   <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                    <span className="text-5xl font-bold tracking-tight text-primary-500">€1200</span>
+                    <span className="text-5xl font-bold tracking-tight text-primary-500">€2400</span>
                     <span className="text-md font-semibold leading-6 tracking-wide text-primary-500">/month</span>
                   </p>
                   <button

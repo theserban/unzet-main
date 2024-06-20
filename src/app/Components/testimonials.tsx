@@ -44,8 +44,8 @@ function classNames(...classes: string[]) {
 
 export default function Testimonials() {
   return (
-    <div className="relative isolate bg-black py-16 sm:py-24">
-      <section id="testimonials">
+    <div className="relative isolate bg-black">
+      <section id="testimonials" className="py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">

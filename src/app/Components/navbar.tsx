@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, ClipboardIcon, ArrowPathIcon, FaceSmileIcon, CreditCardIcon, } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import { getCalApi } from "@calcom/embed-react";
 
 const navigation = [
-  { name: 'Archive', href: 'projects' },
-  { name: 'Process', href: 'how' },
-  { name: 'Insights', href: 'testimonials' },
-  { name: 'Pricing', href: 'pricing' },
+  { name: 'Archive', href: 'projects', icon: ClipboardIcon },
+  { name: 'Process', href: 'how', icon: ArrowPathIcon },
+  { name: 'Insights', href: 'testimonials', icon: FaceSmileIcon },
+  { name: 'Pricing', href: 'pricing', icon: CreditCardIcon },
 ];
 
 export default function Navbar() {
@@ -42,6 +42,7 @@ export default function Navbar() {
 
   const BookNowButton = () => (
     <button
+      onClick={() => setMobileMenuOpen(false)}
       data-cal-namespace=""
       data-cal-link="weunzet/30min"
       data-cal-config='{"layout":"week_view"}'
@@ -91,9 +92,10 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={`#${item.href}`}
-                className="cursor-pointer text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105"
+                className="cursor-pointer text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105 flex items-center"
                 onClick={(e) => handleSmoothScroll(e, item.href)}
               >
+                <item.icon className="h-5 w-5 mr-2" aria-hidden="true" />
                 {item.name}
               </a>
             ))}
@@ -109,9 +111,10 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={`#${item.href}`}
-                  className="block rounded-tr-lg rounded-bl-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-black hover:bg-primary-500 cursor-pointer"
+                  className="block rounded-tr-lg rounded-bl-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-black hover:bg-primary-500 cursor-pointer flex items-center"
                   onClick={(e) => handleSmoothScroll(e, item.href)}
                 >
+                  <item.icon className="h-5 w-5 mr-2" aria-hidden="true" />
                   {item.name}
                 </a>
               ))}
