@@ -3,17 +3,16 @@ import Image from 'next/image';
 
 const cardData = [
   { src: "/photos/project1.png", title: "1" },
-  { src: "/photos/project2.png", title: "2" },
-  { src: "/photos/project3.png", title: "3" },
-  { src: "/photos/project4.png", title: "4" },
-  { src: "/photos/project5.png", title: "5" },
+  { src: "/photos/project1.png", title: "2" },
+  { src: "/photos/project1.png", title: "3" },
+  { src: "/photos/project1.png", title: "4" },
+  { src: "/photos/project1.png", title: "5" },
 ];
 
 const stats = [
-  { label: 'Founded', value: '2021' },
-  { label: 'Employees', value: '37' },
-  { label: 'Countries', value: '12' },
-  { label: 'Raised', value: '$25M' },
+  { label: 'Duration', value: '5m' },
+  { label: 'Disruptions', value: '3x' },
+  { label: 'Power', value: '+40' },
 ];
 
 export default function Projects() {
@@ -52,15 +51,13 @@ export default function Projects() {
           <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-8 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
               <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-                <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">Our people</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">Ace Projects</h2>
                 <p className="mt-6 text-xl leading-8 text-white">
-                  Soluta rerum quidem minus ut molestiae velit error quod. Excepturi quidem.
+                We have worked on many tech endeavors, including products, services, and open-source. 
                 </p>
                 <p className="mt-6 text-xl leading-8 text-white">
-                  Quasi est quaerat. Sit molestiae et. Provident ad dolorem occaecati eos iste.
+                From branding to helping with product building, strategies, marketing, and more, we ensured everything needed for their growth. 
                 </p>
-                <div className="mt-10 flex items-center gap-x-6">
-                </div>
               </div>
               <div className="grid grid-cols-1 sm:flex sm:flex-wrap sm:items-start sm:justify-end sm:gap-8 lg:contents">
                 <div className="w-full sm:w-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
@@ -128,7 +125,7 @@ export default function Projects() {
                   <div className="relative overflow-hidden px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 transform transition-transform duration-500 hover:-translate-y-3">
                     <Image
                       className="absolute inset-0 h-full w-full object-cover rounded-tl-ct rounded-br-ct mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
-                      src="/photos/project5.png"
+                      src="/photos/project1.png"
                       alt="Project 5"
                       width={700}
                       height={400}
@@ -166,15 +163,15 @@ export default function Projects() {
                       Our time @ Teckstar <br /> Case Study
                     </h1>
                     <div className="max-w-xl">
-                      <p className="mt-6 text-xl leading-8 text-white">
-                        Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id.
+                      <p className="mt-6 text-xl leading-7 text-white">
+                      Teckstar is a dynamic company specializing in matching businesses with top-tier developers. When we partnered with them, our goal was to help them scale their operations and enhance their market presence.
                       </p>
-                      <p className="mt-8 text-xl leading-8 text-white">
-                        Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
+                      <p className="mt-8 text-xl leading-8 text-white pb-4">
+                        We overhauled Teckstar’s business processes and branding to improve efficiency and presence. One of our key initiatives was the implementation of a new sales flow, which we named "The Broken Glass". This new system streamlined their sales operations, making the process more effective, leading to a noticeable increase in sales performance.
                       </p>
                     </div>
                   </div>
-                  <dl className="grid grid-cols-2 gap-8 border-t border-primary-500/20 mt-4 pb-12 sm:pb-0 pt-4 sm:grid-cols-4 hidden lg:grid">
+                  <dl className="grid grid-cols-2 gap-8 border-t border-primary-500/20 mt-4 pb-12 sm:pb-0 pt-4 sm:grid-cols-3 hidden lg:grid">
                     {stats.map((stat, statIdx) => (
                       <div key={statIdx}>
                         <dt className="text-sm font-semibold leading-6 text-primary-500">{stat.label}</dt>

@@ -7,18 +7,29 @@ import Link from 'next/link';
 
 const faqs = [
   {
-    question: "What's the best thing about Switzerland?",
-    answer: "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    question: "Why do I need Unzet?",
+    answer: "We are dedicated to helping tech companies become strong brands. We work closely with you, offering customized solutions to meet your needs. Our focus on transparency, practical strategies, and innovation ensures we deliver great results quickly.",
+  },
+    {
+    question: "What is the Ace Level Status?",
+    answer: "Being an 'Ace Level' at Unzet means that your business has achieved significant milestones with our help. These milestones include aligning your product with market demand, creating a strong brand, gaining substantial online visibility, and successfully acquiring your first users. ",
+  },
+    {
+    question: "Transparency throughout the project?",
+    answer: "We ensure transparency by providing regular updates, detailed progress reports, and clear communication throughout the project. We involve you in every step, from planning to execution, so you always know what’s happening and can provide feedback.",
   },
   {
-    question: "What's the best thing about Switzerland?",
-    answer: "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    question: "The Royal Flush Approach?",
+    answer: "We tailor our strategies to the unique needs of each project, addressing specific challenges and goals. This personalized approach ensures that every aspect of your business is optimized for success, providing a comprehensive solution that drives growth and innovation.",
   },
   {
-    question: "What's the best thing about Switzerland?",
-    answer: "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    question: "How involved will I be in the process?",
+    answer: "You'll be very involved. We believe in close collaboration and will provide regular updates. Your input is crucial to ensure the final outcome meets your expectations.",
   },
-  // More questions...
+  {
+    question: "Is there a minimum commitment?",
+    answer: "Yes, we recommend working together for at least 2 months. This helps us fully understand your goals and achieve the best results.",
+  },
 ];
 
 export default function FAQ() {
@@ -42,11 +53,11 @@ export default function FAQ() {
           </div>
           <div className="relative lg:ml-10">
             <blockquote className="text-xl leading-8 text-white sm:text-2xl sm:leading-9">
-              <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl mt-6">Purposeful Disruptors</h2>
-              <p className="mt-4 text-lg leading-8 text-white">
-                Our mission is to generate and implement creative and impactful ideas to propel your growth, ensuring you become the next ace in the tech world.
+              <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl mt-4">Purposeful Disruptors</h2>
+              <p className="mt-3 text-xl leading-8 text-white">
+                We are here to generate and implement creative and impactful ideas to propel your growth, ensuring you become the next ace in the tech world.
               </p>
-              <p className="mt-1 text-lg leading-8 text-white/80">
+              <p className="text-xl leading-8 text-white/80 mt-3">
                 The Serban, Founder
               </p>
               <div className="mt-6 flex items-center gap-x-6">
@@ -58,7 +69,10 @@ export default function FAQ() {
                 >
                   Meet The Founder
                 </button>
-                <Link href="https://www.linkedin.com/in/theserban/" className="text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105">
+                <Link 
+                  href="https://www.linkedin.com/in/theserban/" 
+                  className="text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105" 
+                  target="_blank">
                   Linkedin <span aria-hidden="true">→</span>
                 </Link>
               </div>
@@ -70,7 +84,7 @@ export default function FAQ() {
       <div className="bg-black">
         <div className="mx-auto max-w-7xl px-6 pb-32 py-4 sm:pt-8">
           <div className="mx-auto max-w-4xl divide-y divide-white/10">
-            <h2 className="text-2xl font-bold leading-10 tracking-tight text-white mb-8">Let me answer</h2>
+            <h2 className="text-2xl font-bold leading-10 tracking-tight text-primary-500 mb-8">Let me answer</h2>
 
             {faqs.map((faq) => (
               <Disclosure as="div" key={faq.question} className="pt-4 pb-8 transform transition-transform duration-500 hover:-translate-y-1">
@@ -78,7 +92,7 @@ export default function FAQ() {
                   <>
                     <dt>
                       <DisclosureButton className="flex w-full items-start justify-between text-left text-white">
-                        <span className="text-base font-semibold leading-7 ">{faq.question}</span>
+                        <span className="text-base font-semibold leading-7">{faq.question}</span>
                         <span className="ml-6 flex h-7 items-center">
                           {open ? (
                             <MinusSmallIcon className="h-6 w-6" aria-hidden="true" />

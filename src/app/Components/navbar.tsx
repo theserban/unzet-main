@@ -1,15 +1,16 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Bars3Icon, XMarkIcon, ClipboardIcon, ArrowPathIcon, FaceSmileIcon, CreditCardIcon, } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, ClipboardIcon, CreditCardIcon, ArrowPathRoundedSquareIcon, SwatchIcon, UserIcon, } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import { getCalApi } from "@calcom/embed-react";
 
 const navigation = [
   { name: 'Archive', href: 'projects', icon: ClipboardIcon },
-  { name: 'Process', href: 'how', icon: ArrowPathIcon },
-  { name: 'Insights', href: 'testimonials', icon: FaceSmileIcon },
-  { name: 'Pricing', href: 'pricing', icon: CreditCardIcon },
+  { name: 'Insights', href: 'testimonials', icon: UserIcon },
+  { name: 'Process', href: 'how', icon: ArrowPathRoundedSquareIcon },
+  { name: 'Products', href: 'products', icon: SwatchIcon },
+  { name: 'Rates', href: 'pricing', icon: CreditCardIcon },
 ];
 
 export default function Navbar() {

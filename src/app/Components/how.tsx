@@ -3,33 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, TrophyIcon, MapIcon, CheckIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 
-const timeline = [
-  {
-    name: 'Founded company',
-    description: 'Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.',
-    date: 'Aug 2021',
-    dateTime: '2021-08',
-  },
-  {
-    name: 'Secured $65m in funding',
-    description: 'Provident quia ut esse. Vero vel eos repudiandae aspernatur. Cumque minima impedit sapiente a architecto nihil.',
-    date: 'Dec 2021',
-    dateTime: '2021-12',
-  },
-  {
-    name: 'Released beta',
-    description: 'Sunt perspiciatis incidunt. Non necessitatibus aliquid. Consequatur ut officiis earum eum quia facilis. Hic deleniti dolorem quia et.',
-    date: 'Feb 2022',
-    dateTime: '2022-02',
-  },
-  {
-    name: 'Global launch of product',
-    description: 'Ut ipsa sint distinctio quod itaque nam qui. Possimus aut unde id architecto voluptatem hic aut pariatur velit.',
-    date: 'Dec 2022',
-    dateTime: '2022-12',
-  },
-];
-
 const getIcon = (status: string): JSX.Element | null => {
   switch (status) {
     case 'done':
@@ -85,7 +58,7 @@ export default function How() {
       if (isMobile) {
         setChangeContent(true);
       } else {
-        const useClientElement = document.getElementById('use-client');
+        const useClientElement = document.getElementById('how2');
         const cardElement = document.getElementById('sticky-card');
         if (useClientElement && cardElement) {
           const useClientRect = useClientElement.getBoundingClientRect();
@@ -116,103 +89,82 @@ export default function How() {
               <rect width="100%" height="100%" strokeWidth={0} fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
             </svg>
           </div>
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
             <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
               <div className="lg:pr-4">
                 <div className="mx-auto max-w-2xl lg:mx-0">
                   <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-                    We approach the workplace
+                  The Royal Flush
                   </h2>
-                  <p className="mt-6 text-base leading-7 text-white">
-                    Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est euismod lacus. Est non placerat nam arcu. Cras purus nibh cursus sit eu in id. Integer vel nibh.
+                  <p className="mt-6 leading-7 text-white text-xl">
+                  Everything we do varies from project to project. As growth hackers, we must approach each initiative differently to address its unique needs.
                   </p>
                 </div>
               </div>
             </div>
             <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
               <div className="lg:pr-4">
-                <div className="max-w-xl text-base leading-7 text-white lg:max-w-lg">
+                <div className="max-w-xl text-lg leading-7 text-white lg:max-w-lg">
                   <ul role="list" className="space-y-8 text-white">
                     <li className="flex gap-x-3">
                       <CloudArrowUpIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
                       <span>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                      Whether it's for our product or a client's, we begin by identifying the specific needs at that stage of development. This could involve naming and branding at the outset, or implementing various strategies, starting ads and building pitches later on.
                       </span>
                     </li>
                     <li className="flex gap-x-3">
                       <LockClosedIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
                       <span>
-                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+                      We focus on one task at a time, following a staged process where each loop is closed before starting the next. This approach requires close collaboration with the team and regular updates on the progress.
                       </span>
                     </li>
                     <li className="flex gap-x-3">
                       <ServerIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
                       <span>
-                        Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                      We developed a system where each major task is represented as a card, like trading cards from childhood. Each card gives you power and brings you closer to success. For instance, having your branding in place makes marketing much easier.
                       </span>
                     </li>
                   </ul>
                   <section id="how2">
-                  <h2 id="use-client" className="mt-16 text-2xl font-bold tracking-tight text-primary-500">No server? No problem.</h2>
-                  <p className="mt-6">
-                    Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in.  enim, consequat vulputate nibh. Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis diam.
+                  <h2 className="mt-16 text-3xl font-bold tracking-tight text-primary-500">Be the Joker</h2>
+                  <p className="mt-6 leading-7 text-white text-xl">
+                  To succeed, you need to think differently and solve problems in multiple ways, just like the flexibility and unpredictability of the Joker in a deck of cards.
                   </p>
-                  <p className="mt-6">
-                    Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in.  enim, consequat vulputate nibh. Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis diam.
+                  <p className="mt-6 leading-7 text-white text-xl">
+                  We aim to be a seamless part of your team, not just a service provider.  Our primary goal is to contribute to innovation, allowing us to scale our impact by collaborating with many incredible initiatives.
                   </p>
                   </section>
                 </div>
               </div>
             </div>
-            <div id="sticky-card" className="-ml-16 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <div id="sticky-card" className="-ml-16 -mt-12 pt-12 pl-12 pr-12   lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
               {changeContent ? (
                 <Card
                   icon={TrophyIcon}
-                  title="New Content"
+                  title="Podium Edge"
                   power="Power +80"
                   description={[
-                    { text: 'Task 1 completed', status: 'done' },
-                    { text: 'Task 2 in progress', status: 'in-progress' },
-                    { text: 'Task 3 pending', status: 'in-progress' },
-                    { text: 'Task 4 done', status: 'done' }
+                    { text: 'Naming & Branding', status: 'done' },
+                    { text: 'Product Market Fit', status: 'done' },
+                    { text: 'Acquire Users', status: 'done' },
+                    { text: 'Research & Development', status: 'in-progress' }
                   ]}
-                  pills={['3/5 done', 'Dec 25', 'New Plan']}
+                  pills={['3/4 done', 'Dec 25', 'New King']}
                 />
               ) : (
                 <Card
                   icon={MapIcon}
-                  title="Colab Start"
+                  title="The Blueprint"
                   power="Power 0"
                   description={[
-                    { text: 'Wireframe 1 done', status: 'done' },
-                    { text: 'Wireframe 2 pending', status: 'in-progress' },
-                    { text: 'Wireframe 3 not started', status: 'in-progress' }
+                    { text: 'Naming & Branding', status: 'in-progress' },
+                    { text: 'Product Market Fit', status: 'in-progress' },
+                    { text: 'Acquire Users', status: 'in-progress' },
+                    { text: 'Research & Development', status: 'in-progress' }
                   ]}
-                  pills={['0/5 done', 'Jun 16', 'Care Plan']}
+                  pills={['0/4 done', 'Jun 16', 'Early Jack']}
                 />
               )}
-            </div>
-          </div>
-        </div>
-
-        <div className="pt-0 pb-16 sm:pt-24 sm:pb-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
-              {timeline.map((item) => (
-                <div key={item.name}>
-                  <time
-                    dateTime={item.dateTime}
-                    className="flex items-center text-sm font-semibold leading-6 text-primary-500"
-                  >
-                    <svg viewBox="0 0 4 4" className="mr-4 h-1 w-1 flex-none" aria-hidden="true">
-                      <circle cx={2} cy={2} r={2} fill="currentColor" />
-                    </svg>
-                    {item.date}
-                  </time>
-                  <p className="mt-6 text-lg font-semibold leading-8 tracking-tight text-white">{item.name}</p>
-                  <p className="mt-1 text-base leading-7 text-white">{item.description}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>

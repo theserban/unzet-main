@@ -59,7 +59,7 @@ export default function Hero() {
                                     Build the Right Deck to{" "}
                                     <span className="text-primary-500">Become the Ace</span>
                                 </h1>
-                                <p className="mt-6 text-lg leading-8 text-white sm:max-w-md lg:max-w-none">
+                                <p className="mt-6 text-xl leading-8 text-white sm:max-w-md lg:max-w-none">
                                     Our mission is to transform tech startups and initiatives into strong brands by delivering all the essential elements needed to develop an outstanding product quickly and efficiently.
                                 </p>
                                 <div className="mt-10 flex items-center gap-x-6">
@@ -141,7 +141,7 @@ export default function Hero() {
                             <h2 className="text-lg font-semibold leading-8 text-primary-500 text-center">Growth Hacked</h2>
                             <div className="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-4">
                                 <Image
-                                    className="col-span-2 max-h-8 w-full object-contain object-center lg:col-span-1 transform transition-transform duration-500 hover:scale-105"
+                                    className="col-span-2 max-h-9 w-full object-contain object-center lg:col-span-1 transform transition-transform duration-500 hover:scale-105"
                                     src="/photos/persuwise.svg"
                                     alt="Persuwise"
                                     width={158}
@@ -162,9 +162,9 @@ export default function Hero() {
                                     height={48}
                                 />
                                 <Image
-                                    className="col-span-2 max-h-8 mt-1 w-full object-contain object-center lg:col-span-1 transform transition-transform duration-500 hover:scale-105"
-                                    src="/photos/nextup.svg"
-                                    alt="NextUp"
+                                    className="col-span-2 max-h-6 mt-2 w-full object-contain object-center lg:col-span-1 transform transition-transform duration-500 hover:scale-105"
+                                    src="/photos/inereto.svg"
+                                    alt="Inereto"
                                     width={158}
                                     height={48}
                                 />
