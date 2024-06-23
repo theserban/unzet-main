@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, TrophyIcon, MapIcon, CheckIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 
 const getIcon = (status: string): JSX.Element | null => {
@@ -109,7 +109,7 @@ export default function How() {
                     <li className="flex gap-x-3">
                       <CloudArrowUpIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
                       <span>
-                      Whether it's for our product or a client's, we begin by identifying the specific needs at that stage of development. This could involve naming and branding at the outset, or implementing various strategies, starting ads and building pitches later on.
+                      Whether it&prime;s for our product or a client&prime;s, we begin by identifying the specific needs at that stage of development. This could involve naming and branding at the outset, or implementing various strategies, starting ads and building pitches later on.
                       </span>
                     </li>
                     <li className="flex gap-x-3">

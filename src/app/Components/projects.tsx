@@ -167,7 +167,7 @@ export default function Projects() {
                       Teckstar is a dynamic company specializing in matching businesses with top-tier developers. When we partnered with them, our goal was to help them scale their operations and enhance their market presence.
                       </p>
                       <p className="mt-8 text-xl leading-8 text-white pb-4">
-                        We overhauled Teckstar’s business processes and branding to improve efficiency and presence. One of our key initiatives was the implementation of a new sales flow, which we named "The Broken Glass". This new system streamlined their sales operations, making the process more effective, leading to a noticeable increase in sales performance.
+                        We overhauled Teckstar’s business processes and branding to improve efficiency and presence. One of our key initiatives was the implementation of a new sales flow, which we named &prime;The Broken Glass&prime;. This new system streamlined their sales operations, making the process more effective, leading to a noticeable increase in sales performance.
                       </p>
                     </div>
                   </div>

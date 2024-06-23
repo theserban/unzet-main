@@ -1,4 +1,3 @@
-'use client';
 import React, { useState, useRef, useEffect } from "react";
 import {
   ClockIcon,
@@ -28,7 +27,9 @@ const Card = ({ title, links, socials }: { title: string; links: Link[]; socials
 
   const handleAllClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    Object.values(socials).forEach((url) => window.open(url, '_blank'));
+    if (socials) {
+      Object.values(socials).forEach((url) => window.open(url, '_blank'));
+    }
   };
 
   useEffect(() => {
@@ -110,7 +111,6 @@ const Card = ({ title, links, socials }: { title: string; links: Link[]; socials
     </div>
   );
 };
-
 
 const socials = {
   LinkedIn: "https://www.linkedin.com/company/shiftintech",
@@ -197,7 +197,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      
     </div>
   );
 }

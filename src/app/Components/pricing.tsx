@@ -2,12 +2,33 @@ import { useState, useEffect, useRef } from 'react';
 import { Radio, RadioGroup } from '@headlessui/react';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
 
-const modes = [
+type ModeValue = 'for-profit' | 'open-source';
+
+interface Mode {
+  value: ModeValue;
+  label: string;
+}
+
+const modes: Mode[] = [
   { value: 'for-profit', label: 'For Profit' },
   { value: 'open-source', label: 'Open Source' },
 ];
 
-const content = {
+const content: Record<ModeValue, {
+  title: string;
+  description: string;
+  features: { name: string; description: string; }[];
+  price: string;
+  priceSuffix: string;
+  priceButton: string;
+  ctaText: string;
+  ctaSubheading: string;
+  growthGroupsPill: string;
+  growthGroupsSize1: string;
+  growthGroupsSize2: string;
+  growthGroupsButton: string;
+  growthGroupsText: string;
+}> = {
   'for-profit': {
     title: 'Unzet Potential',
     description: 'We are here to help tech businesses become leaders. We provide everything needed for success, from a strong name and branding to a great product, marketing, and strategy.',
@@ -54,23 +75,23 @@ const content = {
   },
 };
 
-function classNames(...classes) {
+function classNames(...classes: (string | boolean | undefined)[]) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function Pricing() {
-  const [mode, setMode] = useState(modes[0]);
-  const [tooltipVisible, setTooltipVisible] = useState(null);
-  const featureRefs = useRef([]);
+  const [mode, setMode] = useState<Mode>(modes[0]);
+  const [tooltipVisible, setTooltipVisible] = useState<number | null>(null);
+  const featureRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   const selectedContent = content[mode.value];
 
-  const handleIconClick = (index) => {
+  const handleIconClick = (index: number) => {
     setTooltipVisible(tooltipVisible === index ? null : index);
   };
 
-  const handleClickOutside = (event) => {
-    if (featureRefs.current.every(ref => ref && !ref.contains(event.target))) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (featureRefs.current.every(ref => ref && !ref.contains(event.target as Node))) {
       setTooltipVisible(null);
     }
   };
@@ -147,7 +168,7 @@ export default function Pricing() {
                   {selectedContent.description}
                 </p>
                 <div className="mt-8 flex items-center gap-x-4">
-                  <h4 className="flex-none text-xl font-semibold leading-6 text-primary-500">What's included</h4>
+                  <h4 className="flex-none text-xl font-semibold leading-6 text-primary-500">What&prime;s included</h4>
                 </div>
                 <ul
                   role="list"
@@ -157,7 +178,9 @@ export default function Pricing() {
                     <li
                       key={feature.name}
                       className="flex gap-x-2 relative group cursor-pointer"
-                      ref={el => featureRefs.current[index] = el}
+                      ref={(el) => {
+                        featureRefs.current[index] = el;
+                      }}
                       onClick={() => handleIconClick(index)}
                     >
                       <InformationCircleIcon

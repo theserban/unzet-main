@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from 'react';
 import Modal from './Components/modal';
 import Navbar from './Components/navbar';

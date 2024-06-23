@@ -1,6 +1,16 @@
 import React from 'react';
+import Image from 'next/image';
 
-export default function Products({ isModalOpen, setIsModalOpen, isPlaying, setIsPlaying, showControls, setShowControls }) {
+interface ProductsProps {
+  isModalOpen: boolean;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isPlaying: boolean;
+  setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
+  showControls: boolean;
+  setShowControls: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function Products({ isModalOpen, setIsModalOpen, isPlaying, setIsPlaying, showControls, setShowControls }: ProductsProps) {
   const handleTryExperienceClick = () => {
     if (!isModalOpen) {
       setIsModalOpen(true);
@@ -46,10 +56,10 @@ export default function Products({ isModalOpen, setIsModalOpen, isPlaying, setIs
               </div>
             </div>
             <div className="relative mt-16 h-60 lg:mt-8">
-              <img
+              <Image
                 className="absolute left-0 top-0 w-[48rem] max-w-none rounded-tl-ct bg-white/5 ring-1 ring-white/10"
-                src="photos/project1.png"
-                alt="App screenshot"
+                src="/photos/project1.png"
+                alt="GuidedOn"
                 width={1824}
                 height={1080}
               />

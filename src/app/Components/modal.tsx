@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { PlayIcon, PauseIcon, ArrowPathIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
@@ -9,7 +7,15 @@ const INITIAL_SCROLL_STAMPS = [
   { time: 8, id: 'hero' },
 ];
 
-export default function Modal({ isPlaying, setIsPlaying, showControls, setShowControls }) {
+interface ModalProps {
+  onClose: () => void;
+  isPlaying: boolean;
+  setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
+  showControls: boolean;
+  setShowControls: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function Modal({ onClose, isPlaying, setIsPlaying, showControls, setShowControls }: ModalProps) {
   const [scrollStamps, setScrollStamps] = useState(INITIAL_SCROLL_STAMPS);
   const [showMainModal, setShowMainModal] = useState(true);
   const [currentPlaybackTime, setCurrentPlaybackTime] = useState(0);

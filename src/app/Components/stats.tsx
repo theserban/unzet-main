@@ -32,7 +32,7 @@ export default function Stats() {
                 Playing the Numbers
               </h2>
               <p className="mt-6 leading-7 text-white text-xl">
-              We believe in being open and honest. That's why we want to share the truth: running a tech business isn't easy. It takes good ideas, careful planning, hard work, and the ability to adapt.
+              We believe in being open and honest. That&prime;s why we want to share the truth: running a tech business isn&prime;t easy. It takes good ideas, careful planning, hard work, and the ability to adapt.
               </p>
             </div>
             <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
