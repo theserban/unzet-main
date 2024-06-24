@@ -16,11 +16,25 @@ export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showControls, setShowControls] = useState(false);
+  const [showMainModal, setShowMainModal] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  const handleTryExperienceClick = () => {
+    setShowMainModal(true);
+    if (!isModalOpen) {
+      setIsModalOpen(true);
+    }
+    if (!isPlaying) {
+      setIsPlaying(true);
+    }
+    if (!showControls) {
+      setShowControls(true);
+    }
+  };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -36,7 +50,9 @@ export default function Page() {
             isPlaying={isPlaying} 
             setIsPlaying={setIsPlaying} 
             showControls={showControls} 
-            setShowControls={setShowControls} 
+            setShowControls={setShowControls}
+            showMainModal={showMainModal}
+            setShowMainModal={setShowMainModal}
           />
         </div>
       )}
@@ -46,14 +62,7 @@ export default function Page() {
       <Testimonials />
       <How />
       <Stats />
-      <Products 
-        isModalOpen={isModalOpen} 
-        setIsModalOpen={setIsModalOpen} 
-        isPlaying={isPlaying} 
-        setIsPlaying={setIsPlaying} 
-        showControls={showControls} 
-        setShowControls={setShowControls} 
-      />
+      <Products onTryExperienceClick={handleTryExperienceClick} />
       <Pricing />
       <FAQ />
       <Footer />

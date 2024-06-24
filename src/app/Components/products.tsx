@@ -2,30 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 
 interface ProductsProps {
-  isModalOpen: boolean;
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  isPlaying: boolean;
-  setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
-  showControls: boolean;
-  setShowControls: React.Dispatch<React.SetStateAction<boolean>>;
+  onTryExperienceClick: () => void;
 }
 
-export default function Products({ isModalOpen, setIsModalOpen, isPlaying, setIsPlaying, showControls, setShowControls }: ProductsProps) {
-  const handleTryExperienceClick = () => {
-    if (!isModalOpen) {
-      setIsModalOpen(true);
-      setIsPlaying(true);
-      setShowControls(true);
-    } else {
-      if (!isPlaying) {
-        setIsPlaying(true);
-      }
-      if (!showControls) {
-        setShowControls(true);
-      }
-    }
-  };
-
+export default function Products({ onTryExperienceClick }: ProductsProps) {
   return (
     <section id="products">
       <div className="bg-black">
@@ -44,7 +24,7 @@ export default function Products({ isModalOpen, setIsModalOpen, isPlaying, setIs
               <div className="mt-10 flex items-center gap-x-6">
                 <button
                   className="cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-xs font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
-                  onClick={handleTryExperienceClick}
+                  onClick={onTryExperienceClick}
                 >
                   Try the Experience
                 </button>

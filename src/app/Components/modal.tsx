@@ -13,11 +13,12 @@ interface ModalProps {
   setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
   showControls: boolean;
   setShowControls: React.Dispatch<React.SetStateAction<boolean>>;
+  showMainModal: boolean;
+  setShowMainModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Modal({ onClose, isPlaying, setIsPlaying, showControls, setShowControls }: ModalProps) {
+export default function Modal({ onClose, isPlaying, setIsPlaying, showControls, setShowControls, showMainModal, setShowMainModal }: ModalProps) {
   const [scrollStamps, setScrollStamps] = useState(INITIAL_SCROLL_STAMPS);
-  const [showMainModal, setShowMainModal] = useState(true);
   const [currentPlaybackTime, setCurrentPlaybackTime] = useState(0);
   const [audioDuration, setAudioDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
