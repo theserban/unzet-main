@@ -39,7 +39,7 @@ export default function FAQ() {
     <>
           <section id="founder">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="relative mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-4xl flex lg:flex-row flex-col items-start lg:items-start gap-x-6 gap-y-8 lg:gap-x-10">
+        <div className="relative mx-auto max-w-2xl py-16 lg:pt-16 sm:py-12 lg:max-w-4xl flex lg:flex-row flex-col items-start lg:items-start gap-x-6 gap-y-8 lg:gap-x-0">
           <div className="w-68 lg:w-72 flex-shrink-0 p-2 rounded-lg">
             <Image
               className="rounded-tr-ct rounded-bl-ct border border-primary-500/20 transform transition-transform duration-500 hover:scale-105"
@@ -82,8 +82,8 @@ export default function FAQ() {
       </div>
 
       <div className="bg-black">
-        <div className="mx-auto max-w-7xl px-6 pb-32 py-4 sm:pt-8">
-          <div className="mx-auto max-w-4xl divide-y divide-white/10">
+        <div className="mx-auto max-w-7xl px-6 md:px-20 pb-32 py-4 sm:pt-8">
+          <div className="mx-auto max-w-4xl lg:px-2 divide-y divide-white/10 lg:pb-16">
             <h2 className="text-2xl font-bold leading-10 tracking-tight text-primary-500 mb-8">Let me answer</h2>
 
             {faqs.map((faq) => (

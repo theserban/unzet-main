@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, TrophyIcon, MapIcon, CheckIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import { TrophyIcon, MapIcon, CheckIcon, ArrowPathIcon, ArrowsPointingInIcon, ArrowsPointingOutIcon, CalendarDaysIcon, DocumentArrowUpIcon, TicketIcon, WalletIcon } from '@heroicons/react/24/outline';
 
 const getIcon = (status: string): JSX.Element | null => {
   switch (status) {
@@ -104,22 +104,22 @@ export default function How() {
             </div>
             <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
               <div className="lg:pr-4">
-                <div className="max-w-xl text-lg leading-7 text-white lg:max-w-lg">
+                <div className="max-w-2xl text-lg leading-7 text-white lg:max-w-lg">
                   <ul role="list" className="space-y-8 text-white">
                     <li className="flex gap-x-3">
-                      <CloudArrowUpIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
+                      <WalletIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
                       <span>
                       Whether it&prime;s for our product or a client&prime;s, we begin by identifying the specific needs at that stage of development. This could involve naming and branding at the outset, or implementing various strategies, starting ads and building pitches later on.
                       </span>
                     </li>
                     <li className="flex gap-x-3">
-                      <LockClosedIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
+                      <CalendarDaysIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
                       <span>
                       We focus on one task at a time, following a staged process where each loop is closed before starting the next. This approach requires close collaboration with the team and regular updates on the progress.
                       </span>
                     </li>
                     <li className="flex gap-x-3">
-                      <ServerIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
+                      <DocumentArrowUpIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
                       <span>
                       We developed a system where each major task is represented as a card, like trading cards from childhood. Each card gives you power and brings you closer to success. For instance, having your branding in place makes marketing much easier.
                       </span>
@@ -137,7 +137,7 @@ export default function How() {
                 </div>
               </div>
             </div>
-            <div id="sticky-card" className="-ml-16 -mt-12 pt-12 pl-12 pr-12   lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <div id="sticky-card" className="-ml-16 sm:-ml-4 lg:-ml-16 -mt-12 pt-16 pl-12 pr-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
               {changeContent ? (
                 <Card
                   icon={TrophyIcon}

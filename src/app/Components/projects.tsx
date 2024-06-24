@@ -13,6 +13,7 @@ const stats = [
   { label: 'Duration', value: '5m' },
   { label: 'Disruptions', value: '3x' },
   { label: 'Power', value: '+40' },
+  { label: 'Rank', value: 'Ace' },
 ];
 
 export default function Projects() {
@@ -60,49 +61,49 @@ export default function Projects() {
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:flex sm:flex-wrap sm:items-start sm:justify-end sm:gap-8 lg:contents">
-                <div className="w-full sm:w-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
-                  <div className="transform transition-transform duration-500 hover:-translate-y-3">
+                <div className="w-full sm:w-full lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
+                  <div className="transform transition-transform duration-500 hover:-translate-y-3 sm:mt-12 lg:mt-0">
                     <Image
                       src={cardData[activeCards[0]].src}
                       alt={`Project ${cardData[activeCards[0]].title}`}
-                      className="aspect-[7/4] w-full sm:w-[38rem] max-w-none rounded-tr-ct rounded-bl-ct object-cover mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
+                      className="aspect-[7/4] w-full sm:w-full lg:w-[38rem] max-w-none rounded-tr-ct rounded-bl-ct object-cover mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
                       width={700}
                       height={400}
                     />
                     <h3 className="text-primary-500 text-lg text-center">{cardData[activeCards[0]].title}</h3>
                   </div>
                 </div>
-                <div className="w-full sm:w-auto lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
-                  <div className="order-first w-full sm:w-auto lg:w-auto mt-8 lg:mt-0">
+                <div className="w-full sm:w-full lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
+                  <div className="order-first w-full sm:w-full lg:w-auto mt-8 lg:mt-0 sm:mt-0">
                     <div className="transform transition-transform duration-500 hover:-translate-y-3">
                       <Image
                         src={cardData[activeCards[1]].src}
                         alt={`Project ${cardData[activeCards[1]].title}`}
-                        className="aspect-[7/4] w-full sm:w-[28rem] max-w-none flex-none rounded-br-ct rounded-tl-ct object-cover mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
+                        className="aspect-[7/4] w-full sm:w-full lg:w-[28rem] max-w-none flex-none rounded-br-ct rounded-tl-ct object-cover mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
                         width={700}
                         height={400}
                       />
                       <h3 className="text-primary-500 text-lg text-center">{cardData[activeCards[1]].title}</h3>
                     </div>
                   </div>
-                  <div className="w-full sm:w-auto lg:w-auto mt-8 lg:mt-0">
+                  <div className="w-full sm:w-full lg:w-auto mt-8 lg:mt-0">
                     <div className="transform transition-transform duration-500 hover:-translate-y-3">
                       <Image
                         src={cardData[activeCards[2]].src}
                         alt={`Project ${cardData[activeCards[2]].title}`}
-                        className="aspect-[7/4] w-full sm:w-[34rem] max-w-none flex-none rounded-tr-ct rounded-bl-ct object-cover mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
+                        className="aspect-[7/4] w-full sm:w-full lg:w-[34rem] max-w-none flex-none rounded-tr-ct rounded-bl-ct object-cover mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
                         width={700}
                         height={400}
                       />
                       <h3 className="text-primary-500 text-lg text-center">{cardData[activeCards[2]].title}</h3>
                     </div>
                   </div>
-                  <div className="w-full sm:w-auto sm:block sm:flex-auto lg:w-auto lg:flex-none mt-8 lg:mt-0">
+                  <div className="w-full sm:w-full sm:block sm:flex-auto lg:w-auto lg:flex-none mt-8 lg:mt-0">
                     <div className="transform transition-transform duration-500 hover:-translate-y-3">
                       <Image
                         src={cardData[activeCards[3]].src}
                         alt={`Project ${cardData[activeCards[3]].title}`}
-                        className="aspect-[7/4] w-full sm:w-[20rem] max-w-none rounded-tl-ct rounded-br-ct object-cover mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
+                        className="aspect-[7/4] w-full sm:w-full lg:w-[20rem] max-w-none rounded-tl-ct rounded-br-ct object-cover mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
                         width={700}
                         height={400}
                       />
@@ -120,7 +121,7 @@ export default function Projects() {
         <div className="bg-black py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-none">
-              <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-x-8 gap-y-16 sm:gap-y-24">
+              <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-x-8 gap-y-16 sm:gap-y-12">
                 <div className="lg:pr-4 order-3 lg:order-1">
                   <div className="relative overflow-hidden px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 transform transition-transform duration-500 hover:-translate-y-3">
                     <Image
@@ -135,7 +136,7 @@ export default function Projects() {
                       aria-hidden="true"
                     ></div>
                   </div>
-                  <div className="relative overflow-hidden px-6 pb-9 pt-44 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 transform transition-transform duration-500 hover:-translate-y-3 mt-8">
+                  <div className="relative overflow-hidden px-6 pb-9 pt-44 shadow-2xl sm:px-12 sm:mt-12 lg:mt-8 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 transform transition-transform duration-500 hover:-translate-y-3 mt-8">
                     <Image
                       className="absolute inset-0 h-full w-full object-cover rounded-tl-ct rounded-br-ct mb-2 border border-primary-500/20 filter grayscale hover:filter-none"
                       src="/photos/project1.png"
@@ -162,7 +163,7 @@ export default function Projects() {
                     <h1 className="mt-2 text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
                       Our time @ Teckstar <br /> Case Study
                     </h1>
-                    <div className="max-w-xl">
+                    <div className="max-w-2xl">
                       <p className="mt-6 text-xl leading-7 text-white">
                       Teckstar is a dynamic company specializing in matching businesses with top-tier developers. When we partnered with them, our goal was to help them scale their operations and enhance their market presence.
                       </p>
@@ -171,7 +172,7 @@ export default function Projects() {
                       </p>
                     </div>
                   </div>
-                  <dl className="grid grid-cols-2 gap-8 border-t border-primary-500/20 mt-4 pb-12 sm:pb-0 pt-4 sm:grid-cols-3 hidden lg:grid">
+                  <dl className="grid grid-cols-2 gap-8 border-t border-primary-500/20 mt-4 pb-12 sm:pb-0 pt-4 sm:grid-cols-4 hidden lg:grid">
                     {stats.map((stat, statIdx) => (
                       <div key={statIdx}>
                         <dt className="text-sm font-semibold leading-6 text-primary-500">{stat.label}</dt>

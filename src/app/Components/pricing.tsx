@@ -219,7 +219,7 @@ export default function Pricing() {
               </div>
             </div>
 
-            <div className="relative mt-12 sm:px-6 lg:mt-12 lg:px-8 transform transition-transform duration-500 hover:-translate-y-1">
+            <div className="relative mt-12 sm:px-6 lg:mt-12 lg:px-8 sm:px-20 transform transition-transform duration-500 hover:-translate-y-1">
               <div className="mx-auto w-full lg:max-w-5xl">
                 <div className="rounded-tr-ct rounded-bl-ct bg-secondary-400 border border-primary-500/20 px-6 py-8 sm:p-10 sm:py-6 lg:flex lg:items-center">
                   <div className="flex-1">

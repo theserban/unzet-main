@@ -28,10 +28,10 @@ export default function Products({ isModalOpen, setIsModalOpen, isPlaying, setIs
 
   return (
     <section id="products">
-      <div className="bg-black px-6">
-        <div className="mx-auto max-w-7xl py-24 sm:px-8 sm:py-32">
-          <div className="relative sm:flex lg:gap-x-20 lg:px-12 lg:pt-0 px-8 pt-8 sm:px-16 md:pt-24 isolate overflow-hidden bg-secondary-400 rounded-tl-ct rounded-br-ct border border-primary-500/40 shadow-2xl transform transition-transform duration-500 hover:-translate-y-1">
-            <div className="mx-auto max-w-md sm:mx-0 sm:flex-auto sm:py-16 text-left">
+      <div className="bg-black">
+        <div className="mx-auto max-w-7xl py-24 sm:px-16 sm:mx-2 lg:mx-auto lg:px-8 sm:py-32">
+          <div className="relative lg:flex lg:gap-x-20 lg:px-12 lg:pt-0 px-8 pt-8 sm:px-12 sm:pt-4 isolate overflow-hidden bg-secondary-400 rounded-tl-ct rounded-br-ct border border-primary-500/40 shadow-2xl transform transition-transform duration-500 hover:-translate-y-1">
+            <div className="max-w-md sm:mx-0 sm:flex-auto sm:py-16 text-left">
               <h2 className="text-3xl font-bold tracking-tight text-primary-500">
                 GuidedOn - Always Pitch
               </h2>
@@ -55,7 +55,7 @@ export default function Products({ isModalOpen, setIsModalOpen, isPlaying, setIs
                 </button>
               </div>
             </div>
-            <div className="relative mt-16 h-60 lg:mt-8">
+            <div className="relative mt-16 h-60 lg:mt-8 sm:ml-12 lg:ml-0">
               <Image
                 className="absolute left-0 top-0 w-[48rem] max-w-none rounded-tl-ct bg-white/5 ring-1 ring-white/10"
                 src="/photos/project1.png"

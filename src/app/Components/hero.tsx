@@ -17,7 +17,7 @@ const Card = ({ icon: Icon, title, power, description }: CardProps) => (
             <Icon className="h-12 w-12 text-primary-500" />
         </div>
         <h3 className="text-lg font-bold mb-2">{title}</h3>
-        <p className="text-primary-500 font-semibold mb-4">{power}</p>
+        <p className="text-primary-500 font-semibold mb-3">{power}</p>
         <p>{description}</p>
     </div>
 );
@@ -52,10 +52,10 @@ export default function Hero() {
                         </defs>
                         <rect width="100%" height="100%" strokeWidth={0} fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
                     </svg>
-                    <div className="mx-auto max-w-7xl px-6 pb-12 pt-28 sm:pt-60 lg:px-8 lg:pt-32">
+                    <div className="mx-auto max-w-7xl px-6 pb-12 pt-28 sm:pt-36 lg:px-8 lg:pt-32">
                         <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                             <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
                                     Build the Right Deck to{" "}
                                     <span className="text-primary-500">Become the Ace</span>
                                 </h1>
@@ -139,7 +139,7 @@ export default function Hero() {
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto max-w-2xl lg:max-w-none">
                             <h2 className="text-lg font-semibold leading-8 text-primary-500 text-center">Growth Hacked</h2>
-                            <div className="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-4">
+                            <div className="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-10 lg:mx-0 lg:grid-cols-4">
                                 <Image
                                     className="col-span-2 max-h-9 w-full object-contain object-center lg:col-span-1 transform transition-transform duration-500 hover:scale-105"
                                     src="/photos/persuwise.svg"
