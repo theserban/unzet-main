@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 
 const featuredTestimonial = {
-  body: 'Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non hendrerit in vel ac diam.',
+  body: 'We aim to build a culture of constant improvement and teamwork, driving tech innovation and business growth. We link businesses with skilled professionals, and build custom software to bring ideas to life and ensure their success',
   author: {
     name: 'Laurentiu Manta',
     handle: 'teckstar',
@@ -17,7 +17,7 @@ const testimonials = [
   [
     [
       {
-        body: 'Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut enim doloremque et ipsam.',
+        body: 'By simplifying the email creation, we help people connect with their audience, ensuring their messages are clear',
         author: {
           name: 'Andrei Istrate',
           handle: 'persuwise',
@@ -27,7 +27,7 @@ const testimonials = [
     ],
     [
       {
-        body: 'Aut reprehenderit voluptatem eum asperiores beatae id. Iure molestiae ipsam ut officia rem nulla blanditiis.',
+        body: 'We aim to create a great company culture that leads to outstanding experiences and people-focused success.',
         author: {
           name: 'Carol Mihailescu',
           handle: 'inereto',
