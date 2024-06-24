@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { MagnifyingGlassIcon, ArrowLeftIcon, ArrowRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
-const cardData = [
+interface Card {
+  src: string;
+  title: string;
+}
+
+const cardData: Card[] = [
   { src: "/photos/p1-sitpitch.webp", title: "Pitch Deck" },
   { src: "/photos/p3-pwapp.webp", title: "Extension UI" },
   { src: "/photos/p4-antvise.webp", title: "Naming & Branding" },
@@ -21,7 +26,7 @@ const cardData = [
   { src: "/photos/p16-tssell.webp", title: "Automation Research" },
 ];
 
-const caseStudyData = [
+const caseStudyData: Card[] = [
   { src: "/photos/ts-glass.webp", title: "Broken Glass" },
   { src: "/photos/ts-social.webp", title: "Social Media" },
 ];
@@ -34,11 +39,18 @@ const stats = [
 ];
 
 export default function Projects() {
-  const [activeCards, setActiveCards] = useState([]);
+  const [activeCards, setActiveCards] = useState<number[]>([]);
   const [showModal, setShowModal] = useState(false);
-  const [modalImage, setModalImage] = useState(null);
+  const [modalImage, setModalImage] = useState<Card | null>(null);
   const [showCaseStudyModal, setShowCaseStudyModal] = useState(false);
-  const [caseStudyImage, setCaseStudyImage] = useState(null);
+  const [caseStudyImage, setCaseStudyImage] = useState<Card | null>(null);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+};
 
   useEffect(() => {
     // Initialize with 3 random unique images
@@ -53,15 +65,15 @@ export default function Projects() {
     return () => clearInterval(interval);
   }, []);
 
-  const generateRandomIndices = (count, max) => {
-    const indices = new Set();
+  const generateRandomIndices = (count: number, max: number): number[] => {
+    const indices = new Set<number>();
     while (indices.size < count) {
       indices.add(Math.floor(Math.random() * max));
     }
     return Array.from(indices);
   };
 
-  const openModal = (image) => {
+  const openModal = (image: Card) => {
     setModalImage(image);
     setShowModal(true);
   };
@@ -72,20 +84,24 @@ export default function Projects() {
   };
 
   const getNextImage = () => {
-    const currentIndex = cardData.indexOf(modalImage);
-    if (currentIndex < cardData.length - 1) {
-      setModalImage(cardData[currentIndex + 1]);
+    if (modalImage) {
+      const currentIndex = cardData.indexOf(modalImage);
+      if (currentIndex < cardData.length - 1) {
+        setModalImage(cardData[currentIndex + 1]);
+      }
     }
   };
 
   const getPrevImage = () => {
-    const currentIndex = cardData.indexOf(modalImage);
-    if (currentIndex > 0) {
-      setModalImage(cardData[currentIndex - 1]);
+    if (modalImage) {
+      const currentIndex = cardData.indexOf(modalImage);
+      if (currentIndex > 0) {
+        setModalImage(cardData[currentIndex - 1]);
+      }
     }
   };
 
-  const openCaseStudyModal = (image) => {
+  const openCaseStudyModal = (image: Card) => {
     setCaseStudyImage(image);
     setShowCaseStudyModal(true);
   };
@@ -96,16 +112,20 @@ export default function Projects() {
   };
 
   const getNextCaseStudyImage = () => {
-    const currentIndex = caseStudyData.indexOf(caseStudyImage);
-    if (currentIndex < caseStudyData.length - 1) {
-      setCaseStudyImage(caseStudyData[currentIndex + 1]);
+    if (caseStudyImage) {
+      const currentIndex = caseStudyData.indexOf(caseStudyImage);
+      if (currentIndex < caseStudyData.length - 1) {
+        setCaseStudyImage(caseStudyData[currentIndex + 1]);
+      }
     }
   };
 
   const getPrevCaseStudyImage = () => {
-    const currentIndex = caseStudyData.indexOf(caseStudyImage);
-    if (currentIndex > 0) {
-      setCaseStudyImage(caseStudyData[currentIndex - 1]);
+    if (caseStudyImage) {
+      const currentIndex = caseStudyData.indexOf(caseStudyImage);
+      if (currentIndex > 0) {
+        setCaseStudyImage(caseStudyData[currentIndex - 1]);
+      }
     }
   };
 
