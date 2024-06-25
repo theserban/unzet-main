@@ -33,7 +33,7 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [imageSrc, setImageSrc] = useState('/photos/founder.png');
+  const [imageSrc, setImageSrc] = useState('/photos/founder.webp');
 
   return (
     <>
@@ -45,8 +45,8 @@ export default function FAQ() {
               className="rounded-tr-ct rounded-bl-ct border border-primary-500/20 transform transition-transform duration-500 hover:scale-105"
               src={imageSrc}
               alt=""
-              onMouseEnter={() => setImageSrc('/photos/founder2.png')}
-              onMouseLeave={() => setImageSrc('/photos/founder.png')}
+              onMouseEnter={() => setImageSrc('/photos/founder2.webp')}
+              onMouseLeave={() => setImageSrc('/photos/founder.webp')}
               width={500} 
               height={500} 
             />

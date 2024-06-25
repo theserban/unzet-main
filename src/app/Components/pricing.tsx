@@ -40,7 +40,7 @@ const content: Record<ModeValue, {
       { name: 'Business Consultancy', description: 'Provide expert advice to improve business strategies and operations.' },
       { name: 'Marketing Guidance', description: 'Give strategic advice to boost marketing efforts and engage customers.' },
     ],
-    price: '€2499',
+    price: '€1899',
     priceSuffix: '/month',
     priceButton: "Strategy Call",
     ctaText: 'This subscription is tailored to align with your company’s goals.',

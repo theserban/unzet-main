@@ -172,14 +172,14 @@ export default function Projects() {
           <div className="relative ">
             <button
               onClick={closeCaseStudyModal}
-              className="absolute top-0 right-0 m-4 text-white text-3xl bg-black bg-opacity-50 p-2 rounded-tl-xl rounded-br-xl"
+              className="absolute -top-16 right-0 m-4 text-white text-3xl bg-white bg-opacity-20 p-2 rounded-tr-xl rounded-bl-xl"
             >
               <XMarkIcon className="h-6 w-6" />
             </button>
             {caseStudyData.indexOf(caseStudyImage) > 0 && (
               <button
                 onClick={getPrevCaseStudyImage}
-                className="absolute bottom-0 left-0 m-4 text-white text-3xl bg-black bg-opacity-50 p-2 rounded-tl-xl rounded-br-xl transform translate-y-1/2"
+                className="absolute bottom-0 left-0 m-4 text-white text-3xl bg-white bg-opacity-20 p-2 rounded-tl-xl rounded-br-xl transform translate-y-1/2"
               >
                 <ArrowLeftIcon className="h-6 w-6" />
               </button>
@@ -189,13 +189,13 @@ export default function Projects() {
               alt={caseStudyImage.title}
               width={1000}
               height={600}
-              className="object-contain"
+              className="object-contain px-4 py-2"
             />
             <h3 className="text-white text-lg text-center mt-4">{caseStudyImage.title}</h3>
             {caseStudyData.indexOf(caseStudyImage) < caseStudyData.length - 1 && (
               <button
                 onClick={getNextCaseStudyImage}
-                className="absolute bottom-0 right-0 m-4 text-white text-3xl bg-black bg-opacity-50 rounded-tr-xl rounded-bl-xl p-2 transform translate-y-1/2"
+                className="absolute bottom-0 right-0 m-4 text-white text-3xl bg-white bg-opacity-20 bg-opacity-50 rounded-tr-xl rounded-bl-xl p-2 transform translate-y-1/2"
               >
                 <ArrowRightIcon className="h-6 w-6" />
               </button>
