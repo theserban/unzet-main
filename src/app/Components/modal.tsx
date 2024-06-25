@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { PlayIcon, PauseIcon, ArrowPathIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import debounce from 'lodash.debounce';
 
 const INITIAL_SCROLL_STAMPS = [
   { time: 9, id: 'projects' },
@@ -62,6 +63,15 @@ export default function Modal({
     }
   }, []);
 
+  const smoothScrollTo = (id: string) => {
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const debouncedSmoothScrollTo = useCallback(debounce(smoothScrollTo, 1000), []);
+
   const handleTimeUpdate = useCallback(() => {
     if (audioRef.current) {
       const currentTime = audioRef.current.currentTime;
@@ -70,14 +80,11 @@ export default function Modal({
 
       scrollStamps.forEach(({ time, id }) => {
         if (currentTime >= time && currentTime < time + 1) {
-          const targetElement = document.getElementById(id);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-          }
+          debouncedSmoothScrollTo(id);
         }
       });
     }
-  }, [scrollStamps]);
+  }, [scrollStamps, debouncedSmoothScrollTo]);
 
   const addAudioEventListeners = useCallback(() => {
     if (audioRef.current) {
@@ -183,15 +190,12 @@ export default function Modal({
 
         scrollStamps.forEach(({ time, id }) => {
           if (currentTime >= time && currentTime < time + 1) {
-            const targetElement = document.getElementById(id);
-            if (targetElement) {
-              targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
+            debouncedSmoothScrollTo(id);
           }
         });
       }
     }
-  }, [showMainModal, scrollStamps]);
+  }, [showMainModal, scrollStamps, debouncedSmoothScrollTo]);
 
   return (
     <div style={{ zIndex: 1000 }}>

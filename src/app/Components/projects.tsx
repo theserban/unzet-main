@@ -258,6 +258,7 @@ export default function Projects() {
                         className="aspect-[7/4] w-full sm:w-full lg:w-[38rem] max-w-none rounded-tl-ct rounded-br-ct object-cover mb-2 border border-primary-500/20"
                         width={700}
                         height={400}
+                        priority={idx === 0} // Add priority attribute to the first image
                       />
                       <div
                         className="absolute top-2 right-2 text-white text-2xl cursor-pointer bg-black bg-opacity-50 rounded-tl-xl rounded-br-xl p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -288,6 +289,7 @@ export default function Projects() {
                       alt="Broken Glass"
                       width={1200}
                       height={900}
+                      priority // Add priority attribute to case study images
                     />
                     <div
                       className="absolute top-2 right-2 text-white text-2xl cursor-pointer bg-black bg-opacity-50 rounded-tl-xl rounded-br-xl p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -303,6 +305,7 @@ export default function Projects() {
                       alt="Social"
                       width={700}
                       height={400}
+                      priority // Add priority attribute to case study images
                     />
                     <div
                       className="absolute top-2 right-2 text-white text-2xl cursor-pointer bg-black bg-opacity-50 rounded-tl-xl rounded-br-xl p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
