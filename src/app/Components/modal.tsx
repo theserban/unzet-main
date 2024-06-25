@@ -3,8 +3,15 @@ import { PlayIcon, PauseIcon, ArrowPathIcon, ArrowRightIcon } from '@heroicons/r
 import Image from 'next/image';
 
 const INITIAL_SCROLL_STAMPS = [
-  { time: 2, id: 'how' },
-  { time: 8, id: 'hero' },
+  { time: 9, id: 'projects' },
+  { time: 26, id: 'case' },
+  { time: 37, id: 'testimonials' },
+  { time: 52, id: 'how' },
+  { time: 75, id: 'how2' },
+  { time: 85, id: 'stats' },
+  { time: 98, id: 'products' },
+  { time: 109, id: 'pricing' },
+  { time: 126, id: 'faq' },
 ];
 
 interface ModalProps {
