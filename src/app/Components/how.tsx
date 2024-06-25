@@ -137,7 +137,7 @@ export default function How() {
                 </div>
               </div>
             </div>
-            <div id="sticky-card" className="-ml-16 sm:-ml-4 lg:-ml-16 -mt-12 pt-16 pl-12 pr-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <div id="sticky-card" className="-ml-12 sm:-ml-4 lg:-ml-16 -mt-12 pt-16 pl-12 pr-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
               {changeContent ? (
                 <Card
                   icon={TrophyIcon}

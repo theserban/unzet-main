@@ -113,8 +113,8 @@ const Card = ({ title, links, socials }: { title: string; links: Link[]; socials
 };
 
 const socials = {
-  LinkedIn: "https://www.linkedin.com/company/shiftintech",
-  Instagram: "https://www.instagram.com/shiftintech/",
+  LinkedIn: "https://www.linkedin.com/company/weunzet",
+  Instagram: "https://www.instagram.com/weunzet",
 };
 
 const currentYear = new Date().getFullYear();

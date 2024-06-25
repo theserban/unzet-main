@@ -17,7 +17,15 @@ interface ModalProps {
   setShowMainModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Modal({ onClose, isPlaying, setIsPlaying, showControls, setShowControls, showMainModal, setShowMainModal }: ModalProps) {
+export default function Modal({
+  onClose,
+  isPlaying,
+  setIsPlaying,
+  showControls,
+  setShowControls,
+  showMainModal,
+  setShowMainModal,
+}: ModalProps) {
   const [scrollStamps, setScrollStamps] = useState(INITIAL_SCROLL_STAMPS);
   const [currentPlaybackTime, setCurrentPlaybackTime] = useState(0);
   const [audioDuration, setAudioDuration] = useState(0);
@@ -108,11 +116,15 @@ export default function Modal({ onClose, isPlaying, setIsPlaying, showControls, 
   }, [handleLoadedMetadata, handleTimeUpdate]);
 
   useEffect(() => {
-    addAudioEventListeners();
+    if (showMainModal) {
+      addAudioEventListeners();
+    } else {
+      removeAudioEventListeners();
+    }
     return () => {
       removeAudioEventListeners();
     };
-  }, [addAudioEventListeners, removeAudioEventListeners]);
+  }, [showMainModal, addAudioEventListeners, removeAudioEventListeners]);
 
   useEffect(() => {
     if (isPlaying) {
@@ -159,7 +171,6 @@ export default function Modal({ onClose, isPlaying, setIsPlaying, showControls, 
 
   const handleIconClick = () => {
     setShowMainModal(true);
-    addAudioEventListeners();
   };
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -173,13 +184,11 @@ export default function Modal({ onClose, isPlaying, setIsPlaying, showControls, 
   const handleExploreByYourself = () => {
     setShowMainModal(false);
     localStorage.setItem('scrollStamps', JSON.stringify(scrollStamps));
-    removeAudioEventListeners();
   };
 
   const handleArrowButtonClick = () => {
     setShowMainModal(false);
     localStorage.setItem('scrollStamps', JSON.stringify(scrollStamps));
-    removeAudioEventListeners();
     if (audioRef.current) {
       audioRef.current.pause();
       setIsPlaying(false);

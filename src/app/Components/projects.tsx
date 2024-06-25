@@ -50,7 +50,7 @@ export default function Projects() {
     if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
     }
-};
+  };
 
   useEffect(() => {
     // Initialize with 3 random unique images
@@ -132,18 +132,18 @@ export default function Projects() {
   return (
     <div className="relative isolate">
       {showModal && modalImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
           <div className="relative">
             <button
               onClick={closeModal}
-              className="absolute top-0 right-0 m-4 text-white text-3xl bg-black bg-opacity-50 p-2 rounded-tl-xl rounded-br-xl"
+              className="absolute -top-16 right-0 m-4 text-white text-3xl bg-white bg-opacity-20 p-2 rounded-tr-xl rounded-bl-xl"
             >
               <XMarkIcon className="h-6 w-6" />
             </button>
             {cardData.indexOf(modalImage) > 0 && (
               <button
                 onClick={getPrevImage}
-                className="absolute top-1/2 left-0 m-4 text-white text-3xl bg-black bg-opacity-50 p-2 rounded-tl-xl rounded-br-xl transform -translate-y-1/2"
+                className="absolute bottom-0 left-0 m-4 text-white text-3xl bg-white bg-opacity-20 p-2 rounded-tl-xl rounded-br-xl transform translate-y-1/2"
               >
                 <ArrowLeftIcon className="h-6 w-6" />
               </button>
@@ -153,13 +153,13 @@ export default function Projects() {
               alt={modalImage.title}
               width={1000}
               height={600}
-              className="object-contain"
+              className="object-contain px-4 py-2"
             />
             <h3 className="text-white text-lg text-center mt-4">{modalImage.title}</h3>
             {cardData.indexOf(modalImage) < cardData.length - 1 && (
               <button
                 onClick={getNextImage}
-                className="absolute top-1/2 right-0 m-4 text-white text-3xl bg-black bg-opacity-50 rounded-tr-xl rounded-bl-xl p-2 transform -translate-y-1/2"
+                className="absolute bottom-0 right-0 m-4 text-white text-3xl bg-white bg-opacity-20 bg-opacity-50 rounded-tr-xl rounded-bl-xl p-2 transform translate-y-1/2"
               >
                 <ArrowRightIcon className="h-6 w-6" />
               </button>
@@ -179,7 +179,7 @@ export default function Projects() {
             {caseStudyData.indexOf(caseStudyImage) > 0 && (
               <button
                 onClick={getPrevCaseStudyImage}
-                className="absolute top-1/2 left-0 m-4 text-white text-3xl bg-black bg-opacity-50 p-2 rounded-tl-xl rounded-br-xl transform -translate-y-1/2"
+                className="absolute bottom-0 left-0 m-4 text-white text-3xl bg-black bg-opacity-50 p-2 rounded-tl-xl rounded-br-xl transform translate-y-1/2"
               >
                 <ArrowLeftIcon className="h-6 w-6" />
               </button>
@@ -195,7 +195,7 @@ export default function Projects() {
             {caseStudyData.indexOf(caseStudyImage) < caseStudyData.length - 1 && (
               <button
                 onClick={getNextCaseStudyImage}
-                className="absolute top-1/2 right-0 m-4 text-white text-3xl bg-black bg-opacity-50 rounded-tr-xl rounded-bl-xl p-2 transform -translate-y-1/2"
+                className="absolute bottom-0 right-0 m-4 text-white text-3xl bg-black bg-opacity-50 rounded-tr-xl rounded-bl-xl p-2 transform translate-y-1/2"
               >
                 <ArrowRightIcon className="h-6 w-6" />
               </button>
@@ -251,7 +251,7 @@ export default function Projects() {
               <div className="grid grid-cols-1 sm:flex sm:flex-wrap sm:items-start sm:justify-end sm:gap-8 lg:contents">
                 {activeCards.map((cardIndex, idx) => (
                   <div key={idx} className="w-full sm:w-full lg:ml-auto lg:w-auto lg:flex-none lg:self-end relative group">
-                    <div className="transform transition-transform duration-500 hover:-translate-y-3 sm:mt-12 lg:mt-0">
+                    <div className="transform transition-transform duration-500 hover:-translate-y-3 sm:mt-12 mt-8 lg:mt-0">
                       <Image
                         src={cardData[cardIndex].src}
                         alt={`Project ${cardData[cardIndex].title}`}
@@ -300,7 +300,7 @@ export default function Projects() {
                     <Image
                       className="absolute inset-0 h-full w-full object-cover rounded-tl-ct rounded-br-ct mb-2 border border-primary-500/20"
                       src="/photos/ts-social.webp"
-                      alt="Project 1"
+                      alt="Social"
                       width={700}
                       height={400}
                     />
