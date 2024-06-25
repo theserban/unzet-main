@@ -11,7 +11,7 @@ const INITIAL_SCROLL_STAMPS = [
   { time: 85, id: 'stats' },
   { time: 98, id: 'products' },
   { time: 109, id: 'pricing' },
-  { time: 126, id: 'faq' },
+  { time: 126, id: 'founder' },
 ];
 
 interface ModalProps {
@@ -62,35 +62,6 @@ export default function Modal({
     }
   }, []);
 
-  const smoothScrollTo = (targetY: number, duration: number) => {
-    const overlay = document.getElementById('scroll-overlay');
-    if (overlay) {
-      overlay.classList.add('active');
-    }
-
-    const startY = window.scrollY;
-    const diffY = targetY - startY;
-    let startTime: number | null = null;
-
-    const scroll = (currentTime: number) => {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1);
-
-      window.scrollTo(0, startY + diffY * progress);
-
-      if (timeElapsed < duration) {
-        requestAnimationFrame(scroll);
-      } else {
-        if (overlay) {
-          overlay.classList.remove('active');
-        }
-      }
-    };
-
-    requestAnimationFrame(scroll);
-  };
-
   const handleTimeUpdate = useCallback(() => {
     if (audioRef.current) {
       const currentTime = audioRef.current.currentTime;
@@ -101,7 +72,7 @@ export default function Modal({
         if (currentTime >= time && currentTime < time + 1) {
           const targetElement = document.getElementById(id);
           if (targetElement) {
-            smoothScrollTo(targetElement.offsetTop, 1000);
+            targetElement.scrollIntoView({ behavior: 'smooth' });
           }
         }
       });
@@ -214,7 +185,7 @@ export default function Modal({
           if (currentTime >= time && currentTime < time + 1) {
             const targetElement = document.getElementById(id);
             if (targetElement) {
-              smoothScrollTo(targetElement.offsetTop, 1000);
+              targetElement.scrollIntoView({ behavior: 'smooth' });
             }
           }
         });

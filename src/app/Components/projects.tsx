@@ -130,9 +130,9 @@ export default function Projects() {
   };
 
   return (
-    <div className="relative isolate">
+    <div className="relative isolate z-20">
       {showModal && modalImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-20">
           <div className="relative">
             <button
               onClick={closeModal}

@@ -118,14 +118,13 @@ export default function How() {
                       We focus on one task at a time, following a staged process where each loop is closed before starting the next. This approach requires close collaboration with the team and regular updates on the progress.
                       </span>
                     </li>
-                    <li className="flex gap-x-3">
+                    <li className="flex gap-x-3" id="how2">
                       <DocumentArrowUpIcon className="mt-1 h-5 w-5 flex-none text-primary-500" aria-hidden="true" />
                       <span>
                       We developed a system where each major task is represented as a card, like trading cards from childhood. Each card gives you power and brings you closer to success. For instance, having your branding in place makes marketing much easier.
                       </span>
                     </li>
                   </ul>
-                  <section id="how2">
                   <h2 className="mt-16 text-3xl font-bold tracking-tight text-primary-500">Be the Joker</h2>
                   <p className="mt-6 leading-7 text-white text-xl">
                   To succeed, you need to think differently and solve problems in multiple ways, just like the flexibility and unpredictability of the Joker in a deck of cards.
@@ -133,7 +132,6 @@ export default function How() {
                   <p className="mt-6 leading-7 text-white text-xl">
                   We aim to be a seamless part of your team, not just a service provider.  Our primary goal is to contribute to innovation, allowing us to scale our impact by collaborating with many incredible initiatives.
                   </p>
-                  </section>
                 </div>
               </div>
             </div>
