@@ -98,16 +98,16 @@ export default function FAQ() {
 
         <div className="bg-black">
           <div className="px-6 py-4 pb-32 mx-auto max-w-7xl md:px-20 sm:pt-8">
-            <div className="max-w-4xl mx-auto divide-y lg:px-2 divide-white/10 lg:pb-16">
+            <div className="max-w-4xl mx-auto lg:px-2 lg:pb-16">
               <h2 className="mb-8 text-2xl font-bold leading-10 tracking-tight text-primary-500">
                 Let me answer
               </h2>
-              <dl>
+              <dl className="space-y-6">
                 {faqs.map((faq) => (
                   <Disclosure
                     as="div"
                     key={faq.question}
-                    className="pt-4 pb-8 transition-transform duration-500 transform hover:-translate-y-1"
+                    className="pt-4 pb-4 transition-transform duration-500 transform border-b hover:-translate-y-1 border-white/20"
                   >
                     {({ open }) => (
                       <>
