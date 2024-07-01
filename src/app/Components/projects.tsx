@@ -119,6 +119,7 @@ export default function Projects() {
               width={1000}
               height={600}
               className="object-contain px-4 py-2"
+              priority
             />
             <h3 className="mt-4 text-lg text-center text-white">
               {modalImage.title}
@@ -141,6 +142,7 @@ export default function Projects() {
               width={1000}
               height={600}
               className="object-contain px-4 py-2"
+              priority
             />
             <h3 className="mt-4 text-lg text-center text-white">
               {caseStudyImage.title}
@@ -216,6 +218,7 @@ export default function Projects() {
                         className="aspect-[7/4] w-full sm:w-full lg:w-[38rem] max-w-none rounded-tl-ct rounded-br-ct object-cover mb-2 border border-primary-500/20"
                         width={700}
                         height={400}
+                        loading="eager"
                         priority={idx === 0}
                       />
                       <div
@@ -249,6 +252,7 @@ export default function Projects() {
                       alt="Broken Glass"
                       width={1200}
                       height={900}
+                      loading="eager"
                       priority
                     />
                     <div
@@ -265,6 +269,7 @@ export default function Projects() {
                       alt="Social"
                       width={700}
                       height={400}
+                      loading="eager"
                       priority
                     />
                     <div

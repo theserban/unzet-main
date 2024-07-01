@@ -1,15 +1,15 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const featuredTestimonial = {
-  body: 'We aim to build a culture of constant improvement and teamwork, driving tech innovation and business growth. We link businesses with skilled professionals, and build custom software to bring ideas to life and ensure their success',
+  body: "We aim to build a culture of constant improvement and teamwork, driving tech innovation and business growth. We link businesses with skilled professionals, and build custom software to bring ideas to life and ensure their success",
   author: {
-    name: 'Laurentiu Manta',
-    handle: 'teckstar',
-    imageUrl: '/photos/founder.png',
-    logoUrl: 'photos/teckstar.svg',
+    name: "Laurentiu Manta",
+    handle: "teckstar",
+    imageUrl: "/photos/founder.png",
+    logoUrl: "photos/teckstar.svg",
   },
 };
 
@@ -17,21 +17,21 @@ const testimonials = [
   [
     [
       {
-        body: 'By simplifying the email creation, we help people connect with their audience, ensuring their messages are clear',
+        body: "By simplifying the email creation, we help people connect with their audience, ensuring their messages are clear",
         author: {
-          name: 'Andrei Istrate',
-          handle: 'persuwise',
-          imageUrl: '/photos/founder.png',
+          name: "Andrei Istrate",
+          handle: "persuwise",
+          imageUrl: "/photos/founder.png",
         },
       },
     ],
     [
       {
-        body: 'We aim to create a great company culture that leads to outstanding experiences and people-focused success.',
+        body: "Our goal is to create a great company culture that leads to outstanding experiences and people-focused success",
         author: {
-          name: 'Carol Mihailescu',
-          handle: 'inereto',
-          imageUrl: '/photos/founder.png',
+          name: "Carol Mihailescu",
+          handle: "inereto",
+          imageUrl: "/photos/founder.png",
         },
       },
     ],
@@ -39,76 +39,86 @@ const testimonials = [
 ];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Testimonials() {
   return (
-    <div className="relative isolate bg-black">
+    <div className="relative bg-black isolate">
       <section id="testimonials" className="py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-          Insights from Top Achievers
-          </h2>
-          <p className="mt-6 leading-7 text-white text-xl">
-          We love seeing how innovators disrupt the market. Instead of sharing opinions about us, here are their missions, both past and present, which we proudly support and contribute to.
-          </p>
-        </div>
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 sm:gap-0 sm:gap-y-8 lg:gap-8 gap-8 text-sm leading-6 text-white sm:mt-20 sm:grid-cols-0 lg:grid-cols-3 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
-          <figure className="bg-secondary-400 pb-2 shadow-lg ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1 rounded-tr-ct rounded-bl-ct text-left border border-primary-500/20 transform transition-transform duration-500 hover:-translate-y-3">
-            <blockquote className="p-6 text-lg font-medium leading-7 tracking-tight text-white sm:text-xl sm:leading-8">
-              <p>{`“${featuredTestimonial.body}”`}</p>
-            </blockquote>
-            <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
-              <div className="flex-auto">
-                <div className="font-semibold text-primary-500">{featuredTestimonial.author.name}</div>
-                <div className="text-white">{`@${featuredTestimonial.author.handle}`}</div>
-              </div>
-              <Image
-                className="h-8 w-auto flex-none transform transition-transform duration-500 hover:scale-105"
-                src={featuredTestimonial.author.logoUrl}
-                alt=""
-                width={32}
-                height={32}
-              />
-            </figcaption>
-          </figure>
-          {testimonials.map((columnGroup, columnGroupIdx) => (
-            <div key={columnGroupIdx} className="space-y-8 xl:contents xl:space-y-0">
-              {columnGroup.map((column, columnIdx) => (
-                <div
-                  key={columnIdx}
-                  className={classNames(
-                    (columnGroupIdx === 0 && columnIdx === 0) ||
-                    (columnGroupIdx === testimonials.length - 1 && columnIdx === columnGroup.length - 1)
-                      ? 'xl:row-span-2'
-                      : 'xl:row-start-1',
-                    'space-y-8 text-left'
-                  )}
-                >
-                  {column.map((testimonial) => (
-                    <figure
-                      key={testimonial.author.handle}
-                      className="p-6 shadow-lg ring-1 ring-gray-900/5 rounded-tr-ct rounded-bl-ct bg-secondary-400 text-left border border-primary-500/20 transform transition-transform duration-500 hover:-translate-y-3"
-                    >
-                      <blockquote className="text-white font-semibold">
-                        <p>{`“${testimonial.body}”`}</p>
-                      </blockquote>
-                      <figcaption className="mt-6 flex items-center gap-x-4">
-                        <div>
-                          <div className="font-semibold text-primary-500">{testimonial.author.name}</div>
-                          <div className="text-white">{`@${testimonial.author.handle}`}</div>
-                        </div>
-                      </figcaption>
-                    </figure>
-                  ))}
+        <div className="px-6 mx-auto max-w-7xl lg:px-8">
+          <div className="max-w-2xl mx-auto lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
+              Insights from Top Achievers
+            </h2>
+            <p className="mt-6 text-xl leading-7 text-white">
+              We love seeing how innovators disrupt the market. Instead of
+              sharing opinions about us, here are their missions, both past and
+              present, which we proudly support and contribute to.
+            </p>
+          </div>
+          <div className="grid max-w-2xl grid-cols-1 gap-8 mx-auto mt-16 text-sm leading-6 text-white sm:gap-0 sm:gap-y-8 lg:gap-8 sm:mt-20 sm:grid-cols-0 lg:grid-cols-3 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
+            <figure className="pb-2 text-left transition-transform duration-500 transform border shadow-lg bg-secondary-400 ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1 rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-3">
+              <blockquote className="p-6 text-lg font-medium leading-7 tracking-tight text-white sm:text-xl sm:leading-8">
+                <p>{`“${featuredTestimonial.body}”`}</p>
+              </blockquote>
+              <figcaption className="flex flex-wrap items-center px-6 py-4 border-t gap-x-4 gap-y-4 border-gray-900/10 sm:flex-nowrap">
+                <div className="flex-auto">
+                  <div className="font-semibold text-primary-500">
+                    {featuredTestimonial.author.name}
+                  </div>
+                  <div className="text-white">{`@${featuredTestimonial.author.handle}`}</div>
                 </div>
-              ))}
-            </div>
-          ))}
+                <Image
+                  className="flex-none w-auto h-8 transition-transform duration-500 transform hover:scale-105"
+                  src={featuredTestimonial.author.logoUrl}
+                  alt=""
+                  width={32}
+                  height={32}
+                />
+              </figcaption>
+            </figure>
+            {testimonials.map((columnGroup, columnGroupIdx) => (
+              <div
+                key={columnGroupIdx}
+                className="space-y-8 xl:contents xl:space-y-0"
+              >
+                {columnGroup.map((column, columnIdx) => (
+                  <div
+                    key={columnIdx}
+                    className={classNames(
+                      (columnGroupIdx === 0 && columnIdx === 0) ||
+                        (columnGroupIdx === testimonials.length - 1 &&
+                          columnIdx === columnGroup.length - 1)
+                        ? "xl:row-span-2"
+                        : "xl:row-start-1",
+                      "space-y-8 text-left"
+                    )}
+                  >
+                    {column.map((testimonial) => (
+                      <figure
+                        key={testimonial.author.handle}
+                        className="p-6 text-left transition-transform duration-500 transform border shadow-lg ring-1 ring-gray-900/5 rounded-tr-ct rounded-bl-ct bg-secondary-400 border-primary-500/20 hover:-translate-y-3"
+                      >
+                        <blockquote className="font-semibold text-white">
+                          <p>{`“${testimonial.body}”`}</p>
+                        </blockquote>
+                        <figcaption className="flex items-center mt-6 gap-x-4">
+                          <div>
+                            <div className="font-semibold text-primary-500">
+                              {testimonial.author.name}
+                            </div>
+                            <div className="text-white">{`@${testimonial.author.handle}`}</div>
+                          </div>
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
       </section>
     </div>
   );
