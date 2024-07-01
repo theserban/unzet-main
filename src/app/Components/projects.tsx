@@ -219,7 +219,7 @@ export default function Projects() {
                         width={700}
                         height={400}
                         loading="eager"
-                        priority={idx === 0}
+                        priority={idx === 0 || idx === 1 || idx === 2} // Priority for the first three images
                       />
                       <div
                         className="absolute p-2 text-2xl text-white transition-opacity duration-300 bg-black bg-opacity-50 opacity-0 cursor-pointer top-2 right-2 rounded-tl-xl rounded-br-xl group-hover:opacity-100"
