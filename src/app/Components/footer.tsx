@@ -64,7 +64,7 @@ const Card = ({
 
   return (
     <div className="p-6 pb-8 text-white transition-transform duration-500 border shadow-lg bg-secondary-400 rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-1">
-      <h2 className="mb-2 text-lg font-bold ">{title}</h2>
+      {title && <h2 className="mb-2 text-lg font-bold">{title}</h2>}
       <ul className="space-y-2">
         {links.map((link, index) => (
           <li key={index} className="flex items-center space-x-2">
@@ -169,7 +169,7 @@ export default function Footer() {
       <div className="relative py-16 pb-20 overflow-hidden isolate">
         <div className="px-6 mx-auto max-w-7xl lg:px-8">
           <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-            <div className="max-w-xl lg:max-w-lg">
+            <div className="max-w-xl text-white lg:max-w-lg">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Play your cards right today,
                 <br />
@@ -193,68 +193,66 @@ export default function Footer() {
                 </button>
               </div>
             </div>
-            <div className="relative">
-              <dl className="relative z-10 grid grid-cols-1 text-lg gap-x-8 gap-y-8 sm:grid-cols-2 lg:pt-2">
-                <Card
-                  title="Menu"
-                  links={[
-                    {
-                      name: "Ace Level Projects",
-                      href: "#projects",
-                      icon: ClipboardIcon,
-                    },
-                    {
-                      name: "What Clients Say",
-                      href: "#testimonials",
-                      icon: UserIcon,
-                    },
-                    {
-                      name: "How Does It Works",
-                      href: "#how",
-                      icon: ArrowPathRoundedSquareIcon,
-                    },
-                    {
-                      name: "Product Laboratory",
-                      href: "#products",
-                      icon: SwatchIcon,
-                    },
-                    {
-                      name: "What is The Cost",
-                      href: "#pricing",
-                      icon: CreditCardIcon,
-                    },
-                  ]}
-                />
-                <Card
-                  title="Contact"
-                  links={[
-                    {
-                      name: "we@unzet.com",
-                      href: "mailto:we@unzet.com",
-                      icon: EnvelopeIcon,
-                    },
-                    {
-                      name: "+40 (750) 460 150",
-                      href: "tel:+40750460150",
-                      icon: PhoneIcon,
-                    },
-                    {
-                      name: "9:00 to 18:00 GMT+2",
-                      icon: ClockIcon,
-                      "data-cal-namespace": "",
-                      "data-cal-link": "weunzet/30min",
-                      "data-cal-config": '{"layout":"month_view"}',
-                      style: { cursor: "pointer" },
-                    },
-                    {
-                      name: "Bucharest, Romania",
-                      href: "https://www.google.com/maps/place/Unzet/@45.9159548,22.3813054,7z/data=!3m1!4b1!4m6!3m5!1s0xab831d8ce9074bd1:0x8e4e7886695442aa!8m2!3d45.9425072!4d25.0201084!16s%2Fg%2F11w1zh9zhq?entry=ttu",
-                      icon: MapPinIcon,
-                    },
-                  ]}
-                  socials={socials}
-                />
-              </dl>
+            <div className="relative grid grid-cols-1 text-lg gap-x-8 gap-y-8 sm:grid-cols-2 lg:pt-2">
+              <Card
+                title="Menu"
+                links={[
+                  {
+                    name: "Ace Level Projects",
+                    href: "#projects",
+                    icon: ClipboardIcon,
+                  },
+                  {
+                    name: "What Clients Say",
+                    href: "#testimonials",
+                    icon: UserIcon,
+                  },
+                  {
+                    name: "How Does It Works",
+                    href: "#how",
+                    icon: ArrowPathRoundedSquareIcon,
+                  },
+                  {
+                    name: "Product Laboratory",
+                    href: "#products",
+                    icon: SwatchIcon,
+                  },
+                  {
+                    name: "What is The Cost",
+                    href: "#pricing",
+                    icon: CreditCardIcon,
+                  },
+                ]}
+              />
+              <Card
+                title="Contact"
+                links={[
+                  {
+                    name: "we@unzet.com",
+                    href: "mailto:we@unzet.com",
+                    icon: EnvelopeIcon,
+                  },
+                  {
+                    name: "+40 (750) 460 150",
+                    href: "tel:+40750460150",
+                    icon: PhoneIcon,
+                  },
+                  {
+                    name: "9:00 to 18:00 GMT+2",
+                    icon: ClockIcon,
+                    "data-cal-namespace": "",
+                    "data-cal-link": "weunzet/30min",
+                    "data-cal-config": '{"layout":"month_view"}',
+                    style: { cursor: "pointer" },
+                  },
+                  {
+                    name: "Bucharest, Romania",
+                    href: "https://www.google.com/maps/place/Unzet/@45.9159548,22.3813054,7z/data=!3m1!4b1!4m6!3m5!1s0xab831d8ce9074bd1:0x8e4e7886695442aa!8m2!3d45.9425072!4d25.0201084!16s%2Fg%2F11w1zh9zhq?entry=ttu",
+                    icon: MapPinIcon,
+                  },
+                ]}
+                socials={socials}
+              />
             </div>
           </div>
         </div>
@@ -265,7 +263,7 @@ export default function Footer() {
       </div>
       <div className="px-6 py-6 mx-auto border-t shadow-lg max-w-7xl md:flex md:items-center md:justify-between lg:px-8 border-primary-500/20">
         <div className="md:order-1 md:mt-0">
-          <p className="text-sm leading-5 text-left">
+          <p className="text-sm leading-5 text-left text-white">
             &copy; {currentYear} Unzet, All Rights Reserved <u></u>
           </p>
         </div>
