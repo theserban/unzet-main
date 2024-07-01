@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 interface ProductsProps {
   onTryExperienceClick: () => void;
@@ -9,19 +9,21 @@ export default function Products({ onTryExperienceClick }: ProductsProps) {
   return (
     <section id="products">
       <div className="bg-black">
-        <div className="mx-auto max-w-7xl py-24 px-6 lg:px-8 sm:py-32">
-          <div className="relative lg:flex lg:gap-x-20 lg:px-12 lg:pt-0 px-6 pt-8 sm:px-12 sm:pt-4 isolate overflow-hidden bg-secondary-400 rounded-tl-ct rounded-br-ct border border-primary-500/40 shadow-2xl transform transition-transform duration-500 hover:-translate-y-1">
-            <div className="max-w-md sm:mx-0 sm:flex-auto sm:py-16 text-left">
+        <div className="px-6 py-24 mx-auto max-w-7xl lg:px-8 sm:py-32">
+          <div className="relative px-6 pt-8 overflow-hidden transition-transform duration-500 transform border shadow-2xl lg:flex lg:gap-x-20 lg:px-12 lg:pt-0 sm:px-12 sm:pt-4 isolate bg-secondary-400 rounded-tl-ct rounded-br-ct border-primary-500/40 hover:-translate-y-1">
+            <div className="max-w-md text-left sm:mx-0 sm:flex-auto sm:py-16">
               <h2 className="text-3xl font-bold tracking-tight text-primary-500">
                 GuidedOn - Always Pitch
               </h2>
               <p className="mt-6 text-base leading-7 text-white sm:text-xl">
-                Our first product, designed specifically for founders, it ensures you can pitch your business anytime someone visits your website.
+                This product, designed specifically for founders, it ensures you
+                can pitch your business anytime someone visits your website.
               </p>
               <p className="mt-6 text-base leading-7 text-white sm:text-xl">
-                Take advantage of every visitor with an accessible prerecorded pitch that guides them.
+                Take advantage of every visitor with an accessible prerecorded
+                pitch that guides them, and the best part - it is open source!
               </p>
-              <div className="mt-10 flex items-center gap-x-6">
+              <div className="flex items-center mt-10 gap-x-6">
                 <button
                   className="cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-xs font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
                   onClick={onTryExperienceClick}
@@ -29,9 +31,15 @@ export default function Products({ onTryExperienceClick }: ProductsProps) {
                   Try the Experience
                 </button>
                 <button
-                  className="cursor-pointer text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105"
+                  className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/theserban/guidedon",
+                      "_blank"
+                    )
+                  }
                 >
-                  Soon <span aria-hidden="true">→</span>
+                  Github <span aria-hidden="true">→</span>
                 </button>
               </div>
             </div>

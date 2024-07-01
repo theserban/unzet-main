@@ -12,15 +12,27 @@ import {
   UserIcon,
   SwatchIcon,
 } from "@heroicons/react/24/outline";
-import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import { LinkedinLogo, InstagramLogo } from "phosphor-react";
 
 interface Link {
   name: string;
-  href: string;
+  href?: string;
   icon: React.ElementType<React.SVGProps<SVGSVGElement>>;
+  "data-cal-namespace"?: string;
+  "data-cal-link"?: string;
+  "data-cal-config"?: string;
+  style?: React.CSSProperties;
 }
 
-const Card = ({ title, links, socials }: { title: string; links: Link[]; socials?: { [key: string]: string } }) => {
+const Card = ({
+  title,
+  links,
+  socials,
+}: {
+  title: string;
+  links: Link[];
+  socials?: { [key: string]: string };
+}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -28,7 +40,7 @@ const Card = ({ title, links, socials }: { title: string; links: Link[]; socials
   const handleAllClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     if (socials) {
-      Object.values(socials).forEach((url) => window.open(url, '_blank'));
+      Object.values(socials).forEach((url) => window.open(url, "_blank"));
     }
   };
 
@@ -51,16 +63,28 @@ const Card = ({ title, links, socials }: { title: string; links: Link[]; socials
   }, [dropdownRef, buttonRef]);
 
   return (
-    <div className="bg-secondary-400 text-white p-6 rounded-tr-ct pb-8 rounded-bl-ct border border-primary-500/20 shadow-lg transition-transform duration-500 hover:-translate-y-1">
-      <h2 className="text-lg font-bold mb-2 ">{title}</h2>
+    <div className="p-6 pb-8 text-white transition-transform duration-500 border shadow-lg bg-secondary-400 rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-1">
+      <h2 className="mb-2 text-lg font-bold ">{title}</h2>
       <ul className="space-y-2">
         {links.map((link, index) => (
           <li key={index} className="flex items-center space-x-2">
             <a
-              href={link.href}
-              className="flex items-center space-x-2 text-md font-regular leading-6 text-white hover:text-gray-200 transition-transform duration-500 hover:scale-105"
+              href={link.href || "#"}
+              onClick={(e) => {
+                if (!link.href) e.preventDefault();
+              }}
+              className="flex items-center space-x-2 leading-6 text-white transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105"
+              {...(link.name === "9:00 to 18:00 GMT+2" && {
+                "data-cal-namespace": "",
+                "data-cal-link": "weunzet/30min",
+                "data-cal-config": '{"layout":"month_view"}',
+                style: { cursor: "pointer" },
+              })}
             >
-              <link.icon className="h-5 w-5 text-primary-500" aria-hidden="true" />
+              <link.icon
+                className="w-5 h-5 text-primary-500"
+                aria-hidden="true"
+              />
               <span>{link.name}</span>
             </a>
           </li>
@@ -70,21 +94,30 @@ const Card = ({ title, links, socials }: { title: string; links: Link[]; socials
             <button
               ref={buttonRef}
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex items-center space-x-2 text-md font-regular leading-6 text-white hover:text-gray-200 transition-transform duration-500 hover:scale-105"
+              className="flex items-center space-x-2 leading-6 text-white transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105"
             >
-              <AtSymbolIcon className="h-5 w-5 text-primary-500" aria-hidden="true" />
+              <AtSymbolIcon
+                className="w-5 h-5 text-primary-500"
+                aria-hidden="true"
+              />
               <span>weunzet on socials</span>
             </button>
             {dropdownOpen && (
-              <div ref={dropdownRef} className="absolute bottom-8 -left-3 bg-secondary-400 text-white border border-primary-500/20 shadow-lg rounded-tl-xl rounded-br-xl p-4 z-10 md:top-auto md:bottom-8 transition-transform duration-500 hover:-translate-y-1">
+              <div
+                ref={dropdownRef}
+                className="absolute z-10 p-4 text-white transition-transform duration-500 border shadow-lg bottom-8 -left-3 bg-secondary-400 border-primary-500/20 rounded-tl-xl rounded-br-xl md:top-auto md:bottom-8 hover:-translate-y-1"
+              >
                 <ul>
                   <li>
                     <a
                       href="#"
                       onClick={handleAllClick}
-                      className="flex items-center space-x-2 text-md font-regular leading-6 hover:text-gray-200 transition-transform duration-500 hover:scale-105"
+                      className="flex items-center space-x-2 leading-6 transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105"
                     >
-                      <UserGroupIcon className="h-5 w-5 text-primary-500" aria-hidden="true" />
+                      <UserGroupIcon
+                        className="w-5 h-5 text-primary-500"
+                        aria-hidden="true"
+                      />
                       <span>All</span>
                     </a>
                   </li>
@@ -94,10 +127,21 @@ const Card = ({ title, links, socials }: { title: string; links: Link[]; socials
                         href={socials[key]}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-2 text-md font-regular leading-6 hover:text-gray-200 transition-transform duration-500 hover:scale-105"
+                        className="flex items-center space-x-2 leading-6 transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105"
                       >
-                        {key === 'LinkedIn' && <FaLinkedin className="h-5 w-5 text-primary-500" aria-hidden="true" />}
-                        {key === 'Instagram' && <FaInstagram className="h-5 w-5 text-primary-500" aria-hidden="true" />}
+                        {key === "LinkedIn" && (
+                          <LinkedinLogo
+                            size={20}
+                            className="w-5 h-5 text-primary-500"
+                            aria-hidden="true"
+                          />
+                        )}
+                        {key === "Instagram" && (
+                          <InstagramLogo
+                            className="w-5 h-5 text-primary-500"
+                            aria-hidden="true"
+                          />
+                        )}
                         <span>{key}</span>
                       </a>
                     </li>
@@ -121,10 +165,10 @@ const currentYear = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <div className="bg-secondary-400 rounded-tr-ct border-t border-primary-500/20 relative">
-      <div className="relative isolate overflow-hidden py-16 pb-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+    <div className="relative border-t bg-secondary-400 rounded-tr-ct border-primary-500/20">
+      <div className="relative py-16 pb-20 overflow-hidden isolate">
+        <div className="px-6 mx-auto max-w-7xl lg:px-8">
+          <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
             <div className="max-w-xl lg:max-w-lg">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Play your cards right today,
@@ -132,9 +176,10 @@ export default function Footer() {
                 <span className="text-primary-500">And we start tomorrow!</span>
               </h2>
               <p className="mt-4 text-xl leading-8 text-white">
-                Whether you are sure you want to collaborate with us or just want to exchange resources, let&apos;s meet.
+                Whether you are sure you want to collaborate with us or just
+                want to exchange resources, let&apos;s meet.
               </p>
-              <div className="mt-8 flex items-center gap-x-6">
+              <div className="flex items-center mt-8 gap-x-6">
                 <button
                   data-cal-namespace=""
                   data-cal-link="weunzet/30min"
@@ -143,33 +188,69 @@ export default function Footer() {
                 >
                   Book Now
                 </button>
-                <a
-                  href="#"
-                  className="text-sm font-semibold leading-6 text-white hover:text-gray-200 transform transition-transform duration-500 hover:scale-105"
-                >
-                  Pitch Deck <span aria-hidden="true">→</span>
-                </a>
+                <button className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105">
+                  Deck Soon <span aria-hidden="true">→</span>
+                </button>
               </div>
             </div>
             <div className="relative">
-              <dl className="text-lg grid grid-cols-1 flex gap-x-8 gap-y-8 sm:grid-cols-2 lg:pt-2 relative z-10">
+              <dl className="relative z-10 grid grid-cols-1 text-lg gap-x-8 gap-y-8 sm:grid-cols-2 lg:pt-2">
                 <Card
                   title="Menu"
                   links={[
-                    { name: "Ace Level Projects", href: "#projects", icon: ClipboardIcon },
-                    { name: "What Clients Say", href: "#testimonials", icon: UserIcon },
-                    { name: "How Does It Works", href: "#how", icon: ArrowPathRoundedSquareIcon },
-                    { name: "Product Laboratory", href: "#products", icon: SwatchIcon },
-                    { name: "What is The Cost", href: "#pricing", icon: CreditCardIcon },
+                    {
+                      name: "Ace Level Projects",
+                      href: "#projects",
+                      icon: ClipboardIcon,
+                    },
+                    {
+                      name: "What Clients Say",
+                      href: "#testimonials",
+                      icon: UserIcon,
+                    },
+                    {
+                      name: "How Does It Works",
+                      href: "#how",
+                      icon: ArrowPathRoundedSquareIcon,
+                    },
+                    {
+                      name: "Product Laboratory",
+                      href: "#products",
+                      icon: SwatchIcon,
+                    },
+                    {
+                      name: "What is The Cost",
+                      href: "#pricing",
+                      icon: CreditCardIcon,
+                    },
                   ]}
                 />
                 <Card
                   title="Contact"
                   links={[
-                    { name: "we@unzet.com", href: "mailto:we@unzet.com", icon: EnvelopeIcon },
-                    { name: "+40 (750) 460 150", href: "tel:+40750460150", icon: PhoneIcon },
-                    { name: "9:00 to 18:00 GMT+2", href: "#", icon: ClockIcon },
-                    { name: "Bucharest, Romania", href: "#", icon: MapPinIcon },
+                    {
+                      name: "we@unzet.com",
+                      href: "mailto:we@unzet.com",
+                      icon: EnvelopeIcon,
+                    },
+                    {
+                      name: "+40 (750) 460 150",
+                      href: "tel:+40750460150",
+                      icon: PhoneIcon,
+                    },
+                    {
+                      name: "9:00 to 18:00 GMT+2",
+                      icon: ClockIcon,
+                      "data-cal-namespace": "",
+                      "data-cal-link": "weunzet/30min",
+                      "data-cal-config": '{"layout":"month_view"}',
+                      style: { cursor: "pointer" },
+                    },
+                    {
+                      name: "Bucharest, Romania",
+                      href: "https://www.google.com/maps/place/Unzet/@45.9159548,22.3813054,7z/data=!3m1!4b1!4m6!3m5!1s0xab831d8ce9074bd1:0x8e4e7886695442aa!8m2!3d45.9425072!4d25.0201084!16s%2Fg%2F11w1zh9zhq?entry=ttu",
+                      icon: MapPinIcon,
+                    },
                   ]}
                   socials={socials}
                 />
@@ -178,22 +259,14 @@ export default function Footer() {
           </div>
         </div>
         <div
-          className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
+          className="absolute top-0 -translate-x-1/2 left-1/2 -z-10 blur-3xl xl:-top-6"
           aria-hidden="true"
         ></div>
       </div>
-      <div className="mx-auto max-w-7xl px-6 py-6 md:flex md:items-center md:justify-between lg:px-8 border-t border-primary-500/20 shadow-lg">
+      <div className="px-6 py-6 mx-auto border-t shadow-lg max-w-7xl md:flex md:items-center md:justify-between lg:px-8 border-primary-500/20">
         <div className="md:order-1 md:mt-0">
-          <p className="text-left text-sm leading-5">
-            &copy; {currentYear} Unzet, All rights - {" "}
-            <u>
-              <a
-                className="transform transition-transform duration-500 hover:scale-105 inline-block hover:text-gray-200"
-                href="https://drive.google.com/uc?export=download&id=1kEI0rRBbqS2LrOIxJRVQP0MeH_UCQYyV"
-              >
-                Download Presskit
-              </a>
-            </u>
+          <p className="text-sm leading-5 text-left">
+            &copy; {currentYear} Unzet, All Rights Reserved <u></u>
           </p>
         </div>
       </div>

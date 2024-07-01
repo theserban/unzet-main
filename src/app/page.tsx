@@ -44,7 +44,7 @@ export default function Page() {
   return (
     <div className="relative">
       {isMounted && (
-        <div className="fixed bottom-0 left-0 mb-4 ml-4 z-50">
+        <div className="fixed bottom-0 left-0 z-50 mb-4 ml-4">
           <Modal 
             onClose={handleCloseModal} 
             isPlaying={isPlaying} 
