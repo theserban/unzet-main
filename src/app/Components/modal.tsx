@@ -150,7 +150,7 @@ export default function Modal({
           }
         }
       });
-      return nearestStamp.time;
+      return nearestStamp.time ?? 0;
     },
     [scrollStamps]
   );
@@ -242,13 +242,13 @@ export default function Modal({
           key={index}
           className="absolute w-0.5 m-6 h-3 ml-1 bg-primary-900/40 z-20 rounded-full transform -translate-y-full cursor-pointer"
           style={{
-            left: `${(stamp.time / audioDuration) * 100}%`,
+            left: `${(stamp.time ?? 0 / audioDuration) * 100}%`,
             top: "0%",
           }}
           onClick={() => {
             if (audioRef.current) {
-              audioRef.current.currentTime = stamp.time;
-              setCurrentPlaybackTime(stamp.time);
+              audioRef.current.currentTime = stamp.time!;
+              setCurrentPlaybackTime(stamp.time!);
             }
           }}
           onMouseEnter={() => setTooltipVisible(index)}
