@@ -24,7 +24,7 @@ export default function Stats() {
               <div className="relative flex flex-col-reverse justify-between p-8 transition-transform duration-500 transform border gap-x-16 gap-y-8 bg-secondary-400 rounded-tl-ct rounded-br-ct sm:w-3/4 sm:max-w-md sm:flex-row-reverse sm:items-end lg:w-72 lg:max-w-none lg:flex-none lg:flex-col lg:items-start border-primary-500/20 hover:-translate-y-3">
                 <Link
                   href="https://www.forrester.com/report/the-six-steps-for-justifying-better-ux/RES117708"
-                  className="absolute text-white top-2 right-2 hover:text-primary-500"
+                  className="absolute text-white top-2 right-2 hover:text-primary-500 transition-transform duration-500 transform hover:scale-110"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Read the Forrester report on better UX"
@@ -46,7 +46,7 @@ export default function Stats() {
               <div className="relative flex flex-col-reverse justify-between p-8 transition-transform duration-500 transform border gap-x-16 gap-y-8 rounded-tl-ct rounded-br-ct bg-secondary-400 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28 border-primary-500/20 hover:-translate-y-3">
                 <Link
                   href="https://www.ninetwothree.co/blog/how-long-do-startups-take-to-become-profitable"
-                  className="absolute text-white top-2 right-2 hover:text-primary-500"
+                  className="absolute text-white top-2 right-2 hover:text-primary-500 transition-transform duration-500 transform hover:scale-110"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Read the blog post on startup profitability"
@@ -70,7 +70,7 @@ export default function Stats() {
               <div className="relative flex flex-col-reverse justify-between p-8 mb-4 transition-transform duration-500 transform border gap-x-16 gap-y-8 sm:mb-0 rounded-tl-ct rounded-br-ct bg-secondary-400 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44 border-primary-500/20 hover:-translate-y-3">
                 <Link
                   href="https://startupgenome.com/article/the-state-of-the-global-startup-economy"
-                  className="absolute text-white top-2 right-2 hover:text-primary-500"
+                  className="absolute text-white top-2 right-2 hover:text-primary-500 transition-transform duration-500 transform hover:scale-110"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Read the report on the global startup economy"

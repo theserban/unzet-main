@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import Slider from "./Slider";
 import {
   PlayIcon,
   PauseIcon,
   ArrowPathIcon,
   ArrowRightIcon,
-  InformationCircleIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
@@ -137,20 +137,22 @@ export default function Modal({
     }
   }, [scrollStamps, smoothScrollTo, lastScrollStampId]);
 
-  const snapToNearestScrollStamp = useCallback(
+  const snapToClosestScrollStamp = useCallback(
     (time: number) => {
-      let nearestStamp = scrollStamps[0];
-      let minDifference = Math.abs(time - scrollStamps[0].time!);
-      scrollStamps.forEach((stamp) => {
-        if (stamp.time !== null) {
-          const difference = Math.abs(time - stamp.time);
-          if (difference < minDifference) {
-            nearestStamp = stamp;
-            minDifference = difference;
-          }
+      if (scrollStamps.length === 0) return time;
+
+      let closest = scrollStamps[0].time;
+      let minDiff = Math.abs(time - closest);
+
+      for (let i = 1; i < scrollStamps.length; i++) {
+        const diff = Math.abs(time - scrollStamps[i].time);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closest = scrollStamps[i].time;
         }
-      });
-      return nearestStamp.time;
+      }
+
+      return closest;
     },
     [scrollStamps]
   );
@@ -195,7 +197,7 @@ export default function Modal({
         audioRef.current.pause();
         setIsPlaying(false);
       } else {
-        const snapTime = snapToNearestScrollStamp(currentPlaybackTime);
+        const snapTime = snapToClosestScrollStamp(currentPlaybackTime);
         audioRef.current.currentTime = snapTime;
         setCurrentPlaybackTime(snapTime);
         audioRef.current.play();
@@ -216,9 +218,8 @@ export default function Modal({
     setShowMainModal(true);
   };
 
-  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newTime = parseFloat(e.target.value);
-    const snapTime = snapToNearestScrollStamp(newTime);
+  const handleSliderChange = (newTime) => {
+    const snapTime = snapToClosestScrollStamp(newTime);
     setCurrentPlaybackTime(snapTime);
     if (audioRef.current) {
       audioRef.current.currentTime = snapTime;
@@ -240,7 +241,7 @@ export default function Modal({
       .map((stamp, index) => (
         <div
           key={index}
-          className="absolute w-0.5 m-6 h-3 ml-1 bg-primary-900/40 z-20 rounded-full transform -translate-y-full cursor-pointer"
+          className="absolute w-0.5 m-3 h-3 ml-1 bg-primary-900/40 z-20 rounded-full transform -translate-y-full cursor-pointer"
           style={{
             left: `${(stamp.time / audioDuration) * 100}%`,
             top: "0%",
@@ -271,7 +272,7 @@ export default function Modal({
       const savedPlaybackTime = localStorage.getItem("currentPlaybackTime");
       if (savedPlaybackTime && audioRef.current) {
         const currentTime = parseFloat(savedPlaybackTime);
-        const snapTime = snapToNearestScrollStamp(currentTime);
+        const snapTime = snapToClosestScrollStamp(currentTime);
         audioRef.current.currentTime = snapTime;
         setCurrentPlaybackTime(snapTime);
 
@@ -283,7 +284,7 @@ export default function Modal({
         });
       }
     }
-  }, [showMainModal, scrollStamps, smoothScrollTo, snapToNearestScrollStamp]);
+  }, [showMainModal, scrollStamps, smoothScrollTo, snapToClosestScrollStamp]);
 
   return (
     <div style={{ zIndex: 1000 }}>
@@ -322,16 +323,13 @@ export default function Modal({
               <div className="flex flex-col items-center w-full space-y-4">
                 {showControls && (
                   <div className="w-full -mt-2 relative">
-                    <div className="relative w-full h-2">
-                      {renderScrollStampDots()}
-                    </div>
-                    <input
-                      type="range"
-                      min="0"
+                    <Slider
+                      min={0}
                       max={audioDuration}
                       value={currentPlaybackTime}
                       onChange={handleSliderChange}
-                      className="w-full border range range-xs range-primary border-primary-500/20 custom-range relative z-10"
+                      renderScrollStampDots={renderScrollStampDots}
+                      scrollStamps={scrollStamps}
                     />
                   </div>
                 )}

@@ -147,7 +147,7 @@ export default function Hero() {
 
         <section id="cloud">
           <div className="py-16 bg-primary-black sm:py-24">
-            <div className="px-6 mx-auto max-w-7xl lg:px-8">
+            <div className="px-6 mx-auto max-w-7xl lg:px-0">
               <div className="max-w-2xl mx-auto lg:max-w-none">
                 <h2 className="text-lg font-semibold leading-8 text-center text-primary-500">
                   Growth Hacked

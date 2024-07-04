@@ -4,7 +4,7 @@ import {
   PauseIcon,
   ArrowPathIcon,
   ArrowRightIcon,
-  InformationCircleIcon,
+  ChevronUpIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
@@ -48,8 +48,9 @@ export default function Modal({
     null
   );
   const [tooltipVisible, setTooltipVisible] = useState<number | null>(null);
+  const [showVideo, setShowVideo] = useState(false);
   const scrollStampRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     const savedPlaybackTime = localStorage.getItem("currentPlaybackTime");
@@ -94,12 +95,12 @@ export default function Modal({
   }, [showControls]);
 
   const handleLoadedMetadata = useCallback(() => {
-    if (audioRef.current) {
-      setAudioDuration(audioRef.current.duration);
+    if (videoRef.current) {
+      setAudioDuration(videoRef.current.duration);
       setScrollStamps((prevStamps) => {
         const newStamps = prevStamps.map((stamp) =>
           stamp.id === "footer"
-            ? { ...stamp, time: audioRef.current!.duration }
+            ? { ...stamp, time: videoRef.current!.duration }
             : stamp
         );
         return newStamps;
@@ -119,8 +120,8 @@ export default function Modal({
   }, []);
 
   const handleTimeUpdate = useCallback(() => {
-    if (audioRef.current) {
-      const currentTime = audioRef.current.currentTime;
+    if (videoRef.current) {
+      const currentTime = videoRef.current.currentTime;
       setCurrentPlaybackTime(currentTime);
       localStorage.setItem("currentPlaybackTime", currentTime.toString());
 
@@ -156,58 +157,56 @@ export default function Modal({
   );
 
   useEffect(() => {
-    const audio = audioRef.current;
-    if (audio) {
-      audio.addEventListener("loadedmetadata", handleLoadedMetadata);
-      audio.addEventListener("timeupdate", handleTimeUpdate);
+    const video = videoRef.current;
+    if (video) {
+      video.addEventListener("loadedmetadata", handleLoadedMetadata);
+      video.addEventListener("timeupdate", handleTimeUpdate);
     }
 
     return () => {
-      if (audio) {
-        audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
-        audio.removeEventListener("timeupdate", handleTimeUpdate);
+      if (video) {
+        video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+        video.removeEventListener("timeupdate", handleTimeUpdate);
       }
     };
   }, [handleLoadedMetadata, handleTimeUpdate]);
 
   useEffect(() => {
-    const audio = audioRef.current;
-    if (audio) {
+    const video = videoRef.current;
+    if (video) {
       if (isPlaying) {
-        audio.play();
+        video.play();
       } else {
-        audio.pause();
+        video.pause();
       }
     }
   }, [isPlaying]);
 
   const handleGuidedPitchClick = () => {
     setShowControls(true);
-    if (audioRef.current) {
-      audioRef.current.play();
+    if (videoRef.current) {
+      videoRef.current.play();
       setIsPlaying(true);
     }
   };
 
   const handlePlayPauseClick = () => {
-    if (audioRef.current) {
+    if (videoRef.current) {
       if (isPlaying) {
-        audioRef.current.pause();
+        videoRef.current.pause();
         setIsPlaying(false);
       } else {
-        const snapTime = snapToNearestScrollStamp(currentPlaybackTime);
-        audioRef.current.currentTime = snapTime;
-        setCurrentPlaybackTime(snapTime);
-        audioRef.current.play();
+        videoRef.current.currentTime = currentPlaybackTime;
+        videoRef.current.play();
         setIsPlaying(true);
       }
     }
   };
 
   const handleReplayClick = () => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
       setIsPlaying(true);
     }
   };
@@ -220,16 +219,16 @@ export default function Modal({
     const newTime = parseFloat(e.target.value);
     const snapTime = snapToNearestScrollStamp(newTime);
     setCurrentPlaybackTime(snapTime);
-    if (audioRef.current) {
-      audioRef.current.currentTime = snapTime;
+    if (videoRef.current) {
+      videoRef.current.currentTime = snapTime;
     }
   };
 
   const handleArrowButtonClick = () => {
     setShowMainModal(false);
     localStorage.setItem("scrollStamps", JSON.stringify(scrollStamps));
-    if (audioRef.current) {
-      audioRef.current.pause();
+    if (videoRef.current) {
+      videoRef.current.pause();
       setIsPlaying(false);
     }
   };
@@ -246,8 +245,8 @@ export default function Modal({
             top: "0%",
           }}
           onClick={() => {
-            if (audioRef.current) {
-              audioRef.current.currentTime = stamp.time;
+            if (videoRef.current) {
+              videoRef.current.currentTime = stamp.time;
               setCurrentPlaybackTime(stamp.time);
             }
           }}
@@ -269,10 +268,10 @@ export default function Modal({
   useEffect(() => {
     if (!showMainModal) {
       const savedPlaybackTime = localStorage.getItem("currentPlaybackTime");
-      if (savedPlaybackTime && audioRef.current) {
+      if (savedPlaybackTime && videoRef.current) {
         const currentTime = parseFloat(savedPlaybackTime);
         const snapTime = snapToNearestScrollStamp(currentTime);
-        audioRef.current.currentTime = snapTime;
+        videoRef.current.currentTime = snapTime;
         setCurrentPlaybackTime(snapTime);
 
         scrollStamps.forEach(({ time, id }) => {
@@ -284,6 +283,10 @@ export default function Modal({
       }
     }
   }, [showMainModal, scrollStamps, smoothScrollTo, snapToNearestScrollStamp]);
+
+  const handleVideoToggle = () => {
+    setShowVideo(!showVideo);
+  };
 
   return (
     <div style={{ zIndex: 1000 }}>
@@ -320,6 +323,16 @@ export default function Modal({
               </>
             ) : (
               <div className="flex flex-col items-center w-full space-y-4">
+                <video
+                  ref={videoRef}
+                  src="/video/pitch.mp4"
+                  onTimeUpdate={() =>
+                    setCurrentPlaybackTime(videoRef.current?.currentTime || 0)
+                  }
+                  className={`bottom-32 left-6 end-auto max-w-sm border border-1 border-primary-500/20 mx-auto rounded-tr-ct rounded-bl-ct overflow-hidden transition-all duration-200 fixed ${
+                    showVideo ? "opacity-100 visible" : "opacity-0 invisible"
+                  }`}
+                ></video>
                 {showControls && (
                   <div className="w-full -mt-2 relative">
                     <div className="relative w-full h-2">
@@ -336,6 +349,20 @@ export default function Modal({
                   </div>
                 )}
                 <div className="flex flex-row space-x-4">
+                  {showControls && (
+                    <button
+                      className="flex items-center justify-center cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-xs font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
+                      onClick={handleVideoToggle}
+                    >
+                      <ChevronUpIcon className="w-5 h-5 md:mr-0" />
+                      <span
+                        className="hidden md:inline-block"
+                        style={{ width: "45px" }}
+                      >
+                        Video
+                      </span>
+                    </button>
+                  )}
                   <button
                     className="flex items-center justify-center cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-xs font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
                     onClick={handlePlayPauseClick}
@@ -380,13 +407,6 @@ export default function Modal({
             )}
           </div>
         </div>
-        <audio
-          ref={audioRef}
-          src="/audio/pitch.mp3"
-          onTimeUpdate={() =>
-            setCurrentPlaybackTime(audioRef.current?.currentTime || 0)
-          }
-        />
       </div>
       <div
         className={`fixed bottom-0 right-0 mb-6 mr-6 bg-primary-500 text-white p-4 rounded-tl-cts rounded-br-cts border border-primary-500/20 shadow-lg transition-all duration-200 ${

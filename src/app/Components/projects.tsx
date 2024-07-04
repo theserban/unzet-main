@@ -175,51 +175,79 @@ export default function Projects() {
       </svg>
       <section id="projects">
         <div className="py-16 overflow-hidden bg-black sm:py-24">
-          <div className="px-6 mx-auto max-w-7xl lg:flex lg:px-8">
-            <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-12 gap-y-8 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
-              <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-                <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-                  Ace Projects
-                </h2>
-                <p className="mt-6 text-xl leading-8 text-white">
-                  We have worked on many tech endeavors, including products,
-                  services, and open-source.
-                </p>
-                <p className="mt-6 text-xl leading-8 text-white">
-                  From branding to helping with product building, strategies,
-                  marketing, and more, we ensured everything needed for their
-                  growth.
-                </p>
-                <div className="flex items-center mt-10 gap-x-6">
-                  <button
-                    onClick={shuffleProjects}
-                    className="flex align-center justify-center cursor-pointer gap-x-1 rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
-                  >
-                    <ArrowsRightLeftIcon className="w-5 h-5" /> Shuffle Projects
-                  </button>
-                  <button
-                    onClick={() => scrollToSection("case")}
-                    className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
-                  >
-                    Case Study <span aria-hidden="true">→</span>
-                  </button>
+          <div className="px-6 mx-auto max-w-7xl lg:px-8">
+            <div className="grid max-w-2xl grid-cols-1 mx-auto lg:mx-0 lg:max-w-none">
+              <div className="flex flex-col gap-8 lg:flex-row">
+                <div className="lg:w-1/2">
+                  <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
+                    Ace Projects
+                  </h2>
+                  <p className="mt-6 mr-8 text-xl leading-8 text-white">
+                    We have worked on many tech endeavors, including products,
+                    services, and open-source.
+                  </p>
+                  <p className="mt-6 mr-8 text-xl leading-8 text-white">
+                    From branding to helping with product building, effective
+                    strategies, targeted marketing, and more, we ensured
+                    everything needed for their growth.
+                  </p>
+                  <div className="flex items-center mt-10 gap-x-6">
+                    <button
+                      onClick={shuffleProjects}
+                      className="flex align-center justify-center cursor-pointer gap-x-1 rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
+                    >
+                      <ArrowsRightLeftIcon className="w-5 h-5" /> Shuffle
+                      Projects
+                    </button>
+                    <button
+                      onClick={() => scrollToSection("case")}
+                      className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+                    >
+                      Case Study <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="lg:w-1/2">
+                  {activeCards.length > 0 && (
+                    <div className="relative group">
+                      <div className="transition-transform duration-500 transform hover:-translate-y-3">
+                        <Image
+                          src={cardData[activeCards[0]].src}
+                          alt={`Project ${cardData[activeCards[0]].title}`}
+                          className="aspect-[7/5] w-full rounded-tl-ct rounded-br-ct object-cover mb-2 border border-primary-500/20"
+                          width={700}
+                          height={500}
+                          loading="eager"
+                          priority
+                        />
+                        <div
+                          className="absolute p-2 text-2xl text-white transition-opacity duration-300 bg-black bg-opacity-50 opacity-0 cursor-pointer top-2 right-2 rounded-tl-xl rounded-br-xl group-hover:opacity-100"
+                          onClick={() => openModal(cardData[activeCards[0]])}
+                        >
+                          <MagnifyingGlassIcon className="w-6 h-6" />
+                        </div>
+                        <h3 className="mt-2 text-lg font-medium text-center text-white">
+                          {cardData[activeCards[0]].title}
+                        </h3>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:flex sm:flex-wrap sm:items-start sm:justify-end sm:gap-8 lg:contents">
-                {activeCards.map((cardIndex, idx) => (
-                  <div
-                    key={idx}
-                    className="relative w-full sm:w-full lg:ml-auto lg:w-auto lg:flex-none lg:self-end group"
-                  >
-                    <div className="mt-8 transition-transform duration-500 transform hover:-translate-y-3 sm:mt-12 lg:mt-0">
+
+              <div className="flex flex-col mt-8 gap-x-10 sm:flex-row">
+                {activeCards.slice(1, 3).map((cardIndex, idx) => (
+                  <div key={idx} className="relative group sm:w-1/2">
+                    <div className="mb-8 transition-transform duration-500 transform hover:-translate-y-3">
                       <Image
                         src={cardData[cardIndex].src}
                         alt={`Project ${cardData[cardIndex].title}`}
-                        className="aspect-[7/4] w-full sm:w-full lg:w-[38rem] max-w-none rounded-tl-ct rounded-br-ct object-cover mb-2 border border-primary-500/20"
+                        className="aspect-[7/5] w-full rounded-tl-ct rounded-br-ct object-cover mb-2 border border-primary-500/20"
                         width={700}
-                        height={400}
+                        height={500}
                         loading="eager"
-                        priority={idx === 0 || idx === 1 || idx === 2} // Priority for the first three images
+                        priority
                       />
                       <div
                         className="absolute p-2 text-2xl text-white transition-opacity duration-300 bg-black bg-opacity-50 opacity-0 cursor-pointer top-2 right-2 rounded-tl-xl rounded-br-xl group-hover:opacity-100"
@@ -227,7 +255,7 @@ export default function Projects() {
                       >
                         <MagnifyingGlassIcon className="w-6 h-6" />
                       </div>
-                      <h3 className="text-lg font-medium text-center text-white">
+                      <h3 className="mt-2 text-lg font-medium text-center text-white">
                         {cardData[cardIndex].title}
                       </h3>
                     </div>
@@ -279,7 +307,7 @@ export default function Projects() {
                       <MagnifyingGlassIcon className="w-6 h-6" />
                     </div>
                   </div>
-                  <dl className="grid grid-cols-2 gap-8 pt-10 mt-10 border-t border-primary-500/20 sm:grid-cols-4 lg:hidden">
+                  <dl className="grid grid-cols-2 pt-10 mt-10 border-t gap-x-8 border-primary-500/20 sm:grid-cols-4 lg:hidden">
                     {stats.map((stat, statIdx) => (
                       <div key={statIdx}>
                         <dt className="text-sm font-semibold leading-6 text-primary-500">
@@ -293,11 +321,11 @@ export default function Projects() {
                   </dl>
                 </div>
                 <div className="order-1 lg:order-2">
-                  <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
+                  <div className="text-base leading-7 text-gray-700 lg:max-w-xl">
                     <h1 className="mt-2 text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
                       Our time @ Teckstar <br /> Case Study
                     </h1>
-                    <div className="max-w-2xl">
+                    <div className="max-w-xl">
                       <p className="mt-6 text-xl leading-7 text-white">
                         Teckstar is a dynamic company specializing in matching
                         businesses with top-tier developers. When we partnered
