@@ -133,11 +133,11 @@ export default function How() {
               <div className="lg:pr-4">
                 <div className="max-w-2xl mx-auto lg:mx-0">
                   <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-                    The Royal Flush
+                    How We Roll
                   </h2>
                   <p className="mt-6 text-xl leading-7 text-white">
-                    Everything we do varies from project to project. As growth
-                    hackers, we must approach each initiative differently to
+                    Everything we do varies from project to project. As ace
+                    shapers, we must approach each initiative differently to
                     address its unique needs.
                   </p>
                 </div>
@@ -153,11 +153,10 @@ export default function How() {
                         aria-hidden="true"
                       />
                       <span>
-                        Whether it&prime;s for our product or a client&prime;s,
-                        we begin by identifying the specific needs at that stage
-                        of development. This could involve naming and branding
-                        at the outset, or implementing various strategies,
-                        starting ads and building pitches later on.
+                        We begin by identifying your specific needs at that
+                        stage of development. This could involve naming and
+                        branding at the outset, or implementing various
+                        strategies, starting ads and building pitches later on.
                       </span>
                     </li>
                     <li className="flex gap-x-3">
@@ -166,10 +165,9 @@ export default function How() {
                         aria-hidden="true"
                       />
                       <span>
-                        We focus on one task at a time, following a staged
-                        process where each loop is closed before starting the
-                        next. This approach requires close collaboration with
-                        the team and regular updates on the progress.
+                        Each task sprint is closed before starting the next one.
+                        This approach requires close collaboration with the team
+                        and regular updates on the progress.
                       </span>
                     </li>
                     <li className="flex gap-x-3">
@@ -178,11 +176,10 @@ export default function How() {
                         aria-hidden="true"
                       />
                       <span>
-                        We developed a system where each major task is
-                        represented as a card, like trading cards from
-                        childhood. Each card gives you power and brings you
-                        closer to success. For instance, having your branding in
-                        place makes marketing much easier.
+                        You should visualise achievements, that&apos;s why we
+                        have a system of cards representing each step you reach
+                        in your journey. For instance, having a great branding
+                        will get you the &quot;Brand Bound&quot; achievement.
                       </span>
                     </li>
                   </ul>
@@ -190,18 +187,17 @@ export default function How() {
                     className="mt-16 text-3xl font-bold tracking-tight text-primary-500"
                     id="how2"
                   >
-                    Be the Joker
+                    In change we trust
                   </h2>
                   <p className="mt-6 text-xl leading-7 text-white">
                     To succeed, you need to think differently and solve problems
-                    in multiple ways, just like the flexibility and
-                    unpredictability of the Joker in a deck of cards.
+                    in multiple ways, that&apos;s why you should be &quot;The
+                    Joker&quot; and dont take things &quot;as they are&quot;.
                   </p>
                   <p className="mt-6 text-xl leading-7 text-white">
-                    We aim to be a seamless part of your team, not just a
-                    service provider. Our primary goal is to contribute to
-                    innovation, allowing us to scale our impact by collaborating
-                    with many incredible initiatives.
+                    We aim to blend smoothly with your team, going beyond the
+                    role of a service provider. We approach your startups with
+                    the same care and dedication as if they were our own.
                   </p>
                 </div>
               </div>

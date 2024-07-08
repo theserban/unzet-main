@@ -7,7 +7,7 @@ module.exports = {
         sans: ["DM Sans", "sans-serif"],
       },
       borderRadius: {
-        ct: "2.5rem",
+        ct: "2rem",
         cts: "1.5rem",
       },
       colors: {
@@ -17,7 +17,7 @@ module.exports = {
           "200": "#f3ff1a",
           "300": "#ecf500",
           "400": "#d5e000",
-          "500": "#EDFF00",
+          "500": "#edff00",
           "600": "#cad000",
           "700": "#a5a800",
           "800": "#818000",
@@ -28,14 +28,11 @@ module.exports = {
           "100": "#cccccc",
           "200": "#999999",
           "300": "#666666",
-          "400": "#060606",
+          "400": "#000000",
           "500": "#000000",
         },
       },
-      fontSize: {
-        dot: "1.6rem",
-        "dot-sm": "1.2rem",
-      },
+      fontSize: {},
       inset: {
         dot: "0.2rem",
       },

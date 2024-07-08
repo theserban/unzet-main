@@ -4,11 +4,10 @@ import React from "react";
 import Image from "next/image";
 
 const featuredTestimonial = {
-  body: "We aim to build a culture of constant improvement and teamwork, driving tech innovation and business growth. We link businesses with skilled professionals, and build custom software to bring ideas to life and ensure their success",
+  body: "Dedicated to a culture of continuous improvement and teamwork. Connecting businesses with top developers,  transforming ideas into successful realities and ensuring clients excel in the digital landscape.",
   author: {
     name: "Laurentiu Manta",
     handle: "teckstar",
-    imageUrl: "/photos/founder.png",
     logoUrl: "photos/teckstar.svg",
   },
 };
@@ -17,21 +16,19 @@ const testimonials = [
   [
     [
       {
-        body: "By simplifying the email creation, we help people connect with their audience, ensuring their messages are clear",
+        body: "By empowering the email creation, we coach people to get better at sales, ensuring their messages are clear",
         author: {
           name: "Andrei Istrate",
           handle: "persuwise",
-          imageUrl: "/photos/founder.png",
         },
       },
     ],
     [
       {
-        body: "Our goal is to create a great company culture that leads to outstanding experiences and people-focused success",
+        body: "Great company culture in services leads to outstanding client experiences and people-focused success",
         author: {
           name: "Carol Mihailescu",
           handle: "inereto",
-          imageUrl: "/photos/founder.png",
         },
       },
     ],
@@ -52,9 +49,9 @@ export default function Testimonials() {
               Insights from Top Achievers
             </h2>
             <p className="mt-6 text-xl leading-7 text-white">
-              We love seeing how innovators disrupt the market. Instead of
-              sharing opinions about us, here are their missions, both past and
-              present, which we proudly support and contribute to.
+              This is how innovators disrupt the market. Instead of sharing
+              opinions about us, here are their missions, both past and present,
+              which we proudly support and contribute to.
             </p>
           </div>
           <div className="grid max-w-2xl grid-cols-1 gap-8 mx-auto mt-16 text-sm leading-6 text-white sm:gap-0 sm:gap-y-8 lg:gap-8 sm:mt-20 sm:grid-cols-0 lg:grid-cols-3 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">

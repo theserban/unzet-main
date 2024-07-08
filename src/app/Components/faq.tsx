@@ -11,11 +11,6 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "Why do I need Unzet?",
-    answer:
-      "We are dedicated to helping tech companies become strong brands. We work closely with you, offering customized solutions to meet your needs. Our focus on transparency, practical strategies, and innovation ensures we deliver great results quickly.",
-  },
-  {
     question: "What is the Ace Level Status?",
     answer:
       "Being an 'Ace Level' at Unzet means that your business has achieved significant milestones with our help. These milestones include aligning your product with market demand, creating a strong brand, gaining substantial online visibility, and successfully acquiring your first users.",
@@ -24,11 +19,6 @@ const faqs = [
     question: "Transparency throughout the project?",
     answer:
       "We ensure transparency by providing regular updates, detailed progress reports, and clear communication throughout the project. We involve you in every step, from planning to execution, so you always know what’s happening and can provide feedback.",
-  },
-  {
-    question: "The Royal Flush Approach?",
-    answer:
-      "We tailor our strategies to the unique needs of each project, addressing specific challenges and goals. This personalized approach ensures that every aspect of your business is optimized for success, providing a comprehensive solution that drives growth and innovation.",
   },
   {
     question: "How involved will I be in the process?",
@@ -55,8 +45,8 @@ export default function FAQ() {
                 className="transition-transform duration-500 transform border rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:scale-105"
                 src={imageSrc}
                 alt=""
-                onMouseEnter={() => setImageSrc("/photos/founder2.webp")}
-                onMouseLeave={() => setImageSrc("/photos/founder.webp")}
+                onMouseEnter={() => setImageSrc("/photos/founder3.webp")}
+                onMouseLeave={() => setImageSrc("/photos/founder2.webp")}
                 width={500}
                 height={500}
               />
@@ -64,12 +54,12 @@ export default function FAQ() {
             <div className="relative lg:ml-10">
               <blockquote className="text-xl leading-8 text-white sm:text-2xl sm:leading-9">
                 <h2 className="mt-4 text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-                  Purposeful Disruptors
+                  Ace Shapers
                 </h2>
                 <p className="mt-3 text-xl leading-8 text-white">
-                  We are here to generate and implement creative and impactful
-                  ideas to propel your growth, ensuring you become the next ace
-                  in the tech world.
+                  We&apos;re here to blend creativity with purpose, and have a
+                  blast while doing it. Join us on this exciting journey as we
+                  shape the future with creativity, purpose, and good vibes!
                 </p>
                 <p className="mt-3 text-xl leading-8 text-white/80">
                   The Serban, Founder

@@ -73,3 +73,7 @@ body {
 .custom-range::-ms-thumb {
   background-color: black;
 }
+
+.cm_body {
+  background-color: black;
+}

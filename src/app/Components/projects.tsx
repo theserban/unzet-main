@@ -38,7 +38,7 @@ const caseStudyData: Card[] = [
 const stats = [
   { label: "Duration", value: "5m" },
   { label: "Disruptions", value: "3x" },
-  { label: "Power", value: "+40" },
+  { label: "Power", value: "+60" },
   { label: "Rank", value: "Ace" },
 ];
 
@@ -102,10 +102,20 @@ export default function Projects() {
     setCaseStudyImage(null);
   };
 
+  const handleBackgroundClick = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).classList.contains("modal-background")) {
+      closeModal();
+      closeCaseStudyModal();
+    }
+  };
+
   return (
     <div className="relative z-20 isolate">
       {showModal && modalImage && (
-        <div className="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-60">
+        <div
+          className="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-60 modal-background"
+          onClick={handleBackgroundClick}
+        >
           <div className="relative">
             <button
               onClick={closeModal}
@@ -128,7 +138,10 @@ export default function Projects() {
         </div>
       )}
       {showCaseStudyModal && caseStudyImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 modal-background"
+          onClick={handleBackgroundClick}
+        >
           <div className="relative ">
             <button
               onClick={closeCaseStudyModal}
@@ -183,12 +196,12 @@ export default function Projects() {
                     Ace Projects
                   </h2>
                   <p className="mt-6 mr-8 text-xl leading-8 text-white">
-                    We have worked on many tech endeavors, including products,
-                    services, and open-source.
+                    We have successfully delivered a wide range of tech
+                    projects, including products, services, and open-source.
                   </p>
                   <p className="mt-6 mr-8 text-xl leading-8 text-white">
-                    From branding to helping with product building, effective
-                    strategies, targeted marketing, and more, we ensured
+                    From branding to helping with product building, internal
+                    tools, effective strategies, targeted marketing, we ensured
                     everything needed for their growth.
                   </p>
                   <div className="flex items-center mt-10 gap-x-6">
@@ -327,17 +340,20 @@ export default function Projects() {
                     </h1>
                     <div className="max-w-xl">
                       <p className="mt-6 text-xl leading-7 text-white">
-                        Teckstar is a dynamic company specializing in matching
-                        businesses with top-tier developers. When we partnered
-                        with them, our goal was to help them scale their
-                        operations and enhance their market presence.
+                        Teckstar is a company that connects businesses with top
+                        developers. When we started working with them, our main
+                        goal was to help them grow bigger and become more
+                        visible in the market. We improved their branding to
+                        make sure their message was clear and appealing to their
+                        target audience.
                       </p>
                       <p className="pb-4 mt-8 text-xl leading-8 text-white">
-                        One of our key initiatives was the implementation of a
-                        new sales flow, which we named &prime;The Broken
-                        Glass&prime;. This new system streamlined their sales
-                        operations, making the process more effective, leading
-                        to a noticeable increase in sales leads.
+                        The main achievement was creating a new sales process
+                        called &quot;The Broken Glass&quot;. This new system was
+                        designed to make their sales operations smoother and
+                        more efficient. Additionally, we assisted in enhancing
+                        their online presence by optimizing their social media
+                        content.
                       </p>
                     </div>
                   </div>

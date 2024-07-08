@@ -1,14 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Modal from "./Components/modal";
+
 import Navbar from "./Components/navbar";
 import Hero from "./Components/hero";
 import Services from "./Components/services";
 import How from "./Components/how";
-import Products from "./Components/products";
+import Pricing from "./Components/pricing";
 import Stats from "./Components/stats";
 import Projects from "./Components/projects";
-import Pricing from "./Components/pricing";
 import Tools from "./Components/tools";
 import FAQ from "./Components/faq";
 import Testimonials from "./Components/testimonials";
@@ -16,60 +15,40 @@ import Footer from "./Components/footer";
 
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [showControls, setShowControls] = useState(false);
-  const [showMainModal, setShowMainModal] = useState(true);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
-  const handleTryExperienceClick = () => {
-    setShowMainModal(true);
-    if (!isModalOpen) {
-      setIsModalOpen(true);
-    }
-    if (!isPlaying) {
-      setIsPlaying(true);
-    }
-    if (!showControls) {
-      setShowControls(true);
-    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isModalOpen]);
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
   };
 
-  const handleCloseModal = () => {
+  const handleModalClose = () => {
     setIsModalOpen(false);
-    setIsPlaying(false);
   };
 
   return (
     <div className="relative">
-      {isMounted && (
-        <div className="fixed bottom-0 left-0 z-50 mb-4 ml-4">
-          <Modal
-            onClose={handleCloseModal}
-            isPlaying={isPlaying}
-            setIsPlaying={setIsPlaying}
-            showControls={showControls}
-            setShowControls={setShowControls}
-            showMainModal={showMainModal}
-            setShowMainModal={setShowMainModal}
-          />
-        </div>
-      )}
       <Navbar />
       <Hero />
-      <Services />
       <Projects />
-      <Testimonials />
+      <Services />
       <How />
-      <Stats />
-      <Products onTryExperienceClick={handleTryExperienceClick} />
+      <Testimonials />
       <Tools />
+      <Stats />
       <Pricing />
       <FAQ />
-      <Footer />
+      <Footer onModalOpen={handleModalOpen} onModalClose={handleModalClose} />
     </div>
   );
 }

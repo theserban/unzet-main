@@ -65,13 +65,14 @@ export default function Hero() {
             <div className="max-w-2xl mx-auto gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
               <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                  Build the Right Deck to{" "}
-                  <span className="text-primary-500">Become the Ace</span>
+                  Grow Your Startup to{" "}
+                  <span className="text-primary-500">Become an Ace</span>
                 </h1>
                 <p className="mt-6 text-xl leading-8 text-white sm:max-w-md lg:max-w-none">
-                  Our mission is to transform tech startups and initiatives into
-                  strong brands by delivering all the essential elements needed
-                  to develop an outstanding product quickly and efficiently.
+                  Transform your tech initiatives into powerful brands. We
+                  bridge the gaps in branding, marketing, strategy, and web
+                  development, guiding you to reach Ace Level – ensuring you
+                  have all the cards to succeed.
                 </p>
                 <div className="flex items-center mt-10 gap-x-6">
                   <button
@@ -84,7 +85,7 @@ export default function Hero() {
                     onClick={() => scrollToSection("how")}
                     className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
                   >
-                    How It Works <span aria-hidden="true">→</span>
+                    How We Roll <span aria-hidden="true">→</span>
                   </button>
                 </div>
               </div>
@@ -93,7 +94,7 @@ export default function Hero() {
                   <div className="relative">
                     <Card
                       icon={ShoppingCartIcon}
-                      title="Market Fit"
+                      title="Perfect Sync"
                       power="Power +20"
                       description="You've aligned your product with the demand"
                     />
@@ -106,7 +107,7 @@ export default function Hero() {
                       icon={CloudIcon}
                       title="Cloud Chaser"
                       power="Power +18"
-                      description="Your website is indexed and ready to rumble"
+                      description="Your website is indexed and optimized"
                     />
                     <div className="absolute inset-0 pointer-events-none rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
@@ -150,7 +151,7 @@ export default function Hero() {
             <div className="px-6 mx-auto max-w-7xl lg:px-0">
               <div className="max-w-2xl mx-auto lg:max-w-none">
                 <h2 className="text-lg font-semibold leading-8 text-center text-primary-500">
-                  Growth Hacked
+                  Top Achievers
                 </h2>
                 <div className="grid items-start grid-cols-4 mx-auto mt-10 gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-10 lg:mx-0 lg:grid-cols-4">
                   <Image

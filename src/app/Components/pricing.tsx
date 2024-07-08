@@ -58,17 +58,17 @@ const content: Record<
           "Collect and analyze data to understand the market and customers better.",
       },
       {
-        name: "Business Consultancy",
-        description:
-          "Provide expert advice to improve business strategies and operations.",
-      },
-      {
         name: "Marketing Guidance",
         description:
           "Give strategic advice to boost marketing efforts and engage customers.",
       },
+      {
+        name: "Variable Needs",
+        description:
+          "We will adapt to your needs and work together on your goals.",
+      },
     ],
-    price: "€1899",
+    price: "€1999",
     priceSuffix: "/month",
     priceButton: "Strategy Call",
     ctaText:
@@ -107,14 +107,14 @@ const content: Record<
           "Collect and analyze data to understand the market and customers better.",
       },
       {
-        name: "Business Consultancy",
-        description:
-          "Provide expert advice to improve business strategies and operations.",
-      },
-      {
         name: "Marketing Guidance",
         description:
           "Give strategic advice to boost marketing efforts and engage customers.",
+      },
+      {
+        name: "Variable Needs",
+        description:
+          "We will adapt to your needs and work together on your goals.",
       },
     ],
     price: "€1",
@@ -122,7 +122,7 @@ const content: Record<
     priceButton: "Apply Call",
     ctaText: "This service is created from our big love for free software.",
     ctaSubheading: "Guided Scale",
-    growthGroupsPill: "Mainstreams",
+    growthGroupsPill: "Main Streams",
     growthGroupsSize1: "/2",
     growthGroupsSize2: "/4",
     growthGroupsButton: "Let's Talk",

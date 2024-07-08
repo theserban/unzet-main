@@ -15,14 +15,17 @@ import { getCalApi } from "@calcom/embed-react";
 
 const navigation = [
   { name: "Archive", href: "projects", icon: ClipboardIcon },
-  { name: "Insights", href: "testimonials", icon: UserIcon },
+  { name: "Values", href: "products", icon: SwatchIcon },
   { name: "Process", href: "how", icon: ArrowPathRoundedSquareIcon },
-  { name: "Products", href: "products", icon: SwatchIcon },
+  { name: "Insights", href: "testimonials", icon: UserIcon },
   { name: "Rates", href: "pricing", icon: CreditCardIcon },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [atTop, setAtTop] = useState(true);
 
   useEffect(() => {
     (async function () {
@@ -38,7 +41,22 @@ export default function Navbar() {
         layout: "week_view",
       });
     })();
-  }, []);
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+      setLastScrollY(currentScrollY);
+
+      setAtTop(currentScrollY === 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -71,74 +89,89 @@ export default function Navbar() {
   );
 
   return (
-    <div className="bg-black">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav
-          className="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8"
-          aria-label="Global"
-        >
-          <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Unzet</span>
-              <Image
-                className="w-32 h-auto transition-transform duration-500 transform hover:scale-105"
-                src="/photos/logo.svg"
-                alt="Unzet Logo"
-                width={128}
-                height={32}
-              />
-            </a>
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    <header
+      className={`inset-x-0 top-0 z-50 fixed bg-black ${
+        atTop ? "" : "border-b border-primary-500/20"
+      } rounded-br-ct transition-transform duration-300 ${
+        showNavbar ? "transform translate-y-0" : "transform -translate-y-full"
+      }`}
+    >
+      <nav
+        className="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8"
+        aria-label="Global"
+      >
+        <div className="flex lg:flex-1">
+          <a href="#" className="-m-1.5 p-1.5">
+            <span className="sr-only">Unzet</span>
+            <Image
+              className="w-32 h-auto transition-transform duration-500 transform hover:scale-105"
+              src="/photos/logo.svg"
+              alt="Unzet Logo"
+              width={128}
+              height={32}
+            />
+          </a>
+        </div>
+        <div className="hidden lg:flex lg:gap-x-12">
+          {navigation.map((item) => (
+            <a
+              key={item.name}
+              href={`#${item.href}`}
+              className="flex items-center text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+              onClick={(e) => handleSmoothScroll(e, item.href)}
             >
-              <span className="sr-only">Open main menu</span>
-              {mobileMenuOpen ? (
-                <XMarkIcon className="w-6 h-6" aria-hidden="true" />
-              ) : (
-                <Bars3Icon className="w-6 h-6" aria-hidden="true" />
-              )}
-            </button>
-          </div>
-          <div className="hidden lg:flex lg:gap-x-12">
+              <item.icon className="w-5 h-5 mr-2" aria-hidden="true" />
+              {item.name}
+            </a>
+          ))}
+        </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-3">
+          <BookNowButton />
+        </div>
+        <div className="flex lg:hidden">
+          <button
+            type="button"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <span className="sr-only">Open main menu</span>
+            {mobileMenuOpen ? (
+              <XMarkIcon className="w-6 h-6" aria-hidden="true" />
+            ) : (
+              <Bars3Icon className="w-6 h-6" aria-hidden="true" />
+            )}
+          </button>
+        </div>
+      </nav>
+      {mobileMenuOpen && (
+        <div className="absolute inset-x-0 z-50 w-full px-6 py-6 bg-black border-b lg:hidden top-16 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 border-primary-500/20 rounded-br-ct">
+          <div className="flex flex-col items-start space-y-4">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={`#${item.href}`}
-                className="flex items-center text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+                className="flex items-center px-3 py-2 text-base font-semibold leading-7 text-white rounded-tr-lg rounded-bl-lg cursor-pointer hover:text-black hover:bg-primary-500"
                 onClick={(e) => handleSmoothScroll(e, item.href)}
               >
                 <item.icon className="w-5 h-5 mr-2" aria-hidden="true" />
                 {item.name}
               </a>
             ))}
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <BookNowButton />
-          </div>
-        </nav>
-        {mobileMenuOpen && (
-          <div className="absolute inset-x-0 z-50 w-full px-6 py-6 bg-black border-b lg:hidden top-16 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 border-primary-500/20 rounded-br-ct">
-            <div className="flex flex-col items-start space-y-4">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={`#${item.href}`}
-                  className="flex items-center px-3 py-2 text-base font-semibold leading-7 text-white rounded-tr-lg rounded-bl-lg cursor-pointer hover:text-black hover:bg-primary-500"
-                  onClick={(e) => handleSmoothScroll(e, item.href)}
-                >
-                  <item.icon className="w-5 h-5 mr-2" aria-hidden="true" />
-                  {item.name}
-                </a>
-              ))}
+            <div className="flex items-center gap-2">
+              <a href="#founder" className="flex-shrink-0">
+                <Image
+                  src="/pages/founder.webp"
+                  alt="Founder"
+                  width={24}
+                  height={24}
+                  className="rounded-full"
+                />
+              </a>
               <BookNowButton />
             </div>
           </div>
-        )}
-      </header>
-    </div>
+        </div>
+      )}
+    </header>
   );
 }
