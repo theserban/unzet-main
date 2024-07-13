@@ -42,7 +42,7 @@ const PrivacyPolicyModal: React.FC<{
         </button>
         <div
           ref={modalRef}
-          className="bg-black mt-3 border border-1 border-primary-500/20 p-8 rounded-tl-ct rounded-br-ct shadow-lg text-white max-h-[80vh] overflow-y-auto"
+          className="bg-black mt-3 border border-1 border-primary-500/20 p-8 rounded-tl-ct rounded-br-ct shadow-lg text-white max-h-[70vh] overflow-y-auto"
         >
           <h2 className="text-3xl font-bold text-primary-500">
             Privacy Policy

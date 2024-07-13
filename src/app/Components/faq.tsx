@@ -28,20 +28,18 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [imageSrc, setImageSrc] = useState("/photos/founder2.webp");
+  const [imageSrc, setImageSrc] = useState("/photos/theserban.webp");
 
   return (
     <>
       <section id="founder">
         <div className="px-6 mx-auto max-w-7xl lg:px-8 py-8">
           <div className="relative flex flex-col items-start max-w-2xl py-4 sm:py-12 mx-auto lg:pt-16 lg:max-w-4xl lg:flex-row lg:items-start gap-x-6 gap-y-8 lg:gap-x-0">
-            <div className="flex-shrink-0 p-2 rounded-lg w-88 lg:w-72">
+            <div className="flex-shrink-0 rounded-lg w-88 lg:w-72">
               <Image
-                className="transition-transform duration-500 transform border rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:scale-105"
+                className="transition-transform duration-500 transform border rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-1"
                 src={imageSrc}
                 alt=""
-                onMouseEnter={() => setImageSrc("/photos/founder3.webp")}
-                onMouseLeave={() => setImageSrc("/photos/founder2.webp")}
                 width={500}
                 height={500}
               />

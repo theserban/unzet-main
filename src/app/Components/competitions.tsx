@@ -204,7 +204,7 @@ const Modal = ({
         </button>
         <div
           ref={modalRef}
-          className="bg-black mt-3 border border-1 border-primary-500/20 p-8 rounded-tl-ct rounded-br-ct shadow-lg text-white max-h-[80vh] overflow-y-auto"
+          className="bg-black mt-3 border border-1 border-primary-500/20 p-8 rounded-tl-ct rounded-br-ct shadow-lg text-white max-h-[70vh] overflow-y-auto"
         >
           {children}
         </div>

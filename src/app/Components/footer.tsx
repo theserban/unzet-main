@@ -32,7 +32,6 @@ const socials = {
   LinkedIn: "https://www.linkedin.com/company/weunzet",
   Instagram: "https://www.instagram.com/weunzet",
   Github: "https://github.com/theserban/unzet-main",
-  Blureo: "https://www.blureo.com",
 };
 
 export default function Footer() {
@@ -67,17 +66,18 @@ export default function Footer() {
   return (
     <div id="footer">
       <div className="relative border-t bg-secondary-400 rounded-tr-ct border-primary-500/20">
-        <div className="relative py-16 pb-20 overflow-hidden isolate">
+        <div className="relative py-16  overflow-hidden isolate">
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
             <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
               <div className="max-w-xl text-white lg:max-w-lg">
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  Play Your Cards Right Today,
-                  <br />
+                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-3xl">
+                  Play Your Cards Right Today,{" "}
+                  <br className="hidden sm:inline" />
                   <span className="text-primary-500">
                     And We Start Tomorrow!
                   </span>
                 </h2>
+
                 <p className="mt-4 text-xl leading-8 text-white">
                   Let&apos;s find a way to work together, exchange resources,
                   ask questions, and become friends.
@@ -98,7 +98,7 @@ export default function Footer() {
                   </button>
                 </div>
               </div>
-              <div className="relative grid grid-cols-1 text-lg gap-x-8 gap-y-8 sm:grid-cols-2 lg:pt-2">
+              <div className="relative grid grid-cols-1 text-lg gap-x-0 gap-y-12 sm:grid-cols-2 lg:pt-2">
                 <Card
                   title="Menu"
                   links={[
@@ -166,33 +166,35 @@ export default function Footer() {
             aria-hidden="true"
           ></div>
         </div>
-        <div className="px-8 py-6 mx-auto border-t shadow-lg max-w-7xl border-primary-500/20">
-          <div className="grid grid-cols-1 sm:grid-cols-3 items-start gap-4 py-4 sm:py-0">
-            <div className="order-3 sm:order-1">
+        <div className="px-8 mx-auto shadow-lg max-w-7xl pb-8">
+          <div className="grid grid-cols-1 border-t border-primary-500/20 sm:grid-cols-3 items-start gap-4 sm:py-0 -mt-4 sm:-mt-0">
+            <div className="order-3 sm:order-1 pt-0 sm:pt-8">
               <p className="text-md sm:text-sm leading-5 text-left text-white">
                 &copy; {new Date().getFullYear()} Unzet, All Rights Reserved
               </p>
             </div>
-            <div className="order-1 sm:order-2 flex justify-start sm:justify-center pb-2 sm:pb-0">
-              <Image
-                src="/photos/blureo-member.svg"
-                alt="Member of Blureo"
-                width={280}
-                height={40}
-                className="sm:w-38 sm:h-4 w-56 h-8 -mt-2 -mb-1"
-              />
+            <div className="order-1 sm:order-2 flex justify-start sm:justify-center pb-2 sm:pb-0 pt-11 sm:pt-8">
+              <Link href="https://blureo.com">
+                <Image
+                  src="/photos/blureo-member.svg"
+                  alt="Member of Blureo"
+                  width={280}
+                  height={40}
+                  className="sm:w-38 sm:h-4 w-56 h-8 -mt-2 sm:-mt-0 -mb-1 hover:scale-105 transform duration-500"
+                />
+              </Link>
             </div>
 
-            <div className="order-2 flex flex-row justify-start sm:justify-end gap-4">
+            <div className="order-2 flex flex-row justify-start sm:justify-end gap-4 pt-0 sm:pt-8">
               <button
-                className="text-md sm:text-sm text-white text-left"
+                className="text-md sm:text-sm text-white text-left hover:scale-105 transform duration-500"
                 type="button"
                 onClick={ResetCookieConsent}
               >
                 Reset Consent
               </button>
               <button
-                className="text-md sm:text-sm text-white text-left"
+                className="text-md sm:text-sm text-white text-left hover:scale-105 transform duration-500"
                 type="button"
                 onClick={handleOpenModal}
               >
@@ -261,7 +263,7 @@ const Card: React.FC<{
   }, [dropdownRef, buttonRef]);
 
   return (
-    <div className="p-6 pb-8 text-white transition-transform duration-500 border shadow-lg bg-secondary-400 rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-1">
+    <div className=" text-white shadow-lg bg-secondary-400 rounded-tl-ct rounded-br-ct -mt-2">
       {title && <h2 className="mb-2 text-lg font-bold">{title}</h2>}
       <ul className="space-y-2">
         {links.map((link, index) => (
@@ -342,12 +344,6 @@ const Card: React.FC<{
                         )}
                         {key === "Github" && (
                           <GithubLogo
-                            className="w-5 h-5 text-primary-500"
-                            aria-hidden="true"
-                          />
-                        )}
-                        {key === "Blureo" && (
-                          <CirclesThreePlus
                             className="w-5 h-5 text-primary-500"
                             aria-hidden="true"
                           />

@@ -7,7 +7,6 @@ import {
   ArrowUpIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import { Dialog, DialogPanel } from "@headlessui/react";
 
 interface CardProps {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -35,14 +34,12 @@ const scrollToSection = (id: string) => {
 };
 
 export default function Hero() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <main>
       <section className="py-4 bg-black sm:py-0" id="hero">
         <div className="relative isolate">
           <svg
-            className="absolute top-12 sm:left-0 left-1/2 transform -translate-x-1/2 sm:translate-x-0 -z-10 sm:h-[64rem] h-[32rem] w-full stroke-primary-500/20 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+            className="absolute top-48 sm:top-12 sm:left-0 left-1/2 transform -translate-x-1/2 sm:translate-x-0 -z-10 sm:h-[64rem] h-[32rem] w-full stroke-primary-500/20 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
             aria-hidden="true"
           >
             <defs>
@@ -50,7 +47,7 @@ export default function Hero() {
                 id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
                 width={180}
                 height={180}
-                x="50%"
+                x="60%"
                 y={-1}
                 patternUnits="userSpaceOnUse"
               >

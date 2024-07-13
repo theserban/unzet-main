@@ -55,7 +55,6 @@ export default function Navbar() {
 
       setAtTop(currentScrollY === 0);
 
-      // Close mobile menu when scrolling
       if (mobileMenuOpen) {
         setMobileMenuOpen(false);
       }
@@ -132,7 +131,7 @@ export default function Navbar() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2.5 text-white"
+            className="inline-flex items-center justify-center rounded-md text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Open main menu</span>
@@ -145,7 +144,7 @@ export default function Navbar() {
         </div>
       </nav>
       {mobileMenuOpen && (
-        <div className="absolute mt-4 inset-x-0 z-50 w-full px-4 py-6 bg-black border-b lg:hidden top-12 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 border-primary-500/20 rounded-br-ct">
+        <div className="absolute inset-x-0 z-50 w-full px-4 py-8 bg-black border-b lg:hidden top-12 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 border-primary-500/20 rounded-br-ct">
           <div className="flex flex-col items-start space-y-4">
             {navigation.map((item) => (
               <Link
