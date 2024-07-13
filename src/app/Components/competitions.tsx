@@ -64,7 +64,7 @@ const EventCard: React.FC<EventProps & { onEnterNow: () => void }> = ({
     const shareText = `${title} - ${description}`;
     try {
       await navigator.clipboard.writeText(shareUrl);
-      alert("Link copied to clipboard!");
+      alert("Link copied to clipboard");
     } catch (error) {
       console.error("Failed to copy the link: ", error);
     }
