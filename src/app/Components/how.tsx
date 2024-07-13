@@ -31,6 +31,13 @@ interface CardProps {
   pills: string[];
 }
 
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const Card: React.FC<CardProps> = ({
   icon: Icon,
   title,
@@ -138,7 +145,7 @@ export default function How() {
                   <p className="mt-6 text-xl leading-7 text-white">
                     Everything we do varies from project to project. As ace
                     shapers, we must approach each initiative differently to
-                    address its unique needs.
+                    address its unique needs, kinda like a relationship.
                   </p>
                 </div>
               </div>
@@ -153,21 +160,10 @@ export default function How() {
                         aria-hidden="true"
                       />
                       <span>
-                        We begin by identifying your specific needs at that
-                        stage of development. This could involve naming and
-                        branding at the outset, or implementing various
-                        strategies, starting ads and building pitches later on.
-                      </span>
-                    </li>
-                    <li className="flex gap-x-3">
-                      <CalendarDaysIcon
-                        className="flex-none w-5 h-5 mt-1 text-primary-500"
-                        aria-hidden="true"
-                      />
-                      <span>
-                        Each task sprint is closed before starting the next one.
-                        This approach requires close collaboration with the team
-                        and regular updates on the progress.
+                        We start looking at those needs at the stage of
+                        development. This could involve naming and branding at
+                        the outset, or implementing various strategies, starting
+                        ads and building pitches later on.
                       </span>
                     </li>
                     <li className="flex gap-x-3">
@@ -176,10 +172,11 @@ export default function How() {
                         aria-hidden="true"
                       />
                       <span>
-                        You should visualise achievements, that&apos;s why we
-                        have a system of cards representing each step you reach
-                        in your journey. For instance, having a great branding
-                        will get you the &quot;Brand Bound&quot; achievement.
+                        Everyone should visualise achievements, that&apos;s why
+                        we have a system of cards representing each step you
+                        reach in your journey. For instance, having a great
+                        branding will get you the &quot;Brand Bound&quot;
+                        achievement.
                       </span>
                     </li>
                   </ul>
@@ -190,15 +187,30 @@ export default function How() {
                     In change we trust
                   </h2>
                   <p className="mt-6 text-xl leading-7 text-white">
-                    To succeed, you need to think differently and solve problems
-                    in multiple ways, that&apos;s why you should be &quot;The
-                    Joker&quot; and dont take things &quot;as they are&quot;.
+                    To succeed, you need to think differently. That&apos;s why
+                    you should not just go with the flow.
                   </p>
                   <p className="mt-6 text-xl leading-7 text-white">
-                    We aim to blend smoothly with your team, going beyond the
-                    role of a service provider. We approach your startups with
-                    the same care and dedication as if they were our own.
+                    We aim to fit right in with startup teams, not just as
+                    service providers as we treat your startups with the same
+                    care and dedication as if they were our own.
                   </p>
+                </div>
+                <div className="flex items-center mt-10 gap-x-6">
+                  <button
+                    data-cal-namespace=""
+                    data-cal-link="weunzet/30min"
+                    data-cal-config='{"layout":"week_view"}'
+                    className="cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
+                  >
+                    Roll with us
+                  </button>
+                  <button
+                    className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+                    onClick={() => scrollToSection("products")}
+                  >
+                    Products <span aria-hidden="true">→</span>
+                  </button>
                 </div>
               </div>
             </div>

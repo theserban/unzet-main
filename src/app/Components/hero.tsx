@@ -61,31 +61,31 @@ export default function Hero() {
               fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
             />
           </svg>
-          <div className="px-6 pb-12 mx-auto max-w-7xl pt-28 sm:pt-36 lg:px-8 lg:pt-32">
-            <div className="max-w-2xl mx-auto gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-              <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                  Grow Your Startup to{" "}
-                  <span className="text-primary-500">Become an Ace</span>
+          <div className="px-6 pb-12 mx-auto max-w-7xl pt-24 sm:pt-36 lg:px-8 lg:pt-32">
+            <div className="max-w-2xl mx-auto gap-x-12 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+              <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-xl">
+                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl sm:-mt-32">
+                  Kickstart Your{" "}
+                  <span className="text-primary-500">Startup Journey</span>
                 </h1>
                 <p className="mt-6 text-xl leading-8 text-white sm:max-w-md lg:max-w-none">
-                  Transform your tech initiatives into powerful brands. We
-                  bridge the gaps in branding, marketing, strategy, and web
-                  development, guiding you to reach Ace Level – ensuring you
-                  have all the cards to succeed.
+                  Everything we do, from helping startups achieve their goals to
+                  building our own stuff, it&apos;s done with a clear
+                  destination in mind, making people&apos;s lives more
+                  enjoyable.
                 </p>
                 <div className="flex items-center mt-10 gap-x-6">
                   <button
-                    onClick={() => scrollToSection("projects")}
+                    onClick={() => scrollToSection("compete")}
                     className="cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
                   >
-                    Ace Level Clients
+                    Free Brands
                   </button>
                   <button
-                    onClick={() => scrollToSection("how")}
+                    onClick={() => scrollToSection("projects")}
                     className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
                   >
-                    How We Roll <span aria-hidden="true">→</span>
+                    Work With Us<span aria-hidden="true">→</span>
                   </button>
                 </div>
               </div>
@@ -145,48 +145,45 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
-        <section id="cloud">
-          <div className="py-16 bg-primary-black sm:py-24">
-            <div className="px-6 mx-auto max-w-7xl lg:px-0">
-              <div className="max-w-2xl mx-auto lg:max-w-none">
-                <h2 className="text-lg font-semibold leading-8 text-center text-primary-500">
-                  Top Achievers
-                </h2>
-                <div className="grid items-start grid-cols-4 mx-auto mt-10 gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-10 lg:mx-0 lg:grid-cols-4">
-                  <Image
-                    className="object-contain object-center w-full col-span-2 transition-transform duration-500 transform max-h-9 lg:col-span-1 hover:scale-105"
-                    src="/photos/persuwise.svg"
-                    alt="Persuwise"
-                    width={158}
-                    height={48}
-                  />
-                  <Image
-                    className="object-contain object-center w-full col-span-2 transition-transform duration-500 transform max-h-8 lg:col-span-1 hover:scale-105"
-                    src="/photos/antvise.svg"
-                    alt="Antvise"
-                    width={158}
-                    height={48}
-                  />
-                  <Image
-                    className="object-contain object-center w-full col-span-2 mt-2 transition-transform duration-500 transform max-h-6 lg:col-span-1 hover:scale-105"
-                    src="/photos/shiftintech.svg"
-                    alt="Shiftintech"
-                    width={158}
-                    height={48}
-                  />
-                  <Image
-                    className="object-contain object-center w-full col-span-2 mt-2 transition-transform duration-500 transform max-h-6 lg:col-span-1 hover:scale-105"
-                    src="/photos/inereto.svg"
-                    alt="Inereto"
-                    width={158}
-                    height={48}
-                  />
-                </div>
+        <div className="py-16 bg-primary-black sm:py-24">
+          <div className="px-6 mx-auto max-w-7xl lg:px-0">
+            <div className="max-w-2xl mx-auto lg:max-w-none">
+              <h2 className="text-lg font-semibold leading-8 text-center text-primary-500">
+                Top Achievers
+              </h2>
+              <div className="grid items-start grid-cols-4 mx-auto mt-10 gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-10 lg:mx-0 lg:grid-cols-4">
+                <Image
+                  className="object-contain object-center w-full col-span-2 transition-transform duration-500 transform max-h-9 lg:col-span-1 hover:scale-105"
+                  src="/photos/persuwise.svg"
+                  alt="Persuwise"
+                  width={158}
+                  height={48}
+                />
+                <Image
+                  className="object-contain object-center w-full col-span-2 transition-transform duration-500 transform max-h-8 lg:col-span-1 hover:scale-105"
+                  src="/photos/antvise.svg"
+                  alt="Antvise"
+                  width={158}
+                  height={48}
+                />
+                <Image
+                  className="object-contain object-center w-full col-span-2 mt-2 transition-transform duration-500 transform max-h-6 lg:col-span-1 hover:scale-105"
+                  src="/photos/shiftintech.svg"
+                  alt="Shiftintech"
+                  width={158}
+                  height={48}
+                />
+                <Image
+                  className="object-contain object-center w-full col-span-2 mt-2 transition-transform duration-500 transform max-h-6 lg:col-span-1 hover:scale-105"
+                  src="/photos/inereto.svg"
+                  alt="Inereto"
+                  width={158}
+                  height={48}
+                />
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import {
   MagnifyingGlassIcon,
@@ -12,34 +12,22 @@ interface Card {
 }
 
 const cardData: Card[] = [
-  { src: "/photos/p1-sitpitch.webp", title: "Pitch Deck" },
-  { src: "/photos/p3-pwapp.webp", title: "Extension UI" },
-  { src: "/photos/p4-antvise.webp", title: "Naming & Branding" },
-  { src: "/photos/p5-inereto.webp", title: "Naming" },
-  { src: "/photos/p2-sitweb.webp", title: "Landing Page" },
-  { src: "/photos/p6-sitagr.webp", title: "Events Aggregator" },
-  { src: "/photos/p7-dcapp.webp", title: "Open Source Design" },
-  { src: "/photos/p8-pwbrd.webp", title: "Rebranding" },
-  { src: "/photos/p9-zngweb.webp", title: "Web Design" },
-  { src: "/photos/p10-srsapp.webp", title: "IOS App UI" },
-  { src: "/photos/p11-azgbb.webp", title: "Brand Book" },
-  { src: "/photos/p12-azgapp.webp", title: "Web App" },
-  { src: "/photos/p13-agrpitch.webp", title: "Illustrations" },
-  { src: "/photos/p14-vpppitch.webp", title: "Guidelines" },
-  { src: "/photos/p15-wellwork.webp", title: "Workshop" },
-  { src: "/photos/p16-tssell.webp", title: "Automation Research" },
-];
-
-const caseStudyData: Card[] = [
-  { src: "/photos/ts-glass.webp", title: "Broken Glass" },
-  { src: "/photos/ts-social.webp", title: "Social Media" },
-];
-
-const stats = [
-  { label: "Duration", value: "5m" },
-  { label: "Disruptions", value: "3x" },
-  { label: "Power", value: "+60" },
-  { label: "Rank", value: "Ace" },
+  { src: "/photos/p1.webp", title: "Pitch Deck" },
+  { src: "/photos/p3.webp", title: "Extension UI" },
+  { src: "/photos/p4.webp", title: "Naming & Branding" },
+  { src: "/photos/p5.webp", title: "Naming" },
+  { src: "/photos/p2.webp", title: "Landing Page" },
+  { src: "/photos/p6.webp", title: "Events Aggregator" },
+  { src: "/photos/p7.webp", title: "Landing Page" },
+  { src: "/photos/p8.webp", title: "Rebranding" },
+  { src: "/photos/p9.webp", title: "Launch Campaign" },
+  { src: "/photos/p10.webp", title: "Product Illustrations" },
+  { src: "/photos/p11.webp", title: "Guidelines" },
+  { src: "/photos/p12.webp", title: "Sales Flow" },
+  { src: "/photos/p13.webp", title: "Presentation" },
+  { src: "/photos/p14.webp", title: "Landing Page" },
+  { src: "/photos/p15.webp", title: "Name Workshop" },
+  { src: "/photos/p16.webp", title: "Repositioning" },
 ];
 
 export default function Projects() {
@@ -50,37 +38,31 @@ export default function Projects() {
   const [showCaseStudyModal, setShowCaseStudyModal] = useState(false);
   const [caseStudyImage, setCaseStudyImage] = useState<Card | null>(null);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const generateRandomIndices = useCallback(
+    (count: number, max: number, exclude: number[]): number[] => {
+      const indices = new Set<number>();
+      while (indices.size < count) {
+        const newIndex = Math.floor(Math.random() * max);
+        if (!exclude.includes(newIndex)) {
+          indices.add(newIndex);
+        }
+      }
+      return Array.from(indices);
+    },
+    []
+  );
 
-  const shuffleProjects = () => {
+  const shuffleProjects = useCallback(() => {
     const newIndices = generateRandomIndices(3, cardData.length, previousCards);
     setPreviousCards(newIndices);
     setActiveCards(newIndices);
-  };
+  }, [generateRandomIndices, previousCards]);
 
   useEffect(() => {
-    shuffleProjects();
-  }, []);
-
-  const generateRandomIndices = (
-    count: number,
-    max: number,
-    exclude: number[]
-  ): number[] => {
-    const indices = new Set<number>();
-    while (indices.size < count) {
-      const newIndex = Math.floor(Math.random() * max);
-      if (!exclude.includes(newIndex)) {
-        indices.add(newIndex);
-      }
-    }
-    return Array.from(indices);
-  };
+    const initialIndices = generateRandomIndices(3, cardData.length, []);
+    setActiveCards(initialIndices);
+    setPreviousCards(initialIndices);
+  }, [generateRandomIndices]);
 
   const openModal = (image: Card) => {
     setModalImage(image);
@@ -187,22 +169,22 @@ export default function Projects() {
         />
       </svg>
       <section id="projects">
-        <div className="py-16 overflow-hidden bg-black sm:py-24">
+        <div className="py-16 overflow-hidden bg-black sm:pt-24 sm:pb-4">
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
             <div className="grid max-w-2xl grid-cols-1 mx-auto lg:mx-0 lg:max-w-none">
               <div className="flex flex-col gap-8 lg:flex-row">
                 <div className="lg:w-1/2">
                   <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-                    Ace Projects
+                    Worked On
                   </h2>
                   <p className="mt-6 mr-8 text-xl leading-8 text-white">
-                    We have successfully delivered a wide range of tech
-                    projects, including products, services, and open-source.
+                    We like to be a part of tech initiatives, here is a list of
+                    some of them - p.s which are awesome :)
                   </p>
                   <p className="mt-6 mr-8 text-xl leading-8 text-white">
-                    From branding to helping with product building, internal
-                    tools, effective strategies, targeted marketing, we ensured
-                    everything needed for their growth.
+                    This is just a small archive of dreams we took a part in,
+                    our goal is to make it as big as we can and be that cake
+                    piece in each project we undertake.
                   </p>
                   <div className="flex items-center mt-10 gap-x-6">
                     <button
@@ -213,10 +195,12 @@ export default function Projects() {
                       Projects
                     </button>
                     <button
-                      onClick={() => scrollToSection("case")}
+                      data-cal-namespace=""
+                      data-cal-link="weunzet/30min"
+                      data-cal-config='{"layout":"month_view"}'
                       className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
                     >
-                      Case Study <span aria-hidden="true">→</span>
+                      Join The Archive <span aria-hidden="true">→</span>
                     </button>
                   </div>
                 </div>
@@ -274,102 +258,6 @@ export default function Projects() {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="case">
-        <div className="py-16 bg-black sm:py-24">
-          <div className="px-6 mx-auto max-w-7xl lg:px-8">
-            <div className="max-w-2xl mx-auto lg:max-w-none">
-              <div className="grid items-start grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 sm:gap-y-12">
-                <div className="order-3 lg:pr-4 lg:order-1">
-                  <div className="relative overflow-hidden px-6 pb-9 pt-[40%] shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 transform transition-transform duration-500 hover:-translate-y-3 group">
-                    <Image
-                      className="absolute inset-0 object-cover w-full h-full mb-2 border rounded-tl-ct rounded-br-ct border-primary-500/20"
-                      src="/photos/ts-glass.webp"
-                      alt="Broken Glass"
-                      width={1200}
-                      height={900}
-                      loading="eager"
-                      priority
-                    />
-                    <div
-                      className="absolute p-2 text-2xl text-white transition-opacity duration-300 bg-black bg-opacity-50 opacity-0 cursor-pointer top-2 right-2 rounded-tl-xl rounded-br-xl group-hover:opacity-100"
-                      onClick={() => openCaseStudyModal(caseStudyData[0])}
-                    >
-                      <MagnifyingGlassIcon className="w-6 h-6" />
-                    </div>
-                  </div>
-                  <div className="relative overflow-hidden px-6 pb-9 pt-[40%] shadow-2xl sm:px-12 sm:mt-12 lg:mt-8 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 transform transition-transform duration-500 hover:-translate-y-3 mt-8 group">
-                    <Image
-                      className="absolute inset-0 object-cover w-full h-full mb-2 border rounded-tl-ct rounded-br-ct border-primary-500/20"
-                      src="/photos/ts-social.webp"
-                      alt="Social"
-                      width={700}
-                      height={400}
-                      loading="eager"
-                      priority
-                    />
-                    <div
-                      className="absolute p-2 text-2xl text-white transition-opacity duration-300 bg-black bg-opacity-50 opacity-0 cursor-pointer top-2 right-2 rounded-tl-xl rounded-br-xl group-hover:opacity-100"
-                      onClick={() => openCaseStudyModal(caseStudyData[1])}
-                    >
-                      <MagnifyingGlassIcon className="w-6 h-6" />
-                    </div>
-                  </div>
-                  <dl className="grid grid-cols-2 pt-10 mt-10 border-t gap-x-8 border-primary-500/20 sm:grid-cols-4 lg:hidden">
-                    {stats.map((stat, statIdx) => (
-                      <div key={statIdx}>
-                        <dt className="text-sm font-semibold leading-6 text-primary-500">
-                          {stat.label}
-                        </dt>
-                        <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-white">
-                          {stat.value}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-                <div className="order-1 lg:order-2">
-                  <div className="text-base leading-7 text-gray-700 lg:max-w-xl">
-                    <h1 className="mt-2 text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-                      Our time @ Teckstar <br /> Case Study
-                    </h1>
-                    <div className="max-w-xl">
-                      <p className="mt-6 text-xl leading-7 text-white">
-                        Teckstar is a company that connects businesses with top
-                        developers. When we started working with them, our main
-                        goal was to help them grow bigger and become more
-                        visible in the market. We improved their branding to
-                        make sure their message was clear and appealing to their
-                        target audience.
-                      </p>
-                      <p className="pb-4 mt-8 text-xl leading-8 text-white">
-                        The main achievement was creating a new sales process
-                        called &quot;The Broken Glass&quot;. This new system was
-                        designed to make their sales operations smoother and
-                        more efficient. Additionally, we assisted in enhancing
-                        their online presence by optimizing their social media
-                        content.
-                      </p>
-                    </div>
-                  </div>
-                  <dl className="grid grid-cols-2 gap-8 pt-4 pb-12 mt-4 border-t border-primary-500/20 sm:pb-0 sm:grid-cols-4 lg:grid">
-                    {stats.map((stat, statIdx) => (
-                      <div key={statIdx}>
-                        <dt className="text-sm font-semibold leading-6 text-primary-500">
-                          {stat.label}
-                        </dt>
-                        <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-white">
-                          {stat.value}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
               </div>
             </div>
           </div>

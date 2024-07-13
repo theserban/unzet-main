@@ -68,7 +68,7 @@ const content: Record<
           "We will adapt to your needs and work together on your goals.",
       },
     ],
-    price: "€1999",
+    price: "€",
     priceSuffix: "/month",
     priceButton: "Strategy Call",
     ctaText:

@@ -15,9 +15,9 @@ export default function Stats() {
               </h2>
               <p className="mt-6 text-xl leading-7 text-white">
                 We believe in being open and honest. That&prime;s why we want to
-                share the truth: running a tech business isn&prime;t easy. It
-                takes good ideas, careful planning, hard work, and the ability
-                to adapt.
+                share the truth we face as well. Running a tech business
+                isn&prime;t easy. It takes good ideas, careful planning, hard
+                work, and the ability to adapt.
               </p>
             </div>
             <div className="flex flex-col max-w-2xl gap-8 mx-auto mt-16 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">

@@ -1,54 +1,35 @@
 "use client";
-import React, { useState, useEffect } from "react";
-
+import React from "react";
 import Navbar from "./Components/navbar";
-import Hero from "./Components/hero";
-import Services from "./Components/services";
-import How from "./Components/how";
-import Pricing from "./Components/pricing";
-import Stats from "./Components/stats";
-import Projects from "./Components/projects";
+import Competitions from "./Components/competitions";
+import Products from "./Components/products";
 import Tools from "./Components/tools";
+import Donate from "./Components/donate";
+import Hero from "./Components/hero";
+import Values from "./Components/values";
+import How from "./Components/how";
+import Stats from "./Components/stats";
+import Divider from "./Components/divider";
+import Projects from "./Components/projects";
 import FAQ from "./Components/faq";
-import Testimonials from "./Components/testimonials";
 import Footer from "./Components/footer";
 
 export default function Page() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isModalOpen]);
-
-  const handleModalOpen = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleModalClose = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <div className="relative">
       <Navbar />
       <Hero />
-      <Projects />
-      <Services />
-      <How />
-      <Testimonials />
+      <Competitions />
       <Tools />
+      <Donate />
       <Stats />
-      <Pricing />
+      <Divider />
+      <Projects />
+      <Products />
+      <How />
+      <Values />
       <FAQ />
-      <Footer onModalOpen={handleModalOpen} onModalClose={handleModalClose} />
+      <Footer />
     </div>
   );
 }

@@ -2,14 +2,36 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const items = [
-  { logo: "/photos/antvise.svg", text: "customers since 2016" },
-  { logo: "/photos/shiftintech.svg", text: "customers since 2015" },
-  { logo: "/photos/inereto.svg", text: "customers since 2014" },
-  { logo: "/photos/persuwise.svg", text: "customers since 2013" },
-  { logo: "/photos/logo.svg", text: "customers since 2012" },
+  {
+    logo: "/photos/rotato.webp",
+    text: "product videos",
+    link: "https://rotato.app/",
+  },
+  {
+    logo: "/photos/linearity.webp",
+    text: "motion graphics",
+    link: "https://www.linearity.io/move/",
+  },
+  {
+    logo: "/photos/shots.webp",
+    text: "fast mockups",
+    link: "https://shots.so",
+  },
+  {
+    logo: "/photos/penpot.webp",
+    text: "web friendly ui",
+    link: "https://penpot.app",
+  },
+  {
+    logo: "/photos/instant.webp",
+    text: "name brainstorming",
+    link: "https://instantdomainsearch.com/",
+  },
 ];
 
-const shuffleArray = (array: { logo: string; text: string }[]) => {
+const shuffleArray = (
+  array: { logo: string; text: string; link: string }[]
+) => {
   let shuffledArray = [...array];
   for (let i = shuffledArray.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -44,7 +66,7 @@ export default function Tools() {
     return displayedItems.map((item, index) => (
       <a
         key={index}
-        href="#"
+        href={item.link}
         className="flex-shrink-0 text-center transition-transform duration-500 transform border px-12 py-6 tool-item hover:-translate-y-3 rounded-tr-ct rounded-bl-ct bg-secondary-400 border-primary-500/20"
       >
         <div className="h-12 flex items-center justify-center mb-4">
@@ -63,24 +85,26 @@ export default function Tools() {
 
   return (
     <section id="tools" className="relative">
-      <div className="px-6 py-8 mx-auto overflow-hidden lg:py-24">
-        <div className="relative pb-12 isolate">
-          <div className="mx-auto max-w-7xl lg:px-8">
-            <div className="max-w-2xl mx-auto lg:mx-0">
+      <div className=" mx-auto overflow-hidden pb-24">
+        <div className="px-6 mx-auto max-w-7xl lg:px-8 sm:pt-16">
+          <div className="flex justify-left">
+            <div className="max-w-2xl mx-auto lg:mx-0 py-12 pt-0">
               <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-                Playing the Numbers
+                Cool Tools
               </h2>
               <p className="mt-6 text-xl leading-7 text-white">
-                We believe in being open and honest. That&apos;s why we want to
-                share the truth: running a tech business isn&apos;t easy. It
-                takes good ideas, careful planning, hard work, and the ability
-                to adapt.
+                These are some great tools for doing things yourself, from
+                branding to product launches. We researched and found the best
+                ones, along with the fastest way to complete each task.
+              </p>
+              <p className="mt-4 text-xl leading-7 text-gray-300">
+                DIY Free Launch Kit Coming Soon
               </p>
             </div>
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-7xl lg:px-8">
+        <div className="relative mx-auto max-w-7xl lg:px-8 pb-12">
           <div
             id="tools-container"
             className="flex space-x-6 overflow-hidden relative pt-4"

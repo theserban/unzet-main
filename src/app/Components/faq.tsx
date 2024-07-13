@@ -18,22 +18,17 @@ const faqs = [
   {
     question: "Transparency throughout the project?",
     answer:
-      "We ensure transparency by providing regular updates, detailed progress reports, and clear communication throughout the project. We involve you in every step, from planning to execution, so you always know what’s happening and can provide feedback.",
+      "If you work with us, we ensure transparency by providing regular updates, detailed progress reports, and clear communication throughout the project. We involve you in every step, from planning to execution, so you always know what’s happening and can provide feedback.",
   },
   {
     question: "How involved will I be in the process?",
     answer:
       "You'll be very involved. We believe in close collaboration and will provide regular updates. Your input is crucial to ensure the final outcome meets your expectations.",
   },
-  {
-    question: "Is there a minimum commitment?",
-    answer:
-      "Yes, we recommend working together for at least 2 months. This helps us fully understand your goals and achieve the best results.",
-  },
 ];
 
 export default function FAQ() {
-  const [imageSrc, setImageSrc] = useState("/photos/founder.webp");
+  const [imageSrc, setImageSrc] = useState("/photos/founder2.webp");
 
   return (
     <>
@@ -87,7 +82,7 @@ export default function FAQ() {
         </div>
 
         <div className="bg-black">
-          <div className="px-6 py-4 pb-32 mx-auto max-w-7xl md:px-20 sm:pt-8">
+          <div className="px-6 py-4 pb-28 mx-auto max-w-7xl md:px-20 sm:pt-8">
             <div className="max-w-4xl mx-auto lg:px-2 lg:pb-16">
               <h2 className="mb-8 text-2xl font-bold leading-10 tracking-tight text-primary-500">
                 Let me answer
@@ -97,7 +92,7 @@ export default function FAQ() {
                   <Disclosure
                     as="div"
                     key={faq.question}
-                    className="pt-4 pb-4 transition-transform duration-500 transform border-b hover:-translate-y-1 border-white/20"
+                    className="pt-4 pb-4 transition-transform duration-500 transform border-b hover:-translate-y-1 border-primary-500/20"
                   >
                     {({ open }) => (
                       <>

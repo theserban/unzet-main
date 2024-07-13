@@ -1,24 +1,26 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { GithubLogo } from "phosphor-react";
 import {
   Bars3Icon,
   XMarkIcon,
   ClipboardIcon,
-  CreditCardIcon,
   ArrowPathRoundedSquareIcon,
   SwatchIcon,
-  UserIcon,
+  BookmarkIcon,
+  ArrowDownTrayIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
 import { getCalApi } from "@calcom/embed-react";
 
 const navigation = [
-  { name: "Archive", href: "projects", icon: ClipboardIcon },
-  { name: "Values", href: "products", icon: SwatchIcon },
-  { name: "Process", href: "how", icon: ArrowPathRoundedSquareIcon },
-  { name: "Insights", href: "testimonials", icon: UserIcon },
-  { name: "Rates", href: "pricing", icon: CreditCardIcon },
+  { name: "Brands", href: "#compete", icon: SwatchIcon },
+  { name: "Remains", href: "#donate", icon: ArrowDownTrayIcon },
+  { name: "Archive", href: "#projects", icon: ClipboardIcon },
+  { name: "Process", href: "#how", icon: ArrowPathRoundedSquareIcon },
+  { name: "FAQ", href: "#founder", icon: BookmarkIcon },
 ];
 
 export default function Navbar() {
@@ -52,23 +54,16 @@ export default function Navbar() {
       setLastScrollY(currentScrollY);
 
       setAtTop(currentScrollY === 0);
+
+      // Close mobile menu when scrolling
+      if (mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
-
-  const handleSmoothScroll = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    href: string
-  ) => {
-    e.preventDefault();
-    const target = document.getElementById(href);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-    setMobileMenuOpen(false);
-  };
+  }, [lastScrollY, mobileMenuOpen]);
 
   const BookNowButton = () => (
     <button
@@ -84,7 +79,7 @@ export default function Navbar() {
           <span className="relative inline-flex w-2 h-2 pb-1 bg-white"></span>
         </span>
       </span>{" "}
-      Book Now
+      Let&apos;s Talk
     </button>
   );
 
@@ -101,7 +96,7 @@ export default function Navbar() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Unzet</span>
             <Image
               className="w-32 h-auto transition-transform duration-500 transform hover:scale-105"
@@ -110,22 +105,28 @@ export default function Navbar() {
               width={128}
               height={32}
             />
-          </a>
+          </Link>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={`#${item.href}`}
+              href={item.href}
               className="flex items-center text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
-              onClick={(e) => handleSmoothScroll(e, item.href)}
             >
               <item.icon className="w-5 h-5 mr-2" aria-hidden="true" />
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-3">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+          <Link
+            href="https://github.com/theserban/unzet-main"
+            passHref
+            className="duration-500 transform hover:scale-105"
+          >
+            <GithubLogo className="w-5 h-5 text-white" aria-hidden="true" />
+          </Link>
           <BookNowButton />
         </div>
         <div className="flex lg:hidden">
@@ -144,31 +145,20 @@ export default function Navbar() {
         </div>
       </nav>
       {mobileMenuOpen && (
-        <div className="absolute inset-x-0 z-50 w-full px-6 py-6 bg-black border-b lg:hidden top-16 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 border-primary-500/20 rounded-br-ct">
+        <div className="absolute inset-x-0 z-50 w-full px-6 py-6 bg-black border-b lg:hidden top-12 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 border-primary-500/20 rounded-br-ct">
           <div className="flex flex-col items-start space-y-4">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={`#${item.href}`}
-                className="flex items-center px-3 py-2 text-base font-semibold leading-7 text-white rounded-tr-lg rounded-bl-lg cursor-pointer hover:text-black hover:bg-primary-500"
-                onClick={(e) => handleSmoothScroll(e, item.href)}
+                href={item.href}
+                className="flex items-center px-2 py-2 text-base font-semibold leading-7 text-white rounded-tr-lg rounded-bl-lg cursor-pointer hover:text-black hover:bg-primary-500"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <item.icon className="w-5 h-5 mr-2" aria-hidden="true" />
                 {item.name}
-              </a>
+              </Link>
             ))}
-            <div className="flex items-center gap-2">
-              <a href="#founder" className="flex-shrink-0">
-                <Image
-                  src="/pages/founder.webp"
-                  alt="Founder"
-                  width={24}
-                  height={24}
-                  className="rounded-full"
-                />
-              </a>
-              <BookNowButton />
-            </div>
+            <BookNowButton />
           </div>
         </div>
       )}
