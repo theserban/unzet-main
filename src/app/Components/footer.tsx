@@ -66,7 +66,7 @@ export default function Footer() {
   return (
     <div id="footer">
       <div className="relative border-t bg-secondary-400 rounded-tr-ct border-primary-500/20">
-        <div className="relative py-16  overflow-hidden isolate">
+        <div className="relative pt-10 pb-16   overflow-hidden isolate">
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
             <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
               <div className="max-w-xl text-white lg:max-w-lg">
