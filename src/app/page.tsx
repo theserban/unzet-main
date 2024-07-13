@@ -18,6 +18,7 @@ export default function Page() {
   return (
     <div className="relative">
       <Navbar />
+      <Hero />
       <Competitions />
       <Tools />
       <Donate />

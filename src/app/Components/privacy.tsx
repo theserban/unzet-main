@@ -32,7 +32,7 @@ const PrivacyPolicyModal: React.FC<{
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 overflow-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 overflow-auto px-6">
       <div className="relative w-full max-w-3xl">
         <button
           onClick={onClose}

@@ -22,6 +22,7 @@ import {
 } from "phosphor-react";
 import Link from "next/link";
 import Privacy from "./privacy";
+import Image from "next/image";
 
 import * as CookieConsent from "vanilla-cookieconsent";
 import "../Scripts/cookie.css";
@@ -165,23 +166,39 @@ export default function Footer() {
             aria-hidden="true"
           ></div>
         </div>
-        <div className="px-6 py-6 mx-auto border-t shadow-lg max-w-7xl md:flex md:items-center md:justify-between lg:px-8 border-primary-500/20">
-          <div className="md:order-1 md:mt-0">
-            <p className="text-sm leading-5 text-left text-white mb-2 sm:mb-0">
-              &copy; {new Date().getFullYear()} Unzet, All Rights Reserved{" "}
-            </p>
-          </div>
-          <div className="md:order-2 md:mt-0 md:ml-auto flex gap-4">
-            <button
-              className="text-sm"
-              type="button"
-              onClick={ResetCookieConsent}
-            >
-              Reset Consent
-            </button>
-            <button className="text-sm" type="button" onClick={handleOpenModal}>
-              Privacy Policy
-            </button>
+        <div className="px-8 py-6 mx-auto border-t shadow-lg max-w-7xl border-primary-500/20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 items-start gap-4 py-4 sm:py-0">
+            <div className="order-3 sm:order-1">
+              <p className="text-md sm:text-sm leading-5 text-left text-white">
+                &copy; {new Date().getFullYear()} Unzet, All Rights Reserved
+              </p>
+            </div>
+            <div className="order-1 sm:order-2 flex justify-start sm:justify-center pb-2 sm:pb-0">
+              <Image
+                src="/photos/blureo-member.svg"
+                alt="Member of Blureo"
+                width={280}
+                height={40}
+                className="sm:w-38 sm:h-4 w-56 h-8 -mt-2 -mb-1"
+              />
+            </div>
+
+            <div className="order-2 flex flex-row justify-start sm:justify-end gap-4">
+              <button
+                className="text-md sm:text-sm text-white text-left"
+                type="button"
+                onClick={ResetCookieConsent}
+              >
+                Reset Consent
+              </button>
+              <button
+                className="text-md sm:text-sm text-white text-left"
+                type="button"
+                onClick={handleOpenModal}
+              >
+                Privacy Policy
+              </button>
+            </div>
           </div>
         </div>
       </div>

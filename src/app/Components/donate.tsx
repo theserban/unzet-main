@@ -10,13 +10,13 @@ interface CardProps {
 
 const Card = ({ imageUrl, title, date, description }: CardProps) => (
   <div className="py-3 px-5 pb-8 text-white transition-transform duration-500 border shadow-lg bg-secondary-400 rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-1">
-    <div className="flex items-center justify-center w-24 h-12 pt-2 mb-2">
+    <div className="flex items-center justify-center w-28 h-12 pt-2 mb-2">
       <Image src={imageUrl} alt={title} width={240} height={52} />
     </div>
-    <p className="mb-3 font-medium text-sm sm:text-lg text-primary-500">
+    <p className="mb-3 font-medium text-md sm:text-lg text-primary-500">
       {date}
     </p>
-    <p className="font-medium text-sm sm:text-lg text-white">{description}</p>
+    <p className="font-medium text-md sm:text-lg text-white">{description}</p>
   </div>
 );
 
@@ -54,7 +54,7 @@ export default function Work() {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 mt-8">
+        <div className="grid grid-cols-2 gap-6 mt-8">
           <div className="mt-0">
             <Card
               imageUrl="photos/zunego.svg"
