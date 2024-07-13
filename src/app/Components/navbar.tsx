@@ -71,7 +71,7 @@ export default function Navbar() {
       data-cal-namespace=""
       data-cal-link="weunzet/30min"
       data-cal-config='{"layout":"week_view"}'
-      className="rounded-tr-lg rounded-bl-lg outline outline-1 text-white px-4 py-2.5 text-xs font-semibold shadow-sm hover:bg-secondary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-500 transform transition-transform duration-500 hover:scale-105 flex items-center"
+      className="rounded-tr-lg rounded-bl-lg outline outline-1 text-white px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-secondary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-500 transform transition-transform duration-500 hover:scale-105 flex items-center"
     >
       <span className="pr-2">
         <span className="relative flex w-2 h-2">
@@ -132,7 +132,7 @@ export default function Navbar() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+            className="inline-flex items-center justify-center rounded-md p-2.5 text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Open main menu</span>
@@ -145,7 +145,7 @@ export default function Navbar() {
         </div>
       </nav>
       {mobileMenuOpen && (
-        <div className="absolute inset-x-0 z-50 w-full px-6 py-6 bg-black border-b lg:hidden top-12 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 border-primary-500/20 rounded-br-ct">
+        <div className="absolute mt-4 inset-x-0 z-50 w-full px-4 py-6 bg-black border-b lg:hidden top-12 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 border-primary-500/20 rounded-br-ct">
           <div className="flex flex-col items-start space-y-4">
             {navigation.map((item) => (
               <Link
@@ -158,7 +158,16 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <BookNowButton />
+            <div className="flex flex-1 justify-end items-center gap-4 pl-2">
+              <Link
+                href="https://github.com/theserban/unzet-main"
+                passHref
+                className="duration-500 transform hover:scale-105"
+              >
+                <GithubLogo className="w-5 h-5 text-white" aria-hidden="true" />
+              </Link>
+              <BookNowButton />
+            </div>
           </div>
         </div>
       )}

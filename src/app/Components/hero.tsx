@@ -16,7 +16,7 @@ interface CardProps {
 }
 
 const Card = ({ icon: Icon, title, power, description }: CardProps) => (
-  <div className="p-6 text-white transition-transform duration-500 border shadow-lg bg-secondary-400 rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-3">
+  <div className="p-6 text-white transition-transform duration-500 border shadow-lg bg-secondary-400 rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-1">
     <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full">
       <Icon className="w-12 h-12 text-primary-500" />
     </div>
@@ -64,7 +64,7 @@ export default function Hero() {
           <div className="px-6 pb-12 mx-auto max-w-7xl pt-24 sm:pt-36 lg:px-8 lg:pt-32">
             <div className="max-w-2xl mx-auto gap-x-12 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
               <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-xl">
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl sm:-mt-32">
+                <h1 className="text-5xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl sm:-mt-32">
                   Kickstart Your{" "}
                   <span className="text-primary-500">Startup Journey</span>
                 </h1>
@@ -89,7 +89,7 @@ export default function Hero() {
                   </button>
                 </div>
               </div>
-              <div className="relative flex justify-end w-full gap-8 mt-14 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 sm:w-auto">
+              <div className="relative flex justify-end w-full gap-4 mt-14 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 sm:w-auto">
                 <div className="flex-none pt-32 ml-auto space-y-8 w-44 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                   <div className="relative">
                     <Card
@@ -98,7 +98,6 @@ export default function Hero() {
                       power="Power +20"
                       description="You've aligned your product with the demand"
                     />
-                    <div className="absolute inset-0 pointer-events-none rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
                 </div>
                 <div className="flex-none mr-auto space-y-8 w-44 sm:mr-0 sm:pt-52 lg:pt-36">
@@ -109,7 +108,6 @@ export default function Hero() {
                       power="Power +18"
                       description="Your website is indexed and optimized"
                     />
-                    <div className="absolute inset-0 pointer-events-none rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
                   <div className="relative">
                     <Card
@@ -118,7 +116,6 @@ export default function Hero() {
                       power="Power +14"
                       description="You are now the proud owner of a great brand"
                     />
-                    <div className="absolute inset-0 pointer-events-none rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
                 </div>
                 <div className="flex-none pt-32 space-y-8 w-44 sm:pt-0">
@@ -129,7 +126,6 @@ export default function Hero() {
                       power="Power +10"
                       description="You got the first user to sign in for the product"
                     />
-                    <div className="absolute inset-0 pointer-events-none rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
                   <div className="relative">
                     <Card
@@ -138,17 +134,16 @@ export default function Hero() {
                       power="Power +8"
                       description="You are trendy on all platforms, keep it up"
                     />
-                    <div className="absolute inset-0 pointer-events-none rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="py-16 bg-primary-black sm:py-24">
+        <div className="py-16 pb-20 bg-primary-black sm:py-24">
           <div className="px-6 mx-auto max-w-7xl lg:px-0">
-            <div className="max-w-2xl mx-auto lg:max-w-none">
-              <h2 className="text-lg font-semibold leading-8 text-center text-primary-500">
+            <div className="max-w-xl mx-auto lg:max-w-none">
+              <h2 className="text-lg font-semibold leading-8 text-left sm:text-center text-primary-500">
                 Top Achievers
               </h2>
               <div className="grid items-start grid-cols-4 mx-auto mt-10 gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-10 lg:mx-0 lg:grid-cols-4">

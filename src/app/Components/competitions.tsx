@@ -250,7 +250,7 @@ export default function Events() {
 
   return (
     <section id="compete" className="bg-black">
-      <div className="max-w-7xl px-4 py-8 mx-auto lg:px-8 sm:py-16 lg:py-24">
+      <div className="max-w-7xl px-6 py-8 mx-auto lg:px-8 sm:py-16 lg:py-28">
         <div className="max-w-2xl mx-auto lg:mx-0 mb-20">
           <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
             Focus On Building
@@ -275,7 +275,7 @@ export default function Events() {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-4 mt-8 xl:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-12 mt-8 xl:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {events.map((event, index) => (
             <EventCard
               key={index}
@@ -301,6 +301,10 @@ export default function Events() {
           <li className="my-2">
             Please use a platform like Youtube, Vimeo and attach the link in the
             mail.
+          </li>
+          <li className="my-2">
+            Have an active Porkbun account where we can instantly transfer your
+            domain.
           </li>
           <li className="my-2">
             Make sure to start the video with &quot;I&apos;m a founder&quot; - a

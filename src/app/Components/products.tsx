@@ -9,9 +9,9 @@ export default function Products({ onTryExperienceClick }: ProductsProps) {
   return (
     <section id="products">
       <div className="bg-black">
-        <div className="px-6 py-24 mx-auto max-w-7xl lg:px-8 sm:py-28">
+        <div className="px-6 py-20 mx-auto max-w-7xl lg:px-8 sm:py-20">
           <div className="flex justify-left ">
-            <div className="max-w-2xl mx-auto lg:mx-0 py-12 pt-0">
+            <div className="max-w-2xl mx-auto lg:mx-0 py-16 sm:py-20 pt-0">
               <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
                 Cooking Now
               </h2>

@@ -169,9 +169,9 @@ export default function Projects() {
         />
       </svg>
       <section id="projects">
-        <div className="py-16 overflow-hidden bg-black sm:pt-24 sm:pb-4">
+        <div className="pt-16 pb-0 overflow-hidden bg-black sm:pt-24 sm:pb-4">
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
-            <div className="grid max-w-2xl grid-cols-1 mx-auto lg:mx-0 lg:max-w-none">
+            <div className="grid max-w-2xl grid-cols-1 mx-auto lg:mx-0 lg:max-w-none gap-4 sm:gap-0">
               <div className="flex flex-col gap-8 lg:flex-row">
                 <div className="lg:w-1/2">
                   <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
@@ -186,7 +186,7 @@ export default function Projects() {
                     our goal is to make it as big as we can and be that cake
                     piece in each project we undertake.
                   </p>
-                  <div className="flex items-center mt-10 gap-x-6">
+                  <div className="flex items-center mt-10 gap-x-6 mb-8 sm:mb-0">
                     <button
                       onClick={shuffleProjects}
                       className="flex align-center justify-center cursor-pointer gap-x-1 rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
@@ -208,7 +208,7 @@ export default function Projects() {
                 <div className="lg:w-1/2">
                   {activeCards.length > 0 && (
                     <div className="relative group">
-                      <div className="transition-transform duration-500 transform hover:-translate-y-3">
+                      <div className="transition-transform duration-500 transform hover:-translate-y-1">
                         <Image
                           src={cardData[activeCards[0]].src}
                           alt={`Project ${cardData[activeCards[0]].title}`}
@@ -233,10 +233,10 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="flex flex-col mt-8 gap-x-10 sm:flex-row">
+              <div className="flex flex-col mt-8 gap-x-10 sm:flex-row gap-4 sm:gap-10">
                 {activeCards.slice(1, 3).map((cardIndex, idx) => (
                   <div key={idx} className="relative group sm:w-1/2">
-                    <div className="mb-8 transition-transform duration-500 transform hover:-translate-y-3">
+                    <div className="mb-8 transition-transform duration-500 transform hover:-translate-y-1">
                       <Image
                         src={cardData[cardIndex].src}
                         alt={`Project ${cardData[cardIndex].title}`}

@@ -45,7 +45,7 @@ const Card: React.FC<CardProps> = ({
   description,
   pills,
 }) => (
-  <div className="ring-1 ring-gray-400/10 w-[37rem] h-auto bg-secondary-400 text-white p-6 rounded-tr-ct rounded-bl-ct border border-primary-500/20 shadow-lg transition-transform duration-500 hover:-translate-y-3">
+  <div className="ring-1 ring-gray-400/10 w-[37rem] h-auto bg-secondary-400 text-white p-6 rounded-tr-ct rounded-bl-ct border border-primary-500/20 shadow-lg transition-transform duration-500 hover:-translate-y-1">
     <div className="flex items-center mb-4">
       <div className="flex items-center justify-center w-12 h-12 rounded-full">
         <Icon className="w-12 h-12 text-primary-500" />
@@ -121,7 +121,7 @@ export default function How() {
   return (
     <>
       <section id="how">
-        <div className="relative px-6 py-16 overflow-hidden isolate sm:py-24 lg:overflow-visible lg:px-0">
+        <div className="relative px-6 py-16 overflow-hidden isolate sm:py-28 lg:overflow-visible lg:px-0">
           <div className="absolute inset-0 overflow-hidden -z-10">
             <svg
               className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"

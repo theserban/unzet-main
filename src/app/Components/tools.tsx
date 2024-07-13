@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const items = [
   {
@@ -67,7 +68,7 @@ export default function Tools() {
       <a
         key={index}
         href={item.link}
-        className="flex-shrink-0 text-center transition-transform duration-500 transform border px-12 py-6 tool-item hover:-translate-y-3 rounded-tr-ct rounded-bl-ct bg-secondary-400 border-primary-500/20"
+        className="flex-shrink-0 text-center transition-transform duration-500 transform border px-12 py-6 tool-item hover:-translate-y-1 rounded-tr-ct rounded-bl-ct bg-secondary-400 border-primary-500/20"
       >
         <div className="h-12 flex items-center justify-center mb-4">
           <Image
@@ -85,7 +86,7 @@ export default function Tools() {
 
   return (
     <section id="tools" className="relative">
-      <div className=" mx-auto overflow-hidden pb-24">
+      <div className=" mx-auto overflow-hidden sm:pt-0 py-20 pb-12 sm:py-24">
         <div className="px-6 mx-auto max-w-7xl lg:px-8 sm:pt-16">
           <div className="flex justify-left">
             <div className="max-w-2xl mx-auto lg:mx-0 py-12 pt-0">
@@ -104,7 +105,7 @@ export default function Tools() {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-7xl lg:px-8 pb-12">
+        <div className="relative mx-auto max-w-7xl px-7 lg:px-8 pb-12">
           <div
             id="tools-container"
             className="flex space-x-6 overflow-hidden relative pt-4"
@@ -117,13 +118,13 @@ export default function Tools() {
               onClick={() => handleArrowClick("left")}
               className="mx-2 text-primary-500 transition-transform duration-500 transform hover:scale-110"
             >
-              ←
+              <ChevronLeftIcon className="w-6 h-6" />
             </button>
             <button
               onClick={() => handleArrowClick("right")}
               className="mx-2 text-primary-500 transition-transform duration-500 transform hover:scale-110"
             >
-              →
+              <ChevronRightIcon className="w-6 h-6" />
             </button>
           </div>
         </div>

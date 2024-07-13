@@ -33,9 +33,9 @@ export default function FAQ() {
   return (
     <>
       <section id="founder">
-        <div className="px-6 mx-auto max-w-7xl lg:px-8">
-          <div className="relative flex flex-col items-start max-w-2xl py-16 mx-auto lg:pt-16 sm:py-12 lg:max-w-4xl lg:flex-row lg:items-start gap-x-6 gap-y-8 lg:gap-x-0">
-            <div className="flex-shrink-0 p-2 rounded-lg w-68 lg:w-72">
+        <div className="px-6 mx-auto max-w-7xl lg:px-8 py-8">
+          <div className="relative flex flex-col items-start max-w-2xl py-4 sm:py-12 mx-auto lg:pt-16 lg:max-w-4xl lg:flex-row lg:items-start gap-x-6 gap-y-8 lg:gap-x-0">
+            <div className="flex-shrink-0 p-2 rounded-lg w-88 lg:w-72">
               <Image
                 className="transition-transform duration-500 transform border rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:scale-105"
                 src={imageSrc}

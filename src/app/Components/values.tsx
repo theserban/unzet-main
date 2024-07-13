@@ -88,7 +88,7 @@ export default function Services() {
 
   return (
     <section className="bg-black">
-      <div className="px-6 py-8 mx-auto max-w-7xl sm:text-left lg:px-8 lg:py-16">
+      <div className="px-6 py-16 mx-auto max-w-7xl sm:text-left lg:px-8 lg:py-24">
         <div className="max-w-2xl mx-auto lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
             We stand for
