@@ -256,7 +256,7 @@ const Card: React.FC<{
                 onClick={(e) => {
                   if (!link.href) e.preventDefault();
                 }}
-                className="flex items-center justify-between w-full px-2 py-1 space-x-2 leading-6 text-white transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105 hover:bg-secondary-300 rounded-md"
+                className="flex items-center justify-between w-full px-2 py-1 space-x-2 leading-6 text-white transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105 rounded-md"
                 {...(link.name === "9:00 to 18:00 GMT+2" && {
                   "data-cal-namespace": "",
                   "data-cal-link": "weunzet/30min",
@@ -284,7 +284,7 @@ const Card: React.FC<{
             <button
               ref={buttonRef}
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex items-center justify-between w-full px-2 py-1 space-x-2 leading-6 text-white transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105 hover:bg-secondary-300 rounded-md"
+              className="flex items-center justify-between w-full px-2 py-1 space-x-2 leading-6 text-white transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105 rounded-md"
             >
               <div className="flex items-center space-x-2">
                 <AtSymbolIcon
