@@ -58,7 +58,7 @@ export default function Hero() {
           </svg>
 
           <div className="overflow-hidden">
-            <div className="px-6 pb-12 mx-auto max-w-7xl pt-24 sm:pt-36 lg:px-8 lg:pt-32">
+            <div className="px-6 pb-12 mx-auto max-w-7xl pt-24 sm:pt-36 lg:px-8 lg:pt-40">
               <div className="max-w-2xl mx-auto gap-x-20 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-xl">
                   <h1 className="text-5xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl sm:-mt-32">
@@ -88,7 +88,7 @@ export default function Hero() {
                   </div>
                 </div>
                 <div className="relative flex justify-end w-full gap-4 mt-14 sm:mt-0 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 sm:w-auto">
-                  <div className="flex-none pt-32 ml-auto space-y-8 w-44 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                  <div className="flex-none pt-32 ml-auto space-y-4 w-44 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                     <div className="relative">
                       <Card
                         icon={ShoppingCartIcon}
@@ -98,7 +98,7 @@ export default function Hero() {
                       />
                     </div>
                   </div>
-                  <div className="flex-none mr-auto space-y-8 w-44 sm:mr-0 sm:pt-52 lg:pt-36">
+                  <div className="flex-none mr-auto space-y-4 w-44 sm:mr-0 sm:pt-52 lg:pt-36">
                     <div className="relative">
                       <Card
                         icon={CloudIcon}

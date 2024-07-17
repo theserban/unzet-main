@@ -13,19 +13,10 @@ import {
   BookmarkIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
-import {
-  LinkedinLogo,
-  InstagramLogo,
-  GithubLogo,
-  YoutubeLogo,
-} from "phosphor-react";
+import { LinkedinLogo, InstagramLogo, YoutubeLogo } from "phosphor-react";
 import Link from "next/link";
 import Privacy from "./privacy";
 import Image from "next/image";
-
-import * as CookieConsent from "vanilla-cookieconsent";
-import "../Scripts/cookie.css";
-import getConfig from "../Scripts/CookieConsentConfig";
 
 const socials = {
   LinkedIn: "https://www.linkedin.com/company/weunzet",
@@ -37,12 +28,6 @@ export default function Footer() {
   const [isModalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && CookieConsent) {
-      CookieConsent.run(getConfig());
-    } else {
-      console.error("CookieConsent is not defined or window is not available");
-    }
-
     if (isModalOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -65,7 +50,7 @@ export default function Footer() {
   return (
     <div id="footer">
       <div className="relative border-t bg-secondary-400 rounded-tr-ct border-primary-500/20">
-        <div className="relative pt-12 pb-16   overflow-hidden isolate">
+        <div className="relative pt-12 pb-16 overflow-hidden isolate">
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
             <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
               <div className="max-w-xl text-white lg:max-w-lg">
@@ -168,13 +153,21 @@ export default function Footer() {
           ></div>
         </div>
         <div className="px-8 mx-auto shadow-lg max-w-7xl pb-8">
-          <div className="grid grid-cols-1 border-t border-primary-500/20 sm:grid-cols-3 items-start gap-4 sm:py-0 -mt-4 sm:-mt-0">
-            <div className="order-3 sm:order-1 pt-0 sm:pt-8">
-              <p className="text-md sm:text-sm leading-5 text-left text-white">
-                &copy; {new Date().getFullYear()} Unzet, All Rights Reserved
+          <div className="grid grid-cols-1 border-t border-primary-500/20 sm:grid-cols-3 items-start gap-4 sm:py-0 -mt-4 sm:-mt-4">
+            <div className="order-3 sm:order-1 pt-0 sm:pt-8 flex sm:block -mb-8">
+              <p className="text-md sm:text-sm leading-5 text-left text-white mr-20 sm:mr-0 m sm:mt-0">
+                Copyright &copy; {new Date().getFullYear()} Unzet
               </p>
+              <button
+                className="text-md sm:text-sm text-white text-left hover:scale-105 transform duration-500 sm:hidden"
+                type="button"
+                onClick={handleOpenModal}
+              >
+                Privacy Policy
+              </button>
             </div>
-            <div className="order-1 sm:order-2 flex justify-start sm:justify-center pb-2 sm:pb-0 pt-11 sm:pt-8">
+
+            <div className="order-1 sm:order-2 flex justify-start sm:justify-center pb-2 sm:pb-0 pt-10 sm:pt-8">
               <Link href="https://blureo.com">
                 <Image
                   src="/photos/blureo-member.svg"
@@ -186,16 +179,15 @@ export default function Footer() {
               </Link>
             </div>
 
-            <div className="order-2 flex flex-row justify-start sm:justify-end gap-4 pt-0 sm:pt-8">
+            <div className="order-3 flex flex-row justify-start sm:justify-end gap-4 pt-0 sm:pt-8">
               <button
-                className="text-md sm:text-sm text-white text-left hover:scale-105 transform duration-500"
+                className="hidden text-md sm:text-sm text-white text-left hover:scale-105 transform duration-500"
                 type="button"
-                onClick={ResetCookieConsent}
               >
                 Reset Consent
               </button>
               <button
-                className="text-md sm:text-sm text-white text-left hover:scale-105 transform duration-500"
+                className="text-md sm:text-sm text-white text-left hover:scale-105 transform duration-500 invisible sm:visible"
                 type="button"
                 onClick={handleOpenModal}
               >
@@ -209,15 +201,6 @@ export default function Footer() {
     </div>
   );
 }
-
-// Helper components and functions
-
-const ResetCookieConsent = () => {
-  if (typeof window !== "undefined" && CookieConsent) {
-    CookieConsent.reset(true);
-    CookieConsent.run(getConfig());
-  }
-};
 
 interface Link {
   name: string;
@@ -264,11 +247,14 @@ const Card: React.FC<{
   }, [dropdownRef, buttonRef]);
 
   return (
-    <div className=" text-white shadow-lg bg-secondary-400 rounded-tl-ct rounded-br-ct -mt-2">
+    <div className="text-white shadow-lg bg-secondary-400 rounded-tl-ct rounded-br-ct -mt-2">
       {title && <h2 className="mb-2 text-lg font-bold">{title}</h2>}
       <ul className="space-y-2">
         {links.map((link, index) => (
-          <li key={index} className="flex items-center space-x-2">
+          <li
+            key={index}
+            className="flex items-center justify-between space-x-2"
+          >
             <a
               href={link.href || "#"}
               onClick={(e) => {
@@ -288,10 +274,14 @@ const Card: React.FC<{
               />
               <span>{link.name}</span>
             </a>
+            <ChevronRightIcon
+              className="w-5 h-5 sm:hidden"
+              aria-hidden="true"
+            />
           </li>
         ))}
         {socials && (
-          <li className="relative flex items-center space-x-2">
+          <li className="relative flex items-center justify-between space-x-2">
             <button
               ref={buttonRef}
               onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -303,6 +293,10 @@ const Card: React.FC<{
               />
               <span>weunzet on socials</span>
             </button>
+            <ChevronRightIcon
+              className="w-5 h-5 sm:hidden"
+              aria-hidden="true"
+            />
             {dropdownOpen && (
               <div
                 ref={dropdownRef}

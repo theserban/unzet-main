@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import "./Scripts/cookie.css";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -10,21 +9,18 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Unzet",
-  description: "Your Potential",
+  metadataBase: new URL("https://unzet.com"),
+  keywords: ["startups", "tech", ""],
+  title: {
+    default: "Unzet Your Potential",
+    template: "%s I Unzet Your Potential",
+  },
   openGraph: {
-    title: "Unzet",
-    type: "website",
-    url: "https://www.unzet.com",
-    description: "Your Potential",
-    images: [
-      {
-        url: "https://www.unzet.com/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Unzet Banner",
-      },
-    ],
+    description: `Everything we do, from helping startups achieve their goals to building our own stuff, it's done with a clear destination in mind, making people's lives more enjoyable.`,
+    images: ["https://www.unzet.com/og.jpg"],
+  },
+  icons: {
+    icon: "/photos/favicon.ico",
   },
 };
 

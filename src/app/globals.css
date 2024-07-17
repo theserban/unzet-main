@@ -4,35 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --primary-500: #edff00;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 html {
   scroll-behavior: smooth;
-}
-
-#scroll-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.5);
-  z-index: 10000;
-  pointer-events: none;
-  opacity: 0;
 }
 
 #scroll-overlay.active {
@@ -41,40 +14,11 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  font-family: "DM Sans", "Arial", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-display: swap;
 }
 
 ::selection {
   background-color: var(--primary-500);
   color: black;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-.custom-range::-webkit-slider-thumb {
-  background-color: black;
-}
-
-.custom-range::-moz-range-thumb {
-  background-color: black;
-}
-
-.custom-range::-ms-thumb {
-  background-color: black;
-}
-
-.cm_body {
-  background-color: black;
 }
