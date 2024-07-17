@@ -4,6 +4,7 @@ import {
   MagnifyingGlassIcon,
   XMarkIcon,
   ArrowsRightLeftIcon,
+  ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 
 interface Card {
@@ -191,16 +192,17 @@ export default function Projects() {
                       onClick={shuffleProjects}
                       className="flex align-center justify-center cursor-pointer gap-x-1 rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
                     >
-                      <ArrowsRightLeftIcon className="w-5 h-5" /> Shuffle
+                      <ArrowsRightLeftIcon className="w-4 h-4" /> Shuffle
                       Projects
                     </button>
                     <button
                       data-cal-namespace=""
                       data-cal-link="weunzet/30min"
                       data-cal-config='{"layout":"month_view"}'
-                      className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+                      className="flex text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
                     >
-                      Join The Archive <span aria-hidden="true">→</span>
+                      Join The Archive{" "}
+                      <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
                     </button>
                   </div>
                 </div>

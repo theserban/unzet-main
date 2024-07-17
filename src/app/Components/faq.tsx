@@ -5,7 +5,11 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
-import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronRightIcon,
+  MinusSmallIcon,
+  PlusSmallIcon,
+} from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,8 +32,6 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [imageSrc, setImageSrc] = useState("/photos/theserban.webp");
-
   return (
     <>
       <section id="founder">
@@ -38,7 +40,7 @@ export default function FAQ() {
             <div className="flex-shrink-0 rounded-lg w-88 lg:w-72">
               <Image
                 className="transition-transform duration-500 transform border rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-1"
-                src={imageSrc}
+                src="/photos/theserban.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -68,10 +70,11 @@ export default function FAQ() {
                   </button>
                   <Link
                     href="https://www.linkedin.com/in/theserban/"
-                    className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform hover:text-gray-200 hover:scale-105"
+                    className="text-sm  flex font-semibold leading-6 text-white transition-transform duration-500 transform hover:text-gray-200 hover:scale-105"
                     target="_blank"
                   >
-                    Linkedin <span aria-hidden="true">→</span>
+                    Linkedin{" "}
+                    <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
                   </Link>
                 </div>
               </blockquote>

@@ -47,7 +47,7 @@ export default function Tools() {
 
   useEffect(() => {
     const shuffled = shuffleArray(items);
-    setShuffledItems([...shuffled, ...shuffled]); // Duplicate the array
+    setShuffledItems([...shuffled, ...shuffled]);
   }, []);
 
   const handleArrowClick = (direction: "left" | "right") => {
@@ -99,7 +99,7 @@ export default function Tools() {
                 ones, along with the fastest way to complete each task.
               </p>
               <p className="mt-4 text-xl leading-7 text-gray-300">
-                DIY Free Launch Kit Coming Soon
+                DIY Launch Kit Coming Soon
               </p>
             </div>
           </div>
@@ -116,13 +116,15 @@ export default function Tools() {
           <div className="justify-right items-right mt-6">
             <button
               onClick={() => handleArrowClick("left")}
-              className="mx-2 text-primary-500 transition-transform duration-500 transform hover:scale-110"
+              className="mx-2 text-primary-500 transition-transform duration-500 transform hover:scale-110 hover:text-primary-400"
+              aria-label="Previous"
             >
               <ChevronLeftIcon className="w-6 h-6" />
             </button>
             <button
               onClick={() => handleArrowClick("right")}
-              className="mx-2 text-primary-500 transition-transform duration-500 transform hover:scale-110"
+              className="mx-2 text-primary-500 transition-transform duration-500 transform hover:scale-110 hover:text-primary-400"
+              aria-label="Next"
             >
               <ChevronRightIcon className="w-6 h-6" />
             </button>

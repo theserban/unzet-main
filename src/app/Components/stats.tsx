@@ -11,7 +11,7 @@ export default function Stats() {
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
             <div className="max-w-2xl mx-auto lg:mx-0">
               <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
-                Playing the Numbers
+                Numbers Speak
               </h2>
               <p className="mt-6 text-xl leading-7 text-white">
                 We believe in being open and honest. That&prime;s why we want to

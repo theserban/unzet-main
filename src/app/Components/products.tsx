@@ -1,11 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-interface ProductsProps {
-  onTryExperienceClick?: () => void;
-}
-
-export default function Products({ onTryExperienceClick }: ProductsProps) {
+export default function Products() {
   return (
     <section id="products">
       <div className="bg-black">
@@ -22,7 +18,7 @@ export default function Products({ onTryExperienceClick }: ProductsProps) {
               </p>
             </div>
           </div>
-          <div className="relative px-6 pt-8 overflow-hidden transition-transform duration-500 transform border shadow-2xl lg:flex lg:gap-x-20 lg:px-12 lg:pt-0 sm:px-12 sm:pt-4 isolate bg-secondary-400 rounded-tl-ct rounded-br-ct border-primary-500/40 hover:-translate-y-1">
+          <div className="relative px-6 pt-8 overflow-hidden transition-transform duration-500 transform border shadow-2xl lg:flex lg:gap-x-20 lg:px-12 lg:pt-0 sm:px-12 sm:pt-4 isolate bg-secondary-400 rounded-tl-ct rounded-br-ct border-primary-500/20 hover:-translate-y-1">
             <div className="max-w-md text-left sm:mx-0 sm:flex-auto sm:py-16">
               <h2 className="text-3xl font-bold tracking-tight text-primary-500">
                 GuidedOn - Coming Soon
@@ -35,27 +31,6 @@ export default function Products({ onTryExperienceClick }: ProductsProps) {
                 Take advantage of every visitor with an accessible pre-recorded
                 pitch that guides them as if you were personally presenting.
               </p>
-              <div className="items-center mt-10 gap-x-6 hidden">
-                {onTryExperienceClick && (
-                  <button
-                    className="cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-xs font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
-                    onClick={onTryExperienceClick}
-                  >
-                    Try the Experience
-                  </button>
-                )}
-                <button
-                  className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
-                  onClick={() =>
-                    window.open(
-                      "https://github.com/theserban/guidedon",
-                      "_blank"
-                    )
-                  }
-                >
-                  Github <span aria-hidden="true">→</span>
-                </button>
-              </div>
             </div>
             <div className="relative mt-16 h-60 lg:mt-8 sm:ml-12 lg:ml-0">
               <Image

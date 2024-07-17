@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   ShoppingCartIcon,
   CloudIcon,
@@ -7,6 +7,8 @@ import {
   ArrowUpIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 interface CardProps {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -25,13 +27,6 @@ const Card = ({ icon: Icon, title, power, description }: CardProps) => (
     <p>{description}</p>
   </div>
 );
-
-const scrollToSection = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
-};
 
 export default function Hero() {
   return (
@@ -64,7 +59,7 @@ export default function Hero() {
 
           <div className="overflow-hidden">
             <div className="px-6 pb-12 mx-auto max-w-7xl pt-24 sm:pt-36 lg:px-8 lg:pt-32">
-              <div className="max-w-2xl mx-auto gap-x-12 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+              <div className="max-w-2xl mx-auto gap-x-20 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-xl">
                   <h1 className="text-5xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl sm:-mt-32">
                     Kickstart Your{" "}
@@ -77,18 +72,19 @@ export default function Hero() {
                     enjoyable.
                   </p>
                   <div className="flex items-center mt-10 gap-x-6">
-                    <button
-                      onClick={() => scrollToSection("compete")}
+                    <Link
+                      href="#compete"
                       className="cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
                     >
                       Free Brands
-                    </button>
-                    <button
-                      onClick={() => scrollToSection("projects")}
-                      className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+                    </Link>
+                    <Link
+                      href="#projects"
+                      className="flex text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
                     >
-                      Work With Us<span aria-hidden="true">→</span>
-                    </button>
+                      Work With Us
+                      <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
+                    </Link>
                   </div>
                 </div>
                 <div className="relative flex justify-end w-full gap-4 mt-14 sm:mt-0 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 sm:w-auto">

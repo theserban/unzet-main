@@ -9,16 +9,15 @@ import {
   ArrowPathRoundedSquareIcon,
   SwatchIcon,
   MapPinIcon,
-  CreditCardIcon,
-  UserIcon,
   ArrowDownTrayIcon,
   BookmarkIcon,
+  ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 import {
   LinkedinLogo,
   InstagramLogo,
   GithubLogo,
-  CirclesThreePlus,
+  YoutubeLogo,
 } from "phosphor-react";
 import Link from "next/link";
 import Privacy from "./privacy";
@@ -31,7 +30,7 @@ import getConfig from "../Scripts/CookieConsentConfig";
 const socials = {
   LinkedIn: "https://www.linkedin.com/company/weunzet",
   Instagram: "https://www.instagram.com/weunzet",
-  Github: "https://github.com/theserban/unzet-main",
+  Youtube: "https://www.youtube.com/@weunzet",
 };
 
 export default function Footer() {
@@ -66,7 +65,7 @@ export default function Footer() {
   return (
     <div id="footer">
       <div className="relative border-t bg-secondary-400 rounded-tr-ct border-primary-500/20">
-        <div className="relative pt-10 pb-16   overflow-hidden isolate">
+        <div className="relative pt-12 pb-16   overflow-hidden isolate">
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
             <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
               <div className="max-w-xl text-white lg:max-w-lg">
@@ -91,11 +90,13 @@ export default function Footer() {
                   >
                     Let&apos;s Talk
                   </button>
-                  <button className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105">
-                    <Link href="https://www.linkedin.com/newsletters/7217200504387342336/">
-                      Newsletter <span aria-hidden="true">→</span>
-                    </Link>
-                  </button>
+                  <Link
+                    href="https://www.linkedin.com/newsletters/7217200504387342336/"
+                    className="flex text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+                  >
+                    Newsletter{" "}
+                    <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
+                  </Link>
                 </div>
               </div>
               <div className="relative grid grid-cols-1 text-lg gap-x-0 gap-y-12 sm:grid-cols-2 lg:pt-2">
@@ -342,8 +343,8 @@ const Card: React.FC<{
                             aria-hidden="true"
                           />
                         )}
-                        {key === "Github" && (
-                          <GithubLogo
+                        {key === "Youtube" && (
+                          <YoutubeLogo
                             className="w-5 h-5 text-primary-500"
                             aria-hidden="true"
                           />

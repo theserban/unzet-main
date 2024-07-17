@@ -4,13 +4,12 @@ import {
   MapIcon,
   CheckIcon,
   ArrowPathIcon,
-  ArrowsPointingInIcon,
-  ArrowsPointingOutIcon,
-  CalendarDaysIcon,
   DocumentArrowUpIcon,
-  TicketIcon,
   WalletIcon,
+  ChevronRightIcon,
 } from "@heroicons/react/24/outline";
+
+import Link from "next/link";
 
 const getIcon = (status: string): JSX.Element | null => {
   switch (status) {
@@ -30,13 +29,6 @@ interface CardProps {
   description: { text: string; status: string }[];
   pills: string[];
 }
-
-const scrollToSection = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
-};
 
 const Card: React.FC<CardProps> = ({
   icon: Icon,
@@ -121,7 +113,7 @@ export default function How() {
   return (
     <>
       <section id="how">
-        <div className="relative px-6 py-16 overflow-hidden isolate sm:py-28 lg:overflow-visible lg:px-0">
+        <div className="relative px-6 py-16 overflow-hidden isolate sm:py-28 lg:overflow-visible lg:px-0 bg-black">
           <div className="absolute inset-0 overflow-hidden -z-10">
             <svg
               className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
@@ -205,12 +197,13 @@ export default function How() {
                   >
                     Roll with us
                   </button>
-                  <button
-                    className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
-                    onClick={() => scrollToSection("products")}
+                  <Link
+                    href="#products"
+                    className="flex text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
                   >
-                    Products <span aria-hidden="true">→</span>
-                  </button>
+                    Products{" "}
+                    <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
+                  </Link>
                 </div>
               </div>
             </div>

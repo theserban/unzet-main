@@ -25,9 +25,6 @@ const navigation = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [atTop, setAtTop] = useState(true);
 
   useEffect(() => {
     (async function () {
@@ -43,26 +40,7 @@ export default function Navbar() {
         layout: "week_view",
       });
     })();
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
-      setLastScrollY(currentScrollY);
-
-      setAtTop(currentScrollY === 0);
-
-      if (mobileMenuOpen) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, mobileMenuOpen]);
+  }, []);
 
   const BookNowButton = () => (
     <button
@@ -70,7 +48,7 @@ export default function Navbar() {
       data-cal-namespace=""
       data-cal-link="weunzet/30min"
       data-cal-config='{"layout":"week_view"}'
-      className="rounded-tr-lg rounded-bl-lg outline outline-1 text-white px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-secondary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-500 transform transition-transform duration-500 hover:scale-105 flex items-center"
+      className="rounded-tr-lg rounded-bl-lg border-1 border border-white/80 text-white px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-secondary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-500 transform transition-transform duration-500 hover:scale-105 flex items-center"
     >
       <span className="pr-2">
         <span className="relative flex w-2 h-2">
@@ -83,13 +61,7 @@ export default function Navbar() {
   );
 
   return (
-    <header
-      className={`inset-x-0 top-0 z-50 fixed bg-black ${
-        atTop ? "" : "border-b border-primary-500/20"
-      } rounded-br-ct transition-transform duration-300 ${
-        showNavbar ? "transform translate-y-0" : "transform -translate-y-full"
-      }`}
-    >
+    <header className="inset-x-0 top-0 z-50 fixed bg-black rounded-br-ct border-b border-primary-500/20">
       <nav
         className="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8"
         aria-label="Global"

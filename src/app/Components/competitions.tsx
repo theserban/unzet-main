@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { ChevronRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import PrivacyPolicyModal from "./privacy";
 
 interface EventProps {
@@ -11,13 +12,6 @@ interface EventProps {
   description: string;
   link?: string;
 }
-
-const scrollToSection = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
-};
 
 const parseDate = (dateString: string) => {
   const [day, month, year] = dateString.split("/").map(Number);
@@ -73,7 +67,7 @@ const EventCard: React.FC<EventProps & { onEnterNow: () => void }> = ({
   return (
     <div
       className={`space-y-4 bg-black border border-primary-500/20 rounded-tr-ct rounded-bl-ct shadow-md lg:p-0 hover:-translate-y-1 duration-500 ${
-        isFutureEvent ? "opacity-50 cursor-not-allowed" : ""
+        isFutureEvent ? "opacity-70 cursor-not-allowed" : ""
       }`}
     >
       <Image
@@ -105,9 +99,9 @@ const EventCard: React.FC<EventProps & { onEnterNow: () => void }> = ({
         <div className="flex flex-col gap-4 sm:flex-row md:flex-col lg:flex-row lg:items-center mt-2">
           <button
             onClick={isFutureEvent ? undefined : onEnterNow}
-            className={`rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm ${
+            className={`rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-xs font-bold text-secondary-400 shadow-sm ${
               isFutureEvent
-                ? "cursor-not-allowed opacity-50"
+                ? "cursor-not-allowed"
                 : "hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
             }`}
           >
@@ -115,9 +109,10 @@ const EventCard: React.FC<EventProps & { onEnterNow: () => void }> = ({
           </button>
           <button
             onClick={handleShare}
-            className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+            className="flex text-xs font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
           >
-            Share Competition <span aria-hidden="true">→</span>
+            Share Competition{" "}
+            <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
           </button>
         </div>
       </div>
@@ -267,12 +262,12 @@ export default function Events() {
             >
               The Rules
             </button>
-            <button
-              onClick={() => scrollToSection("tools")}
-              className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+            <Link
+              href="#tools"
+              className=" flex text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
             >
-              Tools <span aria-hidden="true">→</span>
-            </button>
+              Tools <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-12 mt-8 xl:gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -366,7 +361,7 @@ export default function Events() {
           onClick={handleEnterCompetition}
           className={`mt-6 rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm ${
             !acknowledgeRules
-              ? "cursor-not-allowed opacity-50"
+              ? "cursor-not-allowed"
               : "hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
           }`}
           disabled={!acknowledgeRules}

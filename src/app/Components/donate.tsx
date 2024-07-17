@@ -1,3 +1,4 @@
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,13 +21,6 @@ const Card = ({ imageUrl, title, date, description }: CardProps) => (
   </div>
 );
 
-const scrollToSection = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
-};
-
 export default function Work() {
   return (
     <section className="bg-black" id="donate">
@@ -41,17 +35,18 @@ export default function Work() {
             founders who share the same drive you had when your idea was alive.
           </p>
           <div className="flex items-center mt-8 mb-12 sm:mb-0 gap-x-6">
-            <button className="cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105">
-              <Link href="mailto:we@unzet.com?subject=My%20Startup%20Remains&body=Name%3A%0A%0ACurrent%20Company%3A%0A%0AI%20want%20to%20donate%3A%0A%0ASomething%20cool%3A">
-                Send Us The Details <span aria-hidden="true">→</span>
-              </Link>
-            </button>
-            <button
-              onClick={() => scrollToSection("compete")}
-              className="text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+            <Link
+              href="mailto:we@unzet.com?subject=My%20Startup%20Remains&body=Name%3A%0A%0ACurrent%20Company%3A%0A%0AI%20want%20to%20donate%3A%0A%0ASomething%20cool%3A"
+              className="cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"
             >
-              Compete <span aria-hidden="true">→</span>
-            </button>
+              Send Us The Details
+            </Link>
+            <Link
+              href="#compete"
+              className="text-sm flex font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+            >
+              Compete <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-6 mt-8">
