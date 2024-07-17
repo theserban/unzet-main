@@ -20,7 +20,7 @@ export default function Products() {
           </div>
           <div className="relative px-6 pt-8 overflow-hidden transition-transform duration-500 transform border shadow-2xl lg:flex lg:gap-x-20 lg:px-12 lg:pt-0 sm:px-12 sm:pt-4 isolate bg-secondary-400 rounded-tl-ct rounded-br-ct border-primary-500/20 hover:-translate-y-1">
             <div className="max-w-md text-left sm:mx-0 sm:flex-auto sm:py-16">
-              <h2 className="text-3xl font-bold tracking-tight text-primary-500">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary-500">
                 GuidedOn - Coming Soon
               </h2>
               <p className="mt-6 text-base leading-7 text-white sm:text-xl">

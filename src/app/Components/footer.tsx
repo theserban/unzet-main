@@ -272,7 +272,7 @@ const Card: React.FC<{
                   <span className="flex-grow">{link.name}</span>
                 </div>
                 <ChevronRightIcon
-                  className="w-5 h-5 flex-shrink-0"
+                  className="w-5 h-5 flex-shrink-0 sm:hidden"
                   aria-hidden="true"
                 />
               </div>
@@ -294,7 +294,7 @@ const Card: React.FC<{
                 <span className="flex-grow">weunzet on socials</span>
               </div>
               <ChevronRightIcon
-                className="w-5 h-5 flex-shrink-0"
+                className="w-5 h-5 flex-shrink-0 sm:hidden"
                 aria-hidden="true"
               />
             </button>

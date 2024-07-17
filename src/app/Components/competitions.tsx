@@ -96,7 +96,7 @@ const EventCard: React.FC<EventProps & { onEnterNow: () => void }> = ({
         </h3>
         <p className="text-base font-normal text-white py-4">{description}</p>
 
-        <div className="flex flex-col gap-4 sm:flex-row md:flex-col lg:flex-row lg:items-center mt-2">
+        <div className="flex gap-4 sm:flex-row md:flex-col lg:flex-row lg:items-center mt-2">
           <button
             onClick={isFutureEvent ? undefined : onEnterNow}
             className={`rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-xs font-bold text-secondary-400 shadow-sm ${
@@ -109,7 +109,7 @@ const EventCard: React.FC<EventProps & { onEnterNow: () => void }> = ({
           </button>
           <button
             onClick={handleShare}
-            className="flex text-xs font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
+            className="mt-2 flex text-xs font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
           >
             Share Competition{" "}
             <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
@@ -245,7 +245,7 @@ export default function Events() {
 
   return (
     <section id="compete" className="bg-black">
-      <div className="max-w-7xl px-6 py-8 mx-auto lg:px-8 sm:py-16 lg:py-28">
+      <div className="max-w-7xl px-6 py-8 mx-auto lg:px-8 sm:py-16 lg:py-28 mb-4 sm:mb-0">
         <div className="max-w-2xl mx-auto lg:mx-0 mb-20">
           <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
             Focus On Building

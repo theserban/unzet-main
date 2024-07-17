@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`bg-black ${dmSans.className}`}>
+    <html lang="en" className={`bg-black scroll-smooth ${dmSans.className}`}>
       <body>{children}</body>
     </html>
   );
