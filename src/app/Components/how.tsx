@@ -113,7 +113,7 @@ export default function How() {
   return (
     <>
       <section id="how">
-        <div className="relative px-6 py-16 overflow-hidden isolate sm:py-28 lg:overflow-visible lg:px-0 bg-black">
+        <div className="relative px-6 py-20 overflow-hidden isolate sm:py-28 lg:overflow-visible lg:px-0 bg-black">
           <div className="absolute inset-0 overflow-hidden -z-10">
             <svg
               className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"

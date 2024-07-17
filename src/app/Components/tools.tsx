@@ -86,7 +86,7 @@ export default function Tools() {
 
   return (
     <section id="tools" className="relative">
-      <div className=" mx-auto overflow-hidden sm:pt-0 py-20 pb-12 sm:py-24">
+      <div className=" mx-auto overflow-hidden sm:pt-0 py-24 pb-12 sm:py-24">
         <div className="px-6 mx-auto max-w-7xl lg:px-8 sm:pt-16">
           <div className="flex justify-left">
             <div className="max-w-2xl mx-auto lg:mx-0 py-12 pt-0">

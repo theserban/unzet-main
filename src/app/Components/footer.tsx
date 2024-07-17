@@ -75,12 +75,11 @@ export default function Footer() {
                   >
                     Let&apos;s Talk
                   </button>
-                  <Link
-                    href="https://www.linkedin.com/newsletters/7217200504387342336/"
-                    className="flex text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105"
-                  >
-                    Newsletter{" "}
-                    <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
+                  <Link href="https://www.linkedin.com/newsletters/7217200504387342336/">
+                    <div className="flex text-sm font-semibold leading-6 text-white transition-transform duration-500 transform cursor-pointer hover:text-gray-200 hover:scale-105">
+                      Newsletter{" "}
+                      <ChevronRightIcon className="w-4 ml-0.5 mt-1 h-4" />
+                    </div>
                   </Link>
                 </div>
               </div>
@@ -152,14 +151,14 @@ export default function Footer() {
             aria-hidden="true"
           ></div>
         </div>
-        <div className="px-8 mx-auto shadow-lg max-w-7xl pb-8">
+        <div className="px-8 mx-auto shadow-lg max-w-7xl pb-4">
           <div className="grid grid-cols-1 border-t border-primary-500/20 sm:grid-cols-3 items-start gap-4 sm:py-0 -mt-4 sm:-mt-4">
-            <div className="order-3 sm:order-1 pt-0 sm:pt-8 flex sm:block -mb-8">
-              <p className="text-md sm:text-sm leading-5 text-left text-white mr-20 sm:mr-0 m sm:mt-0">
+            <div className="order-3 sm:order-1 pt-0 sm:pt-8 flex items-center sm:block -mb-8">
+              <p className="text-md sm:text-sm leading-5 text-left text-white sm:mt-0">
                 Copyright &copy; {new Date().getFullYear()} Unzet
               </p>
               <button
-                className="text-md sm:text-sm text-white text-left hover:scale-105 transform duration-500 sm:hidden"
+                className="text-md sm:text-sm ml-4 sm:ml-0 text-white text-left hover:scale-105 transform duration-500 sm:hidden"
                 type="button"
                 onClick={handleOpenModal}
               >
@@ -251,52 +250,54 @@ const Card: React.FC<{
       {title && <h2 className="mb-2 text-lg font-bold">{title}</h2>}
       <ul className="space-y-2">
         {links.map((link, index) => (
-          <li
-            key={index}
-            className="flex items-center justify-between space-x-2"
-          >
-            <a
-              href={link.href || "#"}
-              onClick={(e) => {
-                if (!link.href) e.preventDefault();
-              }}
-              className="flex items-center space-x-2 leading-6 text-white transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105"
-              {...(link.name === "9:00 to 18:00 GMT+2" && {
-                "data-cal-namespace": "",
-                "data-cal-link": "weunzet/30min",
-                "data-cal-config": '{"layout":"month_view"}',
-                style: { cursor: "pointer" },
-              })}
-            >
-              <link.icon
-                className="w-5 h-5 text-primary-500"
-                aria-hidden="true"
-              />
-              <span>{link.name}</span>
-            </a>
-            <ChevronRightIcon
-              className="w-5 h-5 sm:hidden"
-              aria-hidden="true"
-            />
+          <li key={index}>
+            <Link href={link.href || "#"} passHref>
+              <div
+                onClick={(e) => {
+                  if (!link.href) e.preventDefault();
+                }}
+                className="flex items-center justify-between w-full px-2 py-1 space-x-2 leading-6 text-white transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105 hover:bg-secondary-300 rounded-md"
+                {...(link.name === "9:00 to 18:00 GMT+2" && {
+                  "data-cal-namespace": "",
+                  "data-cal-link": "weunzet/30min",
+                  "data-cal-config": '{"layout":"month_view"}',
+                  style: { cursor: "pointer" },
+                })}
+              >
+                <div className="flex items-center space-x-2">
+                  <link.icon
+                    className="w-5 h-5 text-primary-500 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span className="flex-grow">{link.name}</span>
+                </div>
+                <ChevronRightIcon
+                  className="w-5 h-5 flex-shrink-0"
+                  aria-hidden="true"
+                />
+              </div>
+            </Link>
           </li>
         ))}
         {socials && (
-          <li className="relative flex items-center justify-between space-x-2">
+          <li className="relative">
             <button
               ref={buttonRef}
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex items-center space-x-2 leading-6 text-white transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105"
+              className="flex items-center justify-between w-full px-2 py-1 space-x-2 leading-6 text-white transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105 hover:bg-secondary-300 rounded-md"
             >
-              <AtSymbolIcon
-                className="w-5 h-5 text-primary-500"
+              <div className="flex items-center space-x-2">
+                <AtSymbolIcon
+                  className="w-5 h-5 text-primary-500 flex-shrink-0"
+                  aria-hidden="true"
+                />
+                <span className="flex-grow">weunzet on socials</span>
+              </div>
+              <ChevronRightIcon
+                className="w-5 h-5 flex-shrink-0"
                 aria-hidden="true"
               />
-              <span>weunzet on socials</span>
             </button>
-            <ChevronRightIcon
-              className="w-5 h-5 sm:hidden"
-              aria-hidden="true"
-            />
             {dropdownOpen && (
               <div
                 ref={dropdownRef}

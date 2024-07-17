@@ -24,7 +24,7 @@ const Card = ({ imageUrl, title, date, description }: CardProps) => (
 export default function Work() {
   return (
     <section className="bg-black" id="donate">
-      <div className="gap-16 items-center py-8 px-6 mx-auto max-w-7xl lg:grid lg:grid-cols-2 lg:pb-24 lg:pt-8 lg:px-8">
+      <div className="gap-16 items-center py-16 px-6 mx-auto max-w-7xl lg:grid lg:grid-cols-2 lg:pb-24 lg:pt-8 lg:px-8">
         <div className="text-gray-400 sm:text-lg">
           <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
             Your Startup Remains

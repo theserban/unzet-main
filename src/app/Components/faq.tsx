@@ -35,7 +35,7 @@ export default function FAQ() {
   return (
     <>
       <section id="founder">
-        <div className="px-6 mx-auto max-w-7xl lg:px-8 py-8">
+        <div className="px-6 mx-auto max-w-7xl lg:px-8 pt-24 pb-12">
           <div className="relative flex flex-col items-start max-w-2xl py-4 sm:py-12 mx-auto lg:pt-16 lg:max-w-4xl lg:flex-row lg:items-start gap-x-6 gap-y-8 lg:gap-x-0">
             <div className="flex-shrink-0 rounded-lg w-88 lg:w-72">
               <Image
@@ -83,7 +83,7 @@ export default function FAQ() {
         </div>
 
         <div className="bg-black">
-          <div className="px-6 py-4 pb-28 mx-auto max-w-7xl md:px-20 sm:pt-8">
+          <div className="px-6 py-4 pb-36 mx-auto max-w-7xl md:px-20 sm:pt-8">
             <div className="max-w-4xl mx-auto lg:px-2 lg:pb-16">
               <h2 className="mb-8 text-2xl font-bold leading-10 tracking-tight text-primary-500">
                 Let me answer
