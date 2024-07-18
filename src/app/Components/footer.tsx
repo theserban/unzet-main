@@ -52,7 +52,7 @@ export default function Footer() {
       <div className="relative border-t bg-secondary-400 rounded-tr-ct border-primary-500/20">
         <div className="relative pt-12 pb-16 overflow-hidden isolate">
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
-            <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+            <div className="grid max-w-2xl sm:max-w-4xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
               <div className="max-w-xl text-white lg:max-w-lg">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-3xl">
                   Play Your Cards Right Today,{" "}
@@ -152,8 +152,8 @@ export default function Footer() {
           ></div>
         </div>
         <div className="px-8 mx-auto shadow-lg max-w-7xl pb-4">
-          <div className="grid grid-cols-1 border-t border-primary-500/20 sm:grid-cols-3 items-start gap-4 sm:py-0 -mt-4 sm:-mt-4">
-            <div className="order-3 sm:order-1 pt-0 sm:pt-8 flex items-center sm:block -mb-8">
+          <div className="grid grid-cols-1 border-t border-primary-500/20 sm:grid-cols-3 items-start gap-4 sm:py-0 -mt-4 sm:-mt-6">
+            <div className="order-3 sm:order-1 pt-0 sm:pt-6 flex items-center sm:block -mb-8">
               <p className="text-md sm:text-sm leading-5 text-left text-white sm:mt-0">
                 Copyright &copy; {new Date().getFullYear()} Unzet
               </p>
@@ -166,7 +166,7 @@ export default function Footer() {
               </button>
             </div>
 
-            <div className="order-1 sm:order-2 flex justify-start sm:justify-center pb-2 sm:pb-0 pt-10 sm:pt-8">
+            <div className="order-1 sm:order-2 flex justify-start sm:justify-center pb-2 sm:pb-0 pt-10 sm:pt-6">
               <Link href="https://blureo.com">
                 <Image
                   src="/photos/blureo-member.svg"
@@ -178,7 +178,7 @@ export default function Footer() {
               </Link>
             </div>
 
-            <div className="order-3 flex flex-row justify-start sm:justify-end gap-4 pt-0 sm:pt-8">
+            <div className="order-3 flex flex-row justify-start sm:justify-end gap-4 pt-0 sm:pt-6">
               <button
                 className="hidden text-md sm:text-sm text-white text-left hover:scale-105 transform duration-500"
                 type="button"

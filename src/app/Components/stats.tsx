@@ -9,7 +9,7 @@ export default function Stats() {
       <section id="stats">
         <div className="py-24">
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
-            <div className="max-w-2xl mx-auto lg:mx-0">
+            <div className="mx-auto lg:mx-0 max-w-2xl sm:max-w-4xl lg:max-w-2xl ">
               <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
                 Numbers Speak
               </h2>
@@ -20,7 +20,7 @@ export default function Stats() {
                 work, and the ability to adapt.
               </p>
             </div>
-            <div className="flex flex-col max-w-2xl gap-8 mx-auto mt-16 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
+            <div className="flex flex-col max-w-2xl sm:max-w-4xl gap-8 mx-auto mt-16 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
               <div className="relative flex flex-col-reverse justify-between p-8 mb-4 transition-transform duration-500 transform border gap-x-16 gap-y-8 sm:mb-0 rounded-tl-ct rounded-br-ct bg-secondary-400 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44 border-primary-500/20 hover:-translate-y-1">
                 <Link
                   href="https://startupgenome.com/article/the-state-of-the-global-startup-economy"

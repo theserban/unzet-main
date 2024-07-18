@@ -127,10 +127,10 @@ export default function How() {
               />
             </svg>
           </div>
-          <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+          <div className="grid max-w-2xl sm:max-w-4xl grid-cols-1 mx-auto gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
             <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
               <div className="lg:pr-4">
-                <div className="max-w-2xl mx-auto lg:mx-0">
+                <div className="max-w-2xl sm:max-w-4xl lg:max-w-2xl mx-auto lg:mx-0">
                   <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
                     How We Roll
                   </h2>

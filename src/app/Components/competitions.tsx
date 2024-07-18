@@ -246,7 +246,7 @@ export default function Events() {
   return (
     <section id="compete" className="bg-black">
       <div className="max-w-7xl px-6 py-8 mx-auto lg:px-8 sm:py-16 lg:py-28 mb-4 sm:mb-0">
-        <div className="max-w-2xl mx-auto lg:mx-0 mb-20">
+        <div className="max-w-2xl sm:max-w-4xl lg:max-w-2xl mx-auto lg:mx-0 mb-20">
           <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
             Focus On Building
           </h2>

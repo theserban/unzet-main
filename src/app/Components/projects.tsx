@@ -172,7 +172,7 @@ export default function Projects() {
       <section id="projects">
         <div className="pt-16 pb-0 overflow-hidden bg-black sm:pt-24 sm:pb-4">
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
-            <div className="grid max-w-2xl grid-cols-1 mx-auto lg:mx-0 lg:max-w-none gap-4 sm:gap-0">
+            <div className="grid max-w-2xl sm:max-w-4xl grid-cols-1 mx-auto lg:mx-0 lg:max-w-none gap-4 sm:gap-0">
               <div className="flex flex-col gap-8 lg:flex-row">
                 <div className="lg:w-1/2">
                   <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">

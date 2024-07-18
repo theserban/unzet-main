@@ -34,7 +34,7 @@ export default function Work() {
             your name details or domain. We will pass it on to ambitious
             founders who share the same drive you had when your idea was alive.
           </p>
-          <div className="flex items-center mt-8 mb-12 sm:mb-0 gap-x-6">
+          <div className="flex items-center mt-8 mb-12 sm:mb-16 gap-x-6">
             <Link
               href="mailto:we@unzet.com?subject=My%20Startup%20Remains&body=Name%3A%0A%0ACurrent%20Company%3A%0A%0AI%20want%20to%20donate%3A%0A%0ASomething%20cool%3A"
               className="cursor-pointer rounded-bl-xl rounded-tr-xl bg-primary-500 px-3.5 py-2.5 text-sm font-bold text-secondary-400 shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transform transition-transform duration-500 hover:scale-105"

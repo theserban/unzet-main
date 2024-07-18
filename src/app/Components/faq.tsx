@@ -36,10 +36,10 @@ export default function FAQ() {
     <>
       <section id="founder">
         <div className="px-6 mx-auto max-w-7xl lg:px-8 pt-20 sm:pt-16 pb-12">
-          <div className="relative flex flex-col items-start max-w-2xl py-4 sm:py-12 mx-auto lg:pt-16 lg:max-w-4xl lg:flex-row lg:items-start gap-x-6 gap-y-8 lg:gap-x-0">
+          <div className="relative flex flex-col items-start max-w-2xl sm:max-w-4xl  py-4 sm:py-12 mx-auto lg:pt-16 lg:max-w-4xl lg:flex-row lg:items-start gap-x-6 gap-y-8 lg:gap-x-0">
             <div className="flex-shrink-0 rounded-lg w-88 lg:w-72">
               <Image
-                className="transition-transform duration-500 transform border rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-1"
+                className="sm:h-72 sm:w-72 transition-transform duration-500 transform border rounded-tr-ct rounded-bl-ct border-primary-500/20 hover:-translate-y-1"
                 src="/photos/theserban.webp"
                 alt=""
                 width={500}

@@ -69,14 +69,6 @@ export default function Services() {
       className: "sm:col-span-1",
     },
     {
-      title: "Artful Ace",
-      description:
-        "Creativity is our superpower. Our goal is to infuse a spark of originality and fun into every task. We treat projects as blank canvases, and we paint it with creativity and passion.",
-      link: "#",
-      icon: <LightBulbIcon className="w-8 h-8 text-primary-500" />,
-      className: "sm:col-span-2",
-    },
-    {
       title: "Solution Seeker",
       description:
         "We’re problem solvers. No matter what challenge comes our way, we get things done.",
@@ -84,12 +76,20 @@ export default function Services() {
       icon: <PuzzlePieceIcon className="w-8 h-8 text-primary-500" />,
       className: "sm:col-span-1",
     },
+    {
+      title: "Artful Ace",
+      description:
+        "Creativity is our superpower. Our goal is to infuse a spark of originality and fun into every task. We treat projects as blank canvases, and we paint it with creativity and passion.",
+      link: "#",
+      icon: <LightBulbIcon className="w-8 h-8 text-primary-500" />,
+      className: "sm:col-span-2",
+    },
   ];
 
   return (
     <section className="bg-black">
       <div className="px-6 py-16 mx-auto max-w-7xl sm:text-left lg:px-8 lg:py-24">
-        <div className="max-w-2xl mx-auto lg:mx-0">
+        <div className="max-w-2xl sm:max-w-4xl lg:max-w-2xl mx-auto lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
             We stand for
           </h2>
@@ -99,7 +99,7 @@ export default function Services() {
             Here&apos;s who we are how we act in this crazy world.
           </p>
         </div>
-        <div className="gap-8 mt-8 sm:mt-20 sm:grid sm:grid-cols-3 lg:grid-cols-4">
+        <div className="gap-8 mt-8 sm:mt-20 sm:grid sm:grid-cols-2 lg:grid-cols-4">
           {cardsData.map((card, index) => (
             <Card
               key={index}

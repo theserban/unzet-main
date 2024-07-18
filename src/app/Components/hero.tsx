@@ -58,8 +58,8 @@ export default function Hero() {
           </svg>
 
           <div className="overflow-hidden">
-            <div className="px-6 pb-20 sm:pb-28 mx-auto max-w-7xl pt-24 sm:pt-36 lg:px-8 lg:pt-40">
-              <div className="max-w-2xl mx-auto gap-x-20 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+            <div className="px-6 pb-20 sm:pb-28 mx-auto max-w-7xl pt-24 sm:mt-40 lg:mt-0 lg:px-8 lg:pt-40">
+              <div className="max-w-4xl mx-auto gap-x-20 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-xl">
                   <h1 className="text-5xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl sm:-mt-32">
                     Kickstart Your{" "}
@@ -87,7 +87,7 @@ export default function Hero() {
                     </Link>
                   </div>
                 </div>
-                <div className="relative flex justify-end w-full gap-4 mt-14 sm:mt-0 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 sm:w-auto -ml-2 sm:ml-0">
+                <div className="relative flex justify-end w-full gap-4 mt-14 sm:justify-start sm:pl-44 sm:-mt-28 lg:mt-0 lg:pl-0 sm:w-auto -ml-2 sm:ml-0">
                   <div className="flex-none pt-32 ml-auto space-y-4 w-44 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                     <div className="relative">
                       <Card
@@ -145,7 +145,7 @@ export default function Hero() {
                 <h2 className="text-lg font-semibold leading-8 text-center text-primary-500">
                   Top Achievers
                 </h2>
-                <div className="grid items-start grid-cols-4 mx-auto mt-10 gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-10 lg:mx-0 lg:grid-cols-4">
+                <div className="grid items-start grid-cols-4 mx-auto mt-10 gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-20 sm:gap-y-12 lg:mx-0 lg:grid-cols-4">
                   <Image
                     className="object-contain object-center w-full col-span-2 transition-transform duration-500 transform max-h-9 lg:col-span-1 hover:scale-105"
                     src="/photos/persuwise.svg"
