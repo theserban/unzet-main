@@ -10,10 +10,10 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://unzet.com"),
-  keywords: ["startups", "tech", ""],
+  keywords: ["startups", "tech"],
   title: {
     default: "Unzet Your Potential",
-    template: "%s I Unzet Your Potential",
+    template: "%s",
   },
   description:
     "Unzet helps startups achieve their goals and builds innovative solutions to make people's lives more enjoyable.",

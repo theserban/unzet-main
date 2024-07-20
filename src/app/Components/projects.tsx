@@ -179,13 +179,13 @@ export default function Projects() {
                     Worked On
                   </h2>
                   <p className="mt-6 mr-8 text-xl leading-8 text-white">
-                    We like to be a part of tech initiatives, here is a list of
-                    some of them - p.s which are awesome :)
+                    We like to be a part of awesome tech initiatives -
+                    here&apos;s a few of them! This is just a small archive of
+                    the dreams we&apos;ve been part of.
                   </p>
                   <p className="mt-6 mr-8 text-xl leading-8 text-white">
-                    This is just a small archive of dreams we took a part in,
-                    our goal is to make it as big as we can and be that cake
-                    piece in each project we undertake.
+                    Our goal is to make it as big as we can and be that special
+                    ingredient in every project we undertake!
                   </p>
                   <div className="flex items-center mt-10 gap-x-6 mb-8 sm:mb-0">
                     <button

@@ -251,8 +251,8 @@ export default function Events() {
             Focus On Building
           </h2>
           <p className="mt-6 text-xl leading-7 text-white">
-            Pitch us your idea in a 60 seconds video and enter the battle for a
-            premium startup name, a seo friendly .com domain and a brand kit so
+            Pitch us your idea in a 60 seconds video, and enter the battle for a
+            premium startup name, a SEO friendly .com domain and a brand kit, so
             you can focus on building that beauty!
           </p>
           <div className="flex items-center mt-10 gap-x-6">

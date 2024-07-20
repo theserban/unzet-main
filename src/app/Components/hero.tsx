@@ -67,9 +67,8 @@ export default function Hero() {
                   </h1>
                   <p className="mt-6 text-xl leading-8 text-white sm:max-w-md lg:max-w-none">
                     Everything we do, from helping startups achieve their goals
-                    to building our own stuff, it&apos;s done with a clear
-                    destination in mind, making people&apos;s lives more
-                    enjoyable.
+                    to building our own stuff, is done with a clear destination
+                    in mind, making people&apos;s lives more enjoyable.
                   </p>
                   <div className="flex items-center mt-10 gap-x-6">
                     <Link

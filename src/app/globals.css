@@ -19,6 +19,6 @@ body {
 }
 
 ::selection {
-  background-color: var(--primary-500);
+  background-color: #edff00;
   color: black;
 }
