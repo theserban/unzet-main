@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const items = [
@@ -10,7 +10,7 @@ const items = [
   },
   {
     logo: "/photos/linearity.webp",
-    text: "motion graphics",
+    text: "2d motion graphics",
     link: "https://www.linearity.io/move/",
   },
   {
@@ -28,6 +28,11 @@ const items = [
     text: "name brainstorming",
     link: "https://instantdomainsearch.com/",
   },
+  {
+    logo: "/photos/blureo.webp",
+    text: "open source community",
+    link: "https://blureo.com/",
+  },
 ];
 
 const shuffleArray = (
@@ -43,34 +48,64 @@ const shuffleArray = (
 
 export default function Tools() {
   const [shuffledItems, setShuffledItems] = useState<typeof items>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const shuffled = shuffleArray(items);
-    setShuffledItems([...shuffled, ...shuffled]);
+    setShuffledItems(shuffled);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const container = containerRef.current;
+      if (!container) return;
+      setCanScrollLeft(container.scrollLeft > 0);
+      setCanScrollRight(
+        container.scrollWidth > container.clientWidth + container.scrollLeft
+      );
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("scroll", handleScroll);
+      handleScroll();
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, [shuffledItems]);
+
   const handleArrowClick = (direction: "left" | "right") => {
-    if (direction === "left") {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? shuffledItems.length / 2 - 1 : prevIndex - 1
-      );
-    } else if (direction === "right") {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === shuffledItems.length / 2 - 1 ? 0 : prevIndex + 1
-      );
+    const container = containerRef.current;
+    if (!container) return;
+    const scrollAmount = container.clientWidth / 2;
+
+    if (direction === "left" && canScrollLeft) {
+      container.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    } else if (direction === "right" && canScrollRight) {
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
     }
   };
 
   const renderItems = () => {
-    const displayedItems = shuffledItems.slice(currentIndex, currentIndex + 6);
-    return displayedItems.map((item, index) => (
+    return shuffledItems.map((item, index) => (
       <a
         key={index}
         href={item.link}
-        className="flex-shrink-0 text-center transition-transform duration-500 transform border px-12 py-6 tool-item hover:-translate-y-1 rounded-tr-ct rounded-bl-ct bg-secondary-400 border-primary-500/20"
+        className="flex-shrink-0 text-center transition-transform duration-500 transform border px-10 py-5 tool-item hover:-translate-y-1 rounded-tr-ct rounded-bl-ct bg-secondary-400 border-primary-500/20"
       >
-        <div className="h-12 flex items-center justify-center mb-4">
+        <div className="h-12 flex items-center justify-center mb-2">
           <Image
             src={item.logo}
             alt="Logo"
@@ -86,10 +121,10 @@ export default function Tools() {
 
   return (
     <section id="tools" className="relative">
-      <div className=" mx-auto overflow-hidden sm:pt-0 py-24 pb-12 sm:py-24">
+      <div className="mx-auto overflow-hidden py-24 pb-12 sm:pt-0">
         <div className="px-6 mx-auto max-w-7xl lg:px-8 sm:pt-16">
           <div className="flex justify-left">
-            <div className="max-w-2xl sm:max-w-4xl lg:max-w-2xl  mx-auto lg:mx-0 py-12 pt-0">
+            <div className="max-w-2xl sm:max-w-4xl lg:max-w-2xl mx-auto lg:mx-0 py-12 pt-0">
               <h2 className="text-3xl font-bold tracking-tight text-primary-500 sm:text-4xl">
                 Cool Tools
               </h2>
@@ -107,24 +142,34 @@ export default function Tools() {
 
         <div className="relative mx-auto max-w-7xl px-7 lg:px-8 pb-12">
           <div
+            ref={containerRef}
             id="tools-container"
-            className="flex space-x-6 overflow-hidden relative pt-4"
+            className="flex space-x-6 overflow-x-auto scroll-smooth py-1 border-r border-l border-secondary-300/20 px-2 no-scrollbar"
           >
             {renderItems()}
-            <div className="absolute top-0 right-0 w-1/12 h-full bg-gradient-to-l from-black to-transparent"></div>
           </div>
-          <div className="justify-right items-right mt-6">
+          <div className="flex justify-start items-center mt-6">
             <button
               onClick={() => handleArrowClick("left")}
-              className="mx-2 text-primary-500 transition-transform duration-500 transform hover:scale-110 hover:text-primary-400"
+              className={`mx-2 transition-transform duration-500 transform hover:scale-110 ${
+                canScrollLeft
+                  ? "text-primary-500 hover:text-primary-400 opacity-100"
+                  : "text-primary-400 opacity-60 cursor-not-allowed"
+              }`}
               aria-label="Previous"
+              disabled={!canScrollLeft}
             >
               <ChevronLeftIcon className="w-6 h-6" />
             </button>
             <button
               onClick={() => handleArrowClick("right")}
-              className="mx-2 text-primary-500 transition-transform duration-500 transform hover:scale-110 hover:text-primary-400"
+              className={`mx-2 transition-transform duration-500 transform hover:scale-110 ${
+                canScrollRight
+                  ? "text-primary-500 hover:text-primary-400 opacity-100"
+                  : "text-primary-400 opacity-60 cursor-not-allowed"
+              }`}
               aria-label="Next"
+              disabled={!canScrollRight}
             >
               <ChevronRightIcon className="w-6 h-6" />
             </button>

@@ -14,11 +14,11 @@ interface Card {
 
 const cardData: Card[] = [
   { src: "/photos/p1.webp", title: "Pitch Deck" },
+  { src: "/photos/p2.webp", title: "Landing Page" },
   { src: "/photos/p3.webp", title: "Extension UI" },
   { src: "/photos/p4.webp", title: "Naming & Branding" },
   { src: "/photos/p5.webp", title: "Naming" },
-  { src: "/photos/p2.webp", title: "Landing Page" },
-  { src: "/photos/p6.webp", title: "Events Aggregator" },
+  { src: "/photos/p6.webp", title: "Whitelabel Proposal" },
   { src: "/photos/p7.webp", title: "Landing Page" },
   { src: "/photos/p8.webp", title: "Rebranding" },
   { src: "/photos/p9.webp", title: "Launch Campaign" },
@@ -102,7 +102,7 @@ export default function Projects() {
           <div className="relative">
             <button
               onClick={closeModal}
-              className="absolute right-0 p-2 m-4 text-3xl text-white bg-white -top-16 bg-opacity-20 rounded-tr-xl rounded-bl-xl"
+              className="absolute right-0 p-2 m-4  text-3xl text-white bg-white -top-16 bg-opacity-20 rounded-tr-xl rounded-bl-xl hover:scale-105 duration-500"
             >
               <XMarkIcon className="w-6 h-6" />
             </button>
@@ -128,7 +128,7 @@ export default function Projects() {
           <div className="relative ">
             <button
               onClick={closeCaseStudyModal}
-              className="absolute right-0 p-2 m-4 text-3xl text-white bg-white -top-16 bg-opacity-20 rounded-tr-xl rounded-bl-xl"
+              className="absolute right-0 p-2 m-4 text-3xl hover:scale-105 duration-500 text-white bg-white -top-16 bg-opacity-20 rounded-tr-xl rounded-bl-xl"
             >
               <XMarkIcon className="w-6 h-6" />
             </button>

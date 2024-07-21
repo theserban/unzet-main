@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { GithubLogo, YoutubeLogo } from "phosphor-react";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -13,6 +12,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { getCalApi } from "@calcom/embed-react";
+import { PiGithubLogo, PiYoutubeLogo } from "react-icons/pi";
 
 const navigation = [
   { name: "Brands", href: "#compete", icon: SwatchIcon },
@@ -89,14 +89,17 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-3">
           <Link
             href="https://github.com/theserban/unzet-main"
             passHref
             className="duration-500 transform hover:scale-105"
             aria-label="GitHub repository"
           >
-            <GithubLogo className="w-5 h-5 text-white" aria-hidden="true" />
+            <PiGithubLogo
+              className="w-5 h-5 font-medium text-white"
+              aria-hidden="true"
+            />
           </Link>
           <Link
             href="https://youtu.be/CQxS_2olqGM"
@@ -104,7 +107,10 @@ export default function Navbar() {
             className="duration-500 transform hover:scale-105"
             aria-label="YouTube Video"
           >
-            <YoutubeLogo className="w-5 h-5 text-white" aria-hidden="true" />
+            <PiYoutubeLogo
+              className="w-5 h-5 text-white mr-1"
+              aria-hidden="true"
+            />
           </Link>
           <BookNowButton />
         </div>
@@ -149,8 +155,8 @@ export default function Navbar() {
                   className="duration-500 transform hover:scale-105"
                   aria-label="GitHub Repository"
                 >
-                  <GithubLogo
-                    className="w-6 h-6 text-white"
+                  <PiGithubLogo
+                    className="w-6 h-6 font-medium text-white"
                     aria-hidden="true"
                   />
                 </Link>
@@ -160,7 +166,7 @@ export default function Navbar() {
                   className="duration-500 transform hover:scale-105"
                   aria-label="YouTube Video"
                 >
-                  <YoutubeLogo
+                  <PiYoutubeLogo
                     className="w-6 h-6 text-white"
                     aria-hidden="true"
                   />

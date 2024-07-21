@@ -36,7 +36,7 @@ const PrivacyPolicyModal: React.FC<{
       <div className="relative w-full max-w-3xl">
         <button
           onClick={onClose}
-          className="absolute right-0 p-2 text-3xl text-white bg-white bg-opacity-20 rounded-tr-xl rounded-bl-xl -top-12"
+          className="absolute right-0 p-2 text-3xl text-white bg-white bg-opacity-20 rounded-tr-xl rounded-bl-xl -top-12 duration-500 hover:scale-105"
         >
           <XMarkIcon className="h-6 w-6" />
         </button>

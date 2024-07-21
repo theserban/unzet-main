@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({
   description,
   pills,
 }) => (
-  <div className="ring-1 ring-gray-400/10 w-[37rem] h-auto bg-secondary-400 text-white p-6 rounded-tr-ct rounded-bl-ct border border-primary-500/20 shadow-lg transition-transform duration-500 hover:-translate-y-1">
+  <div className="mt-0 sm:mt-8 ring-1 ring-gray-400/10 w-[37rem] h-auto bg-secondary-400 text-white p-6 rounded-tr-ct rounded-bl-ct border border-primary-500/20 shadow-lg transition-transform duration-500 hover:-translate-y-1">
     <div className="flex items-center mb-4">
       <div className="flex items-center justify-center w-12 h-12 rounded-full">
         <Icon className="w-12 h-12 text-primary-500" />
@@ -59,7 +59,7 @@ const Card: React.FC<CardProps> = ({
     </div>
     <div className="grid grid-cols-2 pt-4">
       {description.map((item, index) => (
-        <div key={index} className="flex items-center mb-2">
+        <div key={index} className="flex items-left mb-2">
           {getIcon(item.status)}
           {item.text}
         </div>
@@ -209,7 +209,7 @@ export default function How() {
             </div>
             <div
               id="sticky-card"
-              className="pt-16 pl-12 pr-12 -mt-12 -ml-12 sm:-ml-4 lg:-ml-16 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
+              className="pt-16 pl-12 pr-12 -mt-12 -ml-12 sm:-ml-4 lg:-ml-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
             >
               {changeContent ? (
                 <Card

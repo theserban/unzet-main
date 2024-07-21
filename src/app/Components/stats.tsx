@@ -29,7 +29,7 @@ export default function Stats() {
                   rel="noopener noreferrer"
                   aria-label="Read the report on the global startup economy"
                 >
-                  <ArrowTopRightOnSquareIcon className="w-6 h-6 text-primary-500" />
+                  <ArrowTopRightOnSquareIcon className="w-6 h-6 text-primary-500 hover:text-primary-600" />
                 </Link>
                 <p className="flex-none text-3xl font-bold tracking-tight text-primary-500">
                   9 out of 10
@@ -54,7 +54,7 @@ export default function Stats() {
                   rel="noopener noreferrer"
                   aria-label="Read the blog post on startup profitability"
                 >
-                  <ArrowTopRightOnSquareIcon className="w-6 h-6 text-primary-500" />
+                  <ArrowTopRightOnSquareIcon className="w-6 h-6 text-primary-500 hover:text-primary-600" />
                 </Link>
                 <p className="flex-none text-3xl font-bold tracking-tight text-primary-500">
                   3-5 Years
@@ -78,7 +78,7 @@ export default function Stats() {
                   rel="noopener noreferrer"
                   aria-label="Read the Forrester report on better UX"
                 >
-                  <ArrowTopRightOnSquareIcon className="w-6 h-6 text-primary-500" />
+                  <ArrowTopRightOnSquareIcon className="w-6 h-6 text-primary-500 hover:text-primary-600" />
                 </Link>
                 <p className="flex-none text-3xl font-bold tracking-tight text-primary-500">
                   76%

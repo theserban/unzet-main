@@ -13,10 +13,11 @@ import {
   BookmarkIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
-import { LinkedinLogo, InstagramLogo, YoutubeLogo } from "phosphor-react";
 import Link from "next/link";
 import Privacy from "./privacy";
 import Image from "next/image";
+
+import { PiYoutubeLogo, PiLinkedinLogo, PiInstagramLogo } from "react-icons/pi";
 
 const socials = {
   LinkedIn: "https://www.linkedin.com/company/weunzet",
@@ -52,8 +53,8 @@ export default function Footer() {
       <div className="relative border-t bg-secondary-400 rounded-tr-ct border-primary-500/20">
         <div className="relative pt-12 pb-16 overflow-hidden isolate">
           <div className="px-6 mx-auto max-w-7xl lg:px-8">
-            <div className="grid max-w-2xl sm:max-w-4xl grid-cols-1 mx-auto gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-              <div className="max-w-xl text-white lg:max-w-lg">
+            <div className="grid max-w-2xl sm:max-w-4xl grid-cols-1 mx-auto gap-x-12 gap-y-16 lg:max-w-none lg:grid-cols-2">
+              <div className="max-w-xl text-white lg:max-w-md">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-3xl">
                   Play Your Cards Right Today,{" "}
                   <br className="hidden sm:inline" />
@@ -151,7 +152,7 @@ export default function Footer() {
             aria-hidden="true"
           ></div>
         </div>
-        <div className="px-8 mx-auto shadow-lg max-w-7xl pb-4">
+        <div className="px-8 mx-auto shadow-lg max-w-7xl pb-5">
           <div className="grid grid-cols-1 border-t border-primary-500/20 sm:grid-cols-3 items-start gap-4 sm:py-0 -mt-4 sm:-mt-6">
             <div className="order-3 sm:order-1 pt-0 sm:pt-6 flex items-center sm:block -mb-8">
               <p className="text-md sm:text-sm leading-5 text-left text-white sm:mt-0">
@@ -326,20 +327,20 @@ const Card: React.FC<{
                         className="flex items-center space-x-2 leading-6 transition-transform duration-500 text-md font-regular hover:text-gray-200 hover:scale-105"
                       >
                         {key === "LinkedIn" && (
-                          <LinkedinLogo
+                          <PiLinkedinLogo
                             size={20}
                             className="w-5 h-5 text-primary-500"
                             aria-hidden="true"
                           />
                         )}
                         {key === "Instagram" && (
-                          <InstagramLogo
+                          <PiInstagramLogo
                             className="w-5 h-5 text-primary-500"
                             aria-hidden="true"
                           />
                         )}
                         {key === "Youtube" && (
-                          <YoutubeLogo
+                          <PiYoutubeLogo
                             className="w-5 h-5 text-primary-500"
                             aria-hidden="true"
                           />

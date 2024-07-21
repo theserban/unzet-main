@@ -34,7 +34,7 @@ export default function Hero() {
       <section className="py-4 bg-black sm:py-0" id="hero">
         <div className="relative isolate">
           <svg
-            className="absolute top-48 sm:top-12 sm:left-0 left-1/2 transform -translate-x-1/2 sm:translate-x-0 -z-10 sm:h-[64rem] h-[32rem] w-full stroke-primary-500/20 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+            className="absolute top-48 sm:top-24 sm:left-0 left-1/2 transform -translate-x-1/2 sm:translate-x-0 -z-10 sm:h-[64rem] h-[32rem] w-full stroke-primary-500/20 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
             aria-hidden="true"
           >
             <defs>
@@ -59,7 +59,7 @@ export default function Hero() {
 
           <div className="overflow-hidden">
             <div className="px-6 pb-20 sm:pb-28 mx-auto max-w-7xl pt-24 sm:mt-40 lg:mt-0 lg:px-8 lg:pt-40">
-              <div className="max-w-4xl mx-auto gap-x-20 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+              <div className="max-w-4xl mx-auto gap-x-16 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-xl">
                   <h1 className="text-5xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl sm:-mt-32">
                     Kickstart Your{" "}
@@ -86,7 +86,7 @@ export default function Hero() {
                     </Link>
                   </div>
                 </div>
-                <div className="relative flex justify-end w-full gap-4 mt-14 sm:justify-start sm:pl-44 sm:-mt-28 lg:mt-0 lg:pl-0 sm:w-auto -ml-2 sm:ml-0">
+                <div className="relative flex justify-end w-full gap-6 mt-14 sm:justify-start sm:pl-44 sm:-mt-28 lg:mt-0 lg:pl-0 sm:w-auto -ml-2 sm:ml-0">
                   <div className="flex-none pt-32 ml-auto space-y-4 w-44 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                     <div className="relative">
                       <Card
@@ -97,7 +97,7 @@ export default function Hero() {
                       />
                     </div>
                   </div>
-                  <div className="flex-none mr-auto space-y-4 w-44 sm:mr-0 sm:pt-52 lg:pt-36">
+                  <div className="flex-none mr-auto space-y-6 w-44 sm:mr-0 sm:pt-52 lg:pt-36">
                     <div className="relative">
                       <Card
                         icon={CloudIcon}
@@ -115,7 +115,7 @@ export default function Hero() {
                       />
                     </div>
                   </div>
-                  <div className="flex-none pt-32 space-y-8 w-44 sm:pt-0">
+                  <div className="flex-none pt-32 space-y-6 w-44 sm:pt-0">
                     <div className="relative">
                       <Card
                         icon={UserIcon}
