@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://unzet.com"),
   keywords: ["startups", "tech"],
   title: {
-    default: "Unzet Your Potential",
+    default: "Unzet - Your Potential",
     template: "%s",
   },
   description:
-    "Unzet helps startups achieve their goals and builds innovative solutions to make people's lives more enjoyable.",
+    "Everything we do, from helping startups achieve their goals to building our own stuff, it's done with a clear destination in mind, making people's lives more enjoyable.",
   openGraph: {
     description: `Everything we do, from helping startups achieve their goals to building our own stuff, it's done with a clear destination in mind, making people's lives more enjoyable.`,
     images: ["https://www.unzet.com/og.jpg"],
